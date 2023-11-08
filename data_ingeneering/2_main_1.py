@@ -33,7 +33,7 @@ for i in range(0,data_len):
         sum_elem+=data[i][j]
         if i == j:
             sumMD_elem+= data[i][j]
-        elif i+j == data_len:
+        elif i+j == (data_len-1):
             sumSD_elem += data[i][j]
         max_elem = max(max_elem, data[i][j])
         min_elem = min(min_elem, data[i][j])
