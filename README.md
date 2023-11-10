@@ -12,7 +12,7 @@
     <td>
       <p>2_main_1.py</p>
       <p>matrix_1_7.npy</p>
-      <p>result_2_1.json</p>
+      <p>result_2_1.js</p>
     </td>
     <td>Задача 1</td>
     <td>Входные данные matrix_1_7.npy, <br>Выходные result_2_1.json
@@ -25,7 +25,7 @@
       <p>result_2_2_com.npz</p>
     </td>
     <td>Задача 2</td>
-    <td>Входные данные matrix_7_2.npy, <br>Выходные result_2_1.json
+    <td>Входные данные matrix_7_2.npy, <br>Выходные result_2_2.npz, result_2_2_com.npz
     </td>
   </tr>
   <tr>
