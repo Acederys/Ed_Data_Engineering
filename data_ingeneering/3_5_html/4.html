@@ -1,0 +1,2247 @@
+<!DOCTYPE html>
+<html lang="ru">
+ <head>
+  <base href="https://www.ats-com.ru/"/>
+  <title>
+   iPECS-LIK/UCP
+  </title>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="IP-АТС" name="description"/>
+  <meta content=" iPECS-LIK/UCP" name="keywords"/>
+  <meta content="width=1190" name="viewport"/>
+  <link href="https://www.ats-com.ru/catalog/iPECS-MG" rel="canonical"/>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600&amp;subset=latin,cyrillic" rel="stylesheet" type="text/css"/>
+  <link href="design/default_1/css/bootstrap.min.css" media="screen" rel="stylesheet" type="text/css">
+   <link href="design/default_1/css/style.css" media="screen" rel="stylesheet" type="text/css"/>
+   <link href="design/default_1/images/fav-icon.ico" rel="icon" type="image/x-icon"/>
+   <link href="design/default_1/images/fav-icon.ico" rel="shortcut icon" type="image/x-icon"/>
+   <link href="design/default_1/bxslider/jquery.bxslider.css" rel="stylesheet"/>
+   <script src="js/jquery/jquery.js" type="text/javascript">
+   </script>
+   <script src="design/default_1/bxslider/jquery.bxslider.min.js">
+   </script>
+   <script src="js/ctrlnavigate.js" type="text/javascript">
+   </script>
+   <script src="design/default_1/js/jquery-ui.min.js">
+   </script>
+   <script src="design/default_1/js/ajax_cart.js">
+   </script>
+   <script src="js/baloon/js/baloon.js" type="text/javascript">
+   </script>
+   <link href="js/baloon/css/baloon.css" rel="stylesheet" type="text/css"/>
+   <script src="js/autocomplete/jquery.autocomplete-min.js" type="text/javascript">
+   </script>
+   <style>
+    .autocomplete-suggestions{
+         background-color: #ffffff;
+         overflow: hidden;
+         border: 1px solid #e0e0e0;
+         overflow-y: auto;
+        }
+		.autocomplete-suggestions .autocomplete-suggestion{cursor: default;}
+		.autocomplete-suggestions .selected { background:#F0F0F0; }
+		.autocomplete-suggestions div { padding:2px 5px; white-space:nowrap; }
+		.autocomplete-suggestions strong { font-weight:normal; color:#3399FF; }
+   </style>
+   <script>
+    $(function() {
+     $('div.catalog-main>ul>li:not(:has(ul))').addClass('img-center');
+     $('div.catalog-menu-side>ul>li:has(li.selected)').addClass('selected');
+     //  Автозаполнитель поиска
+		$(".input_search").autocomplete({
+         serviceUrl:'ajax/search_products.php',
+         minChars:1,
+         noCache: false, 
+         onSelect:
+				function(suggestion){
+                 $(".input_search").closest('form').submit();
+                },
+         formatResult:
+				function(suggestion, currentValue){
+					var reEscape = new RegExp('(\\' + ['/', '.', '*', '+', '?', '|', '(', ')', '[', ']', '{', '}', '\\'].join('|\\') + ')', 'g');
+                 var pattern = '(' + currentValue.replace(reEscape, '\\$1') + ')';
+                 return (suggestion.data.image?"<img align=absmiddle src='"+suggestion.data.image+"'> ":'') + suggestion.value.replace(new RegExp(pattern, 'gi'), '<strong>$1<\/strong>');
+                }	
+        });
+    });
+   </script>
+  </link>
+ </head>
+ <body>
+  <!-- Верхняя строка -->
+  <div class="head">
+   <div class="container">
+    <div class="row">
+     <div class="col-xs-4">
+      <div id="logo">
+       <a href="/">
+        <img alt="ATS-COM" src="design/default_1/images/logo.png" title="ATS-COM"/>
+       </a>
+      </div>
+      <div style="width: 170px;height: 56px;float: left;margin-left: 10px;background: url(design/default_1/images/supplier-portal.png) no-repeat;background-size: 100% 100%;">
+      </div>
+     </div>
+     <div class="col-xs-3">
+      <div class="slogan">
+       <span>
+        115583, г.Москва, ул.Генерала Белова, д.26
+       </span>
+       <br/>
+       <span>
+        Пн - Пт с 9.00 до 20.00
+       </span>
+      </div>
+     </div>
+     <div class="col-xs-3">
+      <!-- Вход пользователя -->
+      <div id="account">
+       <a href="user/login" id="login">
+        <img alt="" src="/design/default_1/images/cart-img.png"/>
+        Войти в кабинет
+       </a>
+      </div>
+      <!-- Вход пользователя (The End)-->
+     </div>
+     <div class="col-xs-2">
+      <div id="contact">
+       Тел: +7 (495)788-39-33
+       <!--<span id="phone"> </span> -->
+       <div id="address-email">
+        <a href="mailto:ats@ts-ats.ru">
+         Email: ats@ts-ats.ru
+        </a>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <!-- menu -->
+  <div class="menu">
+   <div class="container">
+    <div class="row">
+     <div class="col-xs-12">
+      <ul id="menu">
+       <li>
+        <a data-page="1" href="">
+         Главная
+        </a>
+       </li>
+       <li>
+        <a data-page="8" href="http://ts-ats.ru">
+         О нас
+        </a>
+       </li>
+       <li>
+        <a data-page="9" href="tseny">
+         Библиотека
+        </a>
+       </li>
+       <li>
+        <a data-page="10" href="nashi-sertifikaty">
+         Сертификаты
+        </a>
+       </li>
+       <li>
+        <a data-page="11" href="skidki">
+         Скидки
+        </a>
+       </li>
+       <li>
+        <a data-page="12" href="obratnaya-svyaz">
+         Обратная связь
+        </a>
+       </li>
+       <li>
+        <a data-page="6" href="contact">
+         Контакты
+        </a>
+       </li>
+      </ul>
+     </div>
+    </div>
+   </div>
+  </div>
+  <!-- menu end -->
+  <div id="top_background">
+   <div class="container">
+    <div class="row">
+     <div class="col-xs-12">
+      <div class="katalog">
+       <div class="kat-butt">
+        <img alt="" src="/design/default_1/images/cat-img.png"/>
+        Каталог товаров
+       </div>
+       <div class="catalog-menu">
+        <ul>
+         <li>
+          <a data-category="1" href="catalog/ats">
+           АТС
+          </a>
+          <ul>
+           <li>
+            <a data-category="18" href="catalog/ericsson-lg">
+             Ericsson-LG
+            </a>
+            <ul>
+             <li>
+              <a data-category="25" href="catalog/wireless-soho-">
+               Wireless SOHO
+              </a>
+             </li>
+             <li>
+              <a data-category="26" href="catalog/ipecs-sbg-1000">
+               iPECS SBG-1000
+              </a>
+             </li>
+             <li>
+              <a data-category="169" href="catalog/ipecs-emg100">
+               iPECS eMG100
+              </a>
+             </li>
+             <li>
+              <a data-category="80" href="catalog/ipecs-mgemg800-">
+               iPECS-MG/eMG800
+              </a>
+             </li>
+             <li>
+              <a class="selected" data-category="29" href="catalog/iPECS-MG">
+               iPECS-LIK/UCP
+              </a>
+             </li>
+             <li>
+              <a data-category="28" href="catalog/iPECS-eMG80">
+               iPECS-eMG80
+              </a>
+             </li>
+            </ul>
+           </li>
+           <li>
+            <a data-category="20" href="catalog/samsung">
+             Samsung
+            </a>
+            <ul>
+             <li>
+              <a data-category="107" href="catalog/officeserv-7070">
+               OFFICESERV 7070
+              </a>
+             </li>
+            </ul>
+           </li>
+           <li>
+            <a data-category="19" href="catalog/panasonic">
+             Panasonic
+            </a>
+            <ul>
+             <li>
+              <a data-category="113" href="catalog/kx-ns500">
+               KX-NS500
+              </a>
+             </li>
+            </ul>
+           </li>
+          </ul>
+         </li>
+         <li>
+          <a data-category="2" href="catalog/terminaly">
+           Терминалы
+          </a>
+          <ul>
+           <li>
+            <a data-category="4" href="catalog/ericsson">
+             Ericsson-LG
+            </a>
+            <ul>
+             <li>
+              <a data-category="83" href="catalog/ip-telefony">
+               IP-телефоны
+              </a>
+              <ul>
+               <li>
+                <a data-category="177" href="catalog/ip-telefony-lip-90-serii">
+                 IP-телефоны LIP-90** серии
+                </a>
+               </li>
+               <li>
+                <a data-category="178" href="catalog/ip-telefony-10i-serii">
+                 IP-телефоны 10**i серии
+                </a>
+               </li>
+              </ul>
+             </li>
+             <li>
+              <a data-category="158" href="catalog/tsifrovye-sistemnye-telefony-ldp-92-seriya">
+               Цифровые системные телефоны LDP-92** серия
+              </a>
+             </li>
+             <li>
+              <a data-category="84" href="catalog/dect--ip-dect">
+               DECT / IP DECT
+              </a>
+             </li>
+            </ul>
+           </li>
+           <li>
+            <a data-category="40" href="catalog/samsung-">
+             Samsung
+            </a>
+            <ul>
+             <li>
+              <a data-category="154" href="catalog/ip-telefony-serii-smt-">
+               IP телефоны серии SMT
+              </a>
+             </li>
+            </ul>
+           </li>
+           <li>
+            <a data-category="192" href="catalog/gigaset">
+             Gigaset
+            </a>
+            <ul>
+             <li>
+              <a data-category="179" href="catalog/ip-dect">
+               IP DECT
+              </a>
+             </li>
+             <li>
+              <a data-category="180" href="catalog/litsenzii-gigaset">
+               Лицензии IP DECT
+              </a>
+             </li>
+            </ul>
+           </li>
+           <li>
+            <a data-category="167" href="catalog/yealink-term">
+             Yealink
+            </a>
+            <ul>
+             <li>
+              <a data-category="168" href="catalog/dect-telefony">
+               DECT-телефоны
+              </a>
+             </li>
+            </ul>
+           </li>
+           <li>
+            <a data-category="3" href="catalog/avaya-">
+             Avaya
+            </a>
+            <ul>
+             <li>
+              <a data-category="156" href="catalog/9600-seriya-ip-telefony-">
+               9600 серия (IP-телефоны)
+              </a>
+             </li>
+             <li>
+              <a data-category="157" href="catalog/1600-seriya-ip-telefony">
+               1600 серия (IP-телефоны)
+              </a>
+             </li>
+            </ul>
+           </li>
+           <li>
+            <a data-category="30" href="catalog/p">
+             Panasonic
+            </a>
+            <ul>
+             <li>
+              <a data-category="148" href="catalog/terminals-ip-telefony-panasonic">
+               IP телефоны
+              </a>
+             </li>
+             <li>
+              <a data-category="149" href="catalog/terms-dect-panasonic">
+               DECT
+              </a>
+             </li>
+            </ul>
+           </li>
+          </ul>
+         </li>
+         <li>
+          <a data-category="5" href="catalog/sip-telefony">
+           SIP-телефоны
+          </a>
+          <ul>
+           <li>
+            <a data-category="166" href="catalog/sip-yealink">
+             Yealink
+            </a>
+           </li>
+           <li>
+            <a data-category="161" href="catalog/fanvil">
+             Fanvil
+            </a>
+           </li>
+          </ul>
+         </li>
+         <li>
+          <a data-category="6" href="catalog/analogovye-telefony">
+           Аналоговые телефоны
+          </a>
+          <ul>
+           <li>
+            <a data-category="184" href="catalog/analog-ericsson-lg">
+             Ericsson-LG
+            </a>
+           </li>
+           <li>
+            <a data-category="147" href="catalog/panasonic-analog-station">
+             Panasonic
+            </a>
+           </li>
+          </ul>
+         </li>
+         <li>
+          <a data-category="13" href="catalog/setevoe-oborudovanie">
+           Сетевое оборудование
+          </a>
+          <ul>
+           <li>
+            <a data-category="174" href="catalog/ericsson-lg-network">
+             Ericsson-LG
+            </a>
+            <ul>
+             <li>
+              <a data-category="175" href="catalog/ipecs-es-20-serii">
+               IPECS-ES 20* серии
+              </a>
+             </li>
+             <li>
+              <a data-category="176" href="catalog/ipecs-es-30-serii">
+               IPECS-ES 30* серии
+              </a>
+             </li>
+             <li>
+              <a data-category="183" href="catalog/ipecs-vucp">
+               iPECS vUCP
+              </a>
+             </li>
+            </ul>
+           </li>
+           <li>
+            <a data-category="77" href="catalog/wi-fi-oborudovanie">
+             Wi-Fi оборудование
+            </a>
+            <ul>
+             <li>
+              <a data-category="89" href="catalog/samsu">
+               Samsung
+              </a>
+             </li>
+            </ul>
+           </li>
+           <li>
+            <a data-category="193" href="catalog/yeastar-set">
+             Yeastar
+            </a>
+           </li>
+          </ul>
+         </li>
+         <li>
+          <a data-category="16" href="catalog/oborudovanie-snyatoe-s-proizvodstva--bu-oborudovanie">
+           Оборудование снятое с производства | Б/У Оборудование
+          </a>
+          <ul>
+           <li>
+            <a data-category="170" href="catalog/panasonic-BU">
+             Panasonic
+            </a>
+            <ul>
+             <li>
+              <a data-category="145" href="catalog/kx-tda100tde200">
+               KX-TDA100/TDE200
+              </a>
+             </li>
+            </ul>
+           </li>
+           <li>
+            <a data-category="172" href="catalog/ericsson-lg-bu">
+             Ericsson-LG
+            </a>
+            <ul>
+             <li>
+              <a data-category="27" href="catalog/ARIA SOHO">
+               ARIA SOHO
+              </a>
+             </li>
+             <li>
+              <a data-category="160" href="catalog/ip-telefony-serii-lip-80--snyato-s-proizvodstva">
+               IP-телефоны серии LIP-80** | Снято с производства
+              </a>
+             </li>
+            </ul>
+           </li>
+          </ul>
+         </li>
+        </ul>
+       </div>
+      </div>
+      <!-- Поиск-->
+      <div id="search">
+       <form action="products">
+        <input class="input_search" name="keyword" placeholder="Поиск товара" type="text" value=""/>
+        <input aria-label="Найти" class="button_search" placeholder="Найти" type="submit" value=""/>
+       </form>
+      </div>
+      <!-- Поиск (The End)-->
+      <!-- Корзина -->
+      <div id="cart_informer">
+       <span style="font-weight: 600;">
+        Корзина пуста
+       </span>
+      </div>
+      <!-- Корзина (The End)-->
+      <div class="uslov">
+       <a href="user/register">
+        <img alt="" src="/design/default_1/images/os-uslov.png"/>
+       </a>
+      </div>
+     </div>
+     <div class="clearfix">
+     </div>
+    </div>
+   </div>
+  </div>
+  <!-- Верхняя строка (The End)-->
+  <!-- Основная часть -->
+  <div id="content-a">
+   <div class="container">
+    <div class="row">
+     <div class="col-xs-12">
+      <div class="row">
+       <div class="col-xs-3">
+        <div class="catalog-menu-side">
+         <ul>
+          <li>
+           <a href="brendy">
+            Бренды
+           </a>
+          </li>
+         </ul>
+         <ul>
+          <li>
+           <a data-category="1" href="catalog/ats">
+            АТС
+           </a>
+           <ul>
+            <li>
+             <a data-category="18" href="catalog/ericsson-lg">
+              Ericsson-LG
+             </a>
+             <ul>
+              <li>
+               <a data-category="25" href="catalog/wireless-soho-">
+                Wireless SOHO
+               </a>
+              </li>
+              <li>
+               <a data-category="26" href="catalog/ipecs-sbg-1000">
+                iPECS SBG-1000
+               </a>
+              </li>
+              <li>
+               <a data-category="169" href="catalog/ipecs-emg100">
+                iPECS eMG100
+               </a>
+              </li>
+              <li>
+               <a data-category="80" href="catalog/ipecs-mgemg800-">
+                iPECS-MG/eMG800
+               </a>
+              </li>
+              <li class="selected">
+               <a data-category="29" href="catalog/iPECS-MG">
+                iPECS-LIK/UCP
+               </a>
+              </li>
+              <li>
+               <a data-category="28" href="catalog/iPECS-eMG80">
+                iPECS-eMG80
+               </a>
+              </li>
+             </ul>
+            </li>
+            <li>
+             <a data-category="20" href="catalog/samsung">
+              Samsung
+             </a>
+             <ul>
+              <li>
+               <a data-category="107" href="catalog/officeserv-7070">
+                OFFICESERV 7070
+               </a>
+              </li>
+             </ul>
+            </li>
+            <li>
+             <a data-category="19" href="catalog/panasonic">
+              Panasonic
+             </a>
+             <ul>
+              <li>
+               <a data-category="113" href="catalog/kx-ns500">
+                KX-NS500
+               </a>
+              </li>
+             </ul>
+            </li>
+           </ul>
+          </li>
+          <li>
+           <a data-category="2" href="catalog/terminaly">
+            Терминалы
+           </a>
+           <ul>
+            <li>
+             <a data-category="4" href="catalog/ericsson">
+              Ericsson-LG
+             </a>
+             <ul>
+              <li>
+               <a data-category="83" href="catalog/ip-telefony">
+                IP-телефоны
+               </a>
+               <ul>
+                <li>
+                 <a data-category="177" href="catalog/ip-telefony-lip-90-serii">
+                  IP-телефоны LIP-90** серии
+                 </a>
+                </li>
+                <li>
+                 <a data-category="178" href="catalog/ip-telefony-10i-serii">
+                  IP-телефоны 10**i серии
+                 </a>
+                </li>
+               </ul>
+              </li>
+              <li>
+               <a data-category="158" href="catalog/tsifrovye-sistemnye-telefony-ldp-92-seriya">
+                Цифровые системные телефоны LDP-92** серия
+               </a>
+              </li>
+              <li>
+               <a data-category="84" href="catalog/dect--ip-dect">
+                DECT / IP DECT
+               </a>
+              </li>
+             </ul>
+            </li>
+            <li>
+             <a data-category="40" href="catalog/samsung-">
+              Samsung
+             </a>
+             <ul>
+              <li>
+               <a data-category="154" href="catalog/ip-telefony-serii-smt-">
+                IP телефоны серии SMT
+               </a>
+              </li>
+             </ul>
+            </li>
+            <li>
+             <a data-category="192" href="catalog/gigaset">
+              Gigaset
+             </a>
+             <ul>
+              <li>
+               <a data-category="179" href="catalog/ip-dect">
+                IP DECT
+               </a>
+              </li>
+              <li>
+               <a data-category="180" href="catalog/litsenzii-gigaset">
+                Лицензии IP DECT
+               </a>
+              </li>
+             </ul>
+            </li>
+            <li>
+             <a data-category="167" href="catalog/yealink-term">
+              Yealink
+             </a>
+             <ul>
+              <li>
+               <a data-category="168" href="catalog/dect-telefony">
+                DECT-телефоны
+               </a>
+              </li>
+             </ul>
+            </li>
+            <li>
+             <a data-category="3" href="catalog/avaya-">
+              Avaya
+             </a>
+             <ul>
+              <li>
+               <a data-category="156" href="catalog/9600-seriya-ip-telefony-">
+                9600 серия (IP-телефоны)
+               </a>
+              </li>
+              <li>
+               <a data-category="157" href="catalog/1600-seriya-ip-telefony">
+                1600 серия (IP-телефоны)
+               </a>
+              </li>
+             </ul>
+            </li>
+            <li>
+             <a data-category="30" href="catalog/p">
+              Panasonic
+             </a>
+             <ul>
+              <li>
+               <a data-category="148" href="catalog/terminals-ip-telefony-panasonic">
+                IP телефоны
+               </a>
+              </li>
+              <li>
+               <a data-category="149" href="catalog/terms-dect-panasonic">
+                DECT
+               </a>
+              </li>
+             </ul>
+            </li>
+           </ul>
+          </li>
+          <li>
+           <a data-category="5" href="catalog/sip-telefony">
+            SIP-телефоны
+           </a>
+           <ul>
+            <li>
+             <a data-category="166" href="catalog/sip-yealink">
+              Yealink
+             </a>
+            </li>
+            <li>
+             <a data-category="161" href="catalog/fanvil">
+              Fanvil
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li>
+           <a data-category="6" href="catalog/analogovye-telefony">
+            Аналоговые телефоны
+           </a>
+           <ul>
+            <li>
+             <a data-category="184" href="catalog/analog-ericsson-lg">
+              Ericsson-LG
+             </a>
+            </li>
+            <li>
+             <a data-category="147" href="catalog/panasonic-analog-station">
+              Panasonic
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li>
+           <a data-category="13" href="catalog/setevoe-oborudovanie">
+            Сетевое оборудование
+           </a>
+           <ul>
+            <li>
+             <a data-category="174" href="catalog/ericsson-lg-network">
+              Ericsson-LG
+             </a>
+             <ul>
+              <li>
+               <a data-category="175" href="catalog/ipecs-es-20-serii">
+                IPECS-ES 20* серии
+               </a>
+              </li>
+              <li>
+               <a data-category="176" href="catalog/ipecs-es-30-serii">
+                IPECS-ES 30* серии
+               </a>
+              </li>
+              <li>
+               <a data-category="183" href="catalog/ipecs-vucp">
+                iPECS vUCP
+               </a>
+              </li>
+             </ul>
+            </li>
+            <li>
+             <a data-category="77" href="catalog/wi-fi-oborudovanie">
+              Wi-Fi оборудование
+             </a>
+             <ul>
+              <li>
+               <a data-category="89" href="catalog/samsu">
+                Samsung
+               </a>
+              </li>
+             </ul>
+            </li>
+            <li>
+             <a data-category="193" href="catalog/yeastar-set">
+              Yeastar
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li>
+           <a data-category="16" href="catalog/oborudovanie-snyatoe-s-proizvodstva--bu-oborudovanie">
+            Оборудование снятое с производства | Б/У Оборудование
+           </a>
+           <ul>
+            <li>
+             <a data-category="170" href="catalog/panasonic-BU">
+              Panasonic
+             </a>
+             <ul>
+              <li>
+               <a data-category="145" href="catalog/kx-tda100tde200">
+                KX-TDA100/TDE200
+               </a>
+              </li>
+             </ul>
+            </li>
+            <li>
+             <a data-category="172" href="catalog/ericsson-lg-bu">
+              Ericsson-LG
+             </a>
+             <ul>
+              <li>
+               <a data-category="27" href="catalog/ARIA SOHO">
+                ARIA SOHO
+               </a>
+              </li>
+              <li>
+               <a data-category="160" href="catalog/ip-telefony-serii-lip-80--snyato-s-proizvodstva">
+                IP-телефоны серии LIP-80** | Снято с производства
+               </a>
+              </li>
+             </ul>
+            </li>
+           </ul>
+          </li>
+         </ul>
+        </div>
+       </div>
+       <div class="col-xs-9">
+        <!-- Хлебные крошки /-->
+        <div id="path">
+         <a href="/">
+          Главная
+         </a>
+         /
+         <a href="catalog/ats">
+          АТС
+         </a>
+         /
+         <a href="catalog/ericsson-lg">
+          Ericsson-LG
+         </a>
+         /
+         <a href="catalog/iPECS-MG">
+          iPECS-LIK/UCP
+         </a>
+        </div>
+        <!-- Хлебные крошки #End /-->
+        <div class="kat-img">
+         <h1>
+          iPECS-LIK/UCP
+         </h1>
+         <img alt="" src="design/default_1/images/kat-img2.png"/>
+        </div>
+        <!-- Тут Товары -->
+        <!--Каталог товаров-->
+        <script src="js/ctrlnavigate.js" type="text/javascript">
+        </script>
+        <!-- Листалка страниц -->
+        <div class="pagination">
+         <a class="selected" href="/catalog/iPECS-MG">
+          1
+         </a>
+         <a href="/catalog/iPECS-MG?page=2">
+          2
+         </a>
+         <a href="/catalog/iPECS-MG?page=all">
+          все сразу
+         </a>
+         <a class="next_page_link" href="/catalog/iPECS-MG?page=2">
+          вперед→
+         </a>
+        </div>
+        <!-- Листалка страниц (The End) -->
+        <!-- Список товаров-->
+        <ul class="products">
+         <!-- Товар-->
+         <li class="product">
+          <!-- Фото товара -->
+          <div class="image">
+           <a href="products/lik-micro-cerver-31-port-5voip-2slt">
+            <img alt="LIK-Micro cервер 31 порт 5VoIP 2SLT" src="https://www.ats-com.ru/files/products/lik-micro_front.200x200.jpg?d710182fa86352b7dca099cc65d24ac9"/>
+           </a>
+          </div>
+          <!-- Фото товара (The End) -->
+          <div class="product_info">
+           <!-- Название товара -->
+           <h3 class="featured">
+            <a data-product="182" href="products/lik-micro-cerver-31-port-5voip-2slt">
+             LIK-Micro cервер 31 порт 5VoIP 2SLT
+            </a>
+           </h3>
+           <!-- Название товара (The End) -->
+           <!-- Выбор варианта товара -->
+           <form action="/cart" class="variants">
+            <table>
+             <tr class="variant">
+              <td>
+               <input checked="" class="variant_radiobutton" id="variants_194" name="variant" style="display:none;" type="radio" value="194"/>
+              </td>
+              <td>
+              </td>
+              <td>
+               <span class="compare_price">
+                9 000,00
+               </span>
+               <span class="price">
+                7 650,00
+                <span class="currency">
+                 руб
+                </span>
+               </span>
+              </td>
+             </tr>
+            </table>
+            <input class="button" data-result-text="добавлено" type="submit" value="в корзину"/>
+           </form>
+           <!-- Выбор варианта товара (The End) -->
+          </div>
+         </li>
+         <!-- Товар (The End)-->
+         <!-- Товар-->
+         <li class="product">
+          <!-- Фото товара -->
+          <div class="image">
+           <a href="products/ucp100-server-50-portov-6-voip-2-slt-6-konf-ucp100-">
+            <img alt="UCP100 Сервер 50 портов, 6 VoIP, 2 SLT, 6 конф. [UCP100] " src="https://www.ats-com.ru/files/products/ucp100.200x200.jpg?03b0fb0cbc2dc4e4bfbca7cb540afc22"/>
+           </a>
+          </div>
+          <!-- Фото товара (The End) -->
+          <div class="product_info">
+           <!-- Название товара -->
+           <h3 class="featured">
+            <a data-product="185" href="products/ucp100-server-50-portov-6-voip-2-slt-6-konf-ucp100-">
+             UCP100 Сервер 50 портов, 6 VoIP, 2 SLT, 6 конф. [UCP100]
+            </a>
+           </h3>
+           <!-- Название товара (The End) -->
+           <!-- Выбор варианта товара -->
+           <form action="/cart" class="variants">
+            <table>
+             <tr class="variant">
+              <td>
+               <input checked="" class="variant_radiobutton" id="variants_197" name="variant" style="display:none;" type="radio" value="197"/>
+              </td>
+              <td>
+              </td>
+              <td>
+               <span class="compare_price">
+                93 480,00
+               </span>
+               <span class="price">
+                79 458,00
+                <span class="currency">
+                 руб
+                </span>
+               </span>
+              </td>
+             </tr>
+            </table>
+            <input class="button" data-result-text="добавлено" type="submit" value="в корзину"/>
+           </form>
+           <!-- Выбор варианта товара (The End) -->
+          </div>
+         </li>
+         <!-- Товар (The End)-->
+         <!-- Товар-->
+         <li class="product">
+          <!-- Фото товара -->
+          <div class="image">
+           <a href="products/ucp600-server-100-portov-6-voip-conf-6-ucp600">
+            <img alt="UCP600 Сервер 100 портов, 6 VoIP, conf. 6 [UCP600]" src="https://www.ats-com.ru/files/products/ucp600_1.200x200.jpg?cfb76fea35fd1ded276437b2970c3343"/>
+           </a>
+          </div>
+          <!-- Фото товара (The End) -->
+          <div class="product_info">
+           <!-- Название товара -->
+           <h3 class="featured">
+            <a data-product="726" href="products/ucp600-server-100-portov-6-voip-conf-6-ucp600">
+             UCP600 Сервер 100 портов, 6 VoIP, conf. 6 [UCP600]
+            </a>
+           </h3>
+           <!-- Название товара (The End) -->
+           <!-- Выбор варианта товара -->
+           <form action="/cart" class="variants">
+            <table>
+             <tr class="variant">
+              <td>
+               <input checked="" class="variant_radiobutton" id="variants_738" name="variant" style="display:none;" type="radio" value="738"/>
+              </td>
+              <td>
+              </td>
+              <td>
+               <span class="compare_price">
+                249 360,00
+               </span>
+               <span class="price">
+                211 956,00
+                <span class="currency">
+                 руб
+                </span>
+               </span>
+              </td>
+             </tr>
+            </table>
+            <input class="button" data-result-text="добавлено" type="submit" value="в корзину"/>
+           </form>
+           <!-- Выбор варианта товара (The End) -->
+          </div>
+         </li>
+         <!-- Товар (The End)-->
+         <!-- Товар-->
+         <li class="product">
+          <!-- Фото товара -->
+          <div class="image">
+           <a href="products/ucp2400-server-600-portov-ucp2400">
+            <img alt="UCP2400 Сервер 600 портов [UCP2400]" src="https://www.ats-com.ru/files/products/ucp2400_1.200x200.jpg?5f5ec3b2e47a7b58a69882bff3d8afc1"/>
+           </a>
+          </div>
+          <!-- Фото товара (The End) -->
+          <div class="product_info">
+           <!-- Название товара -->
+           <h3 class="featured">
+            <a data-product="727" href="products/ucp2400-server-600-portov-ucp2400">
+             UCP2400 Сервер 600 портов [UCP2400]
+            </a>
+           </h3>
+           <!-- Название товара (The End) -->
+           <!-- Выбор варианта товара -->
+           <form action="/cart" class="variants">
+            <table>
+             <tr class="variant">
+              <td>
+               <input checked="" class="variant_radiobutton" id="variants_739" name="variant" style="display:none;" type="radio" value="739"/>
+              </td>
+              <td>
+              </td>
+              <td>
+               <span class="compare_price">
+                935 160,00
+               </span>
+               <span class="price">
+                794 886,00
+                <span class="currency">
+                 руб
+                </span>
+               </span>
+              </td>
+             </tr>
+            </table>
+            <input class="button" data-result-text="добавлено" type="submit" value="в корзину"/>
+           </form>
+           <!-- Выбор варианта товара (The End) -->
+          </div>
+         </li>
+         <!-- Товар (The End)-->
+         <!-- Товар-->
+         <li class="product">
+          <!-- Фото товара -->
+          <div class="image">
+           <a href="products/dochernij-modul-ucp100-4co-ucp-coiu4">
+            <img alt="Дочерний модуль UCP100 (4CO) [UCP-COIU4]" src="https://www.ats-com.ru/files/products/ericsson-lg_ucp-coiu4.200x200.jpg?a288245256923a66dd2238186fb916a4"/>
+           </a>
+          </div>
+          <!-- Фото товара (The End) -->
+          <div class="product_info">
+           <!-- Название товара -->
+           <h3 class="featured">
+            <a data-product="183" href="products/dochernij-modul-ucp100-4co-ucp-coiu4">
+             Дочерний модуль UCP100 (4CO) [UCP-COIU4]
+            </a>
+           </h3>
+           <!-- Название товара (The End) -->
+           <!-- Выбор варианта товара -->
+           <form action="/cart" class="variants">
+            <table>
+             <tr class="variant">
+              <td>
+               <input checked="" class="variant_radiobutton" id="variants_195" name="variant" style="display:none;" type="radio" value="195"/>
+              </td>
+              <td>
+              </td>
+              <td>
+               <span class="compare_price">
+                18 720,00
+               </span>
+               <span class="price">
+                15 912,00
+                <span class="currency">
+                 руб
+                </span>
+               </span>
+              </td>
+             </tr>
+            </table>
+            <input class="button" data-result-text="добавлено" type="submit" value="в корзину"/>
+           </form>
+           <!-- Выбор варианта товара (The End) -->
+          </div>
+         </li>
+         <!-- Товар (The End)-->
+         <!-- Товар-->
+         <li class="product">
+          <!-- Фото товара -->
+          <div class="image">
+           <a href="products/dochernij-modul-ucp100-2bri-ucp-briu2">
+            <img alt="Дочерний модуль UCP100 (2BRI) [UCP-BRIU2]" src="https://www.ats-com.ru/files/products/ucp-briu2.200x200.jpg?61747dccd962fba67990919000bffe36"/>
+           </a>
+          </div>
+          <!-- Фото товара (The End) -->
+          <div class="product_info">
+           <!-- Название товара -->
+           <h3 class="featured">
+            <a data-product="728" href="products/dochernij-modul-ucp100-2bri-ucp-briu2">
+             Дочерний модуль UCP100 (2BRI) [UCP-BRIU2]
+            </a>
+           </h3>
+           <!-- Название товара (The End) -->
+           <!-- Выбор варианта товара -->
+           <form action="/cart" class="variants">
+            <table>
+             <tr class="variant">
+              <td>
+               <input checked="" class="variant_radiobutton" id="variants_740" name="variant" style="display:none;" type="radio" value="740"/>
+              </td>
+              <td>
+              </td>
+              <td>
+               <span class="compare_price">
+                18 720,00
+               </span>
+               <span class="price">
+                15 912,00
+                <span class="currency">
+                 руб
+                </span>
+               </span>
+              </td>
+             </tr>
+            </table>
+            <input class="button" data-result-text="добавлено" type="submit" value="в корзину"/>
+           </form>
+           <!-- Выбор варианта товара (The End) -->
+          </div>
+         </li>
+         <!-- Товар (The End)-->
+         <!-- Товар-->
+         <li class="product">
+          <!-- Фото товара -->
+          <div class="image">
+           <a href="products/dochernij-modul-ucp100-4bri-ucp-briu4">
+            <img alt="Дочерний модуль UCP100 (4BRI) [UCP-BRIU4]" src="https://www.ats-com.ru/files/products/brib4_1.200x200.jpg?291fdca86b5139266659b6d2bbddd681"/>
+           </a>
+          </div>
+          <!-- Фото товара (The End) -->
+          <div class="product_info">
+           <!-- Название товара -->
+           <h3 class="featured">
+            <a data-product="729" href="products/dochernij-modul-ucp100-4bri-ucp-briu4">
+             Дочерний модуль UCP100 (4BRI) [UCP-BRIU4]
+            </a>
+           </h3>
+           <!-- Название товара (The End) -->
+           <!-- Выбор варианта товара -->
+           <form action="/cart" class="variants">
+            <table>
+             <tr class="variant">
+              <td>
+               <input checked="" class="variant_radiobutton" id="variants_741" name="variant" style="display:none;" type="radio" value="741"/>
+              </td>
+              <td>
+              </td>
+              <td>
+               <span class="compare_price">
+                34 080,00
+               </span>
+               <span class="price">
+                28 968,00
+                <span class="currency">
+                 руб
+                </span>
+               </span>
+              </td>
+             </tr>
+            </table>
+            <input class="button" data-result-text="добавлено" type="submit" value="в корзину"/>
+           </form>
+           <!-- Выбор варианта товара (The End) -->
+          </div>
+         </li>
+         <!-- Товар (The End)-->
+         <!-- Товар-->
+         <li class="product">
+          <!-- Фото товара -->
+          <div class="image">
+           <a href="products/modul-4-h-gorodskih-linij-4co-ucp-lgcm4">
+            <img alt="Модуль 4-х городских линий (4CO) [UCP-LGCM4]" src="https://www.ats-com.ru/files/products/lgcm4_1.200x200.jpg?ae3179c59fb4a6025bad5464995fbc3a"/>
+           </a>
+          </div>
+          <!-- Фото товара (The End) -->
+          <div class="product_info">
+           <!-- Название товара -->
+           <h3 class="featured">
+            <a data-product="730" href="products/modul-4-h-gorodskih-linij-4co-ucp-lgcm4">
+             Модуль 4-х городских линий (4CO) [UCP-LGCM4]
+            </a>
+           </h3>
+           <!-- Название товара (The End) -->
+           <!-- Выбор варианта товара -->
+           <form action="/cart" class="variants">
+            <table>
+             <tr class="variant">
+              <td>
+               <input checked="" class="variant_radiobutton" id="variants_742" name="variant" style="display:none;" type="radio" value="742"/>
+              </td>
+              <td>
+              </td>
+              <td>
+               <span class="compare_price">
+                71 880,00
+               </span>
+               <span class="price">
+                61 098,00
+                <span class="currency">
+                 руб
+                </span>
+               </span>
+              </td>
+             </tr>
+            </table>
+            <input class="button" data-result-text="добавлено" type="submit" value="в корзину"/>
+           </form>
+           <!-- Выбор варианта товара (The End) -->
+          </div>
+         </li>
+         <!-- Товар (The End)-->
+         <!-- Товар-->
+         <li class="product">
+          <!-- Фото товара -->
+          <div class="image">
+           <a href="products/modul-8-mi-gorodskih-linij-8co-ucp-lgcm8">
+            <img alt="Модуль 8-ми городских линий (8CO) [UCP-LGCM8]" src="https://www.ats-com.ru/files/products/lgcm8_front_1.200x200.jpg?ca47bcf6db383a0f44ff9de9e388e92e"/>
+           </a>
+          </div>
+          <!-- Фото товара (The End) -->
+          <div class="product_info">
+           <!-- Название товара -->
+           <h3 class="featured">
+            <a data-product="731" href="products/modul-8-mi-gorodskih-linij-8co-ucp-lgcm8">
+             Модуль 8-ми городских линий (8CO) [UCP-LGCM8]
+            </a>
+           </h3>
+           <!-- Название товара (The End) -->
+           <!-- Выбор варианта товара -->
+           <form action="/cart" class="variants">
+            <table>
+             <tr class="variant">
+              <td>
+               <input checked="" class="variant_radiobutton" id="variants_743" name="variant" style="display:none;" type="radio" value="743"/>
+              </td>
+              <td>
+              </td>
+              <td>
+               <span class="compare_price">
+                102 720,00
+               </span>
+               <span class="price">
+                87 312,00
+                <span class="currency">
+                 руб
+                </span>
+               </span>
+              </td>
+             </tr>
+            </table>
+            <input class="button" data-result-text="добавлено" type="submit" value="в корзину"/>
+           </form>
+           <!-- Выбор варианта товара (The End) -->
+          </div>
+         </li>
+         <!-- Товар (The End)-->
+         <!-- Товар-->
+         <li class="product">
+          <!-- Фото товара -->
+          <div class="image">
+           <a href="products/modul-isdn-bri-2-porta-lik-brim2">
+            <img alt="Модуль ISDN BRI-2 порта [LIK-BRIM2]" src="https://www.ats-com.ru/files/products/brim2_front-left_1.200x200.jpg?c241fe021067587d92b7343e37cfb06e"/>
+           </a>
+          </div>
+          <!-- Фото товара (The End) -->
+          <div class="product_info">
+           <!-- Название товара -->
+           <h3 class="featured">
+            <a data-product="732" href="products/modul-isdn-bri-2-porta-lik-brim2">
+             Модуль ISDN BRI-2 порта [LIK-BRIM2]
+            </a>
+           </h3>
+           <!-- Название товара (The End) -->
+           <!-- Выбор варианта товара -->
+           <form action="/cart" class="variants">
+            <table>
+             <tr class="variant">
+              <td>
+               <input checked="" class="variant_radiobutton" id="variants_744" name="variant" style="display:none;" type="radio" value="744"/>
+              </td>
+              <td>
+              </td>
+              <td>
+               <span class="compare_price">
+                79 080,00
+               </span>
+               <span class="price">
+                67 218,00
+                <span class="currency">
+                 руб
+                </span>
+               </span>
+              </td>
+             </tr>
+            </table>
+            <input class="button" data-result-text="добавлено" type="submit" value="в корзину"/>
+           </form>
+           <!-- Выбор варианта товара (The End) -->
+          </div>
+         </li>
+         <!-- Товар (The End)-->
+         <!-- Товар-->
+         <li class="product">
+          <!-- Фото товара -->
+          <div class="image">
+           <a href="products/modul-isdn-bri-4-porta-lik-brim4">
+            <img alt="Модуль ISDN BRI-4 порта [LIK-BRIM4]" src="https://www.ats-com.ru/files/products/brim4_front-left.200x200.jpg?8f4555609597aa8e920eeb8eb01503b2"/>
+           </a>
+          </div>
+          <!-- Фото товара (The End) -->
+          <div class="product_info">
+           <!-- Название товара -->
+           <h3 class="featured">
+            <a data-product="173" href="products/modul-isdn-bri-4-porta-lik-brim4">
+             Модуль ISDN BRI-4 порта [LIK-BRIM4]
+            </a>
+           </h3>
+           <!-- Название товара (The End) -->
+           <!-- Выбор варианта товара -->
+           <form action="/cart" class="variants">
+            <table>
+             <tr class="variant">
+              <td>
+               <input checked="" class="variant_radiobutton" id="variants_185" name="variant" style="display:none;" type="radio" value="185"/>
+              </td>
+              <td>
+              </td>
+              <td>
+               <span class="compare_price">
+                112 920,00
+               </span>
+               <span class="price">
+                95 982,00
+                <span class="currency">
+                 руб
+                </span>
+               </span>
+              </td>
+             </tr>
+            </table>
+            <input class="button" data-result-text="добавлено" type="submit" value="в корзину"/>
+           </form>
+           <!-- Выбор варианта товара (The End) -->
+          </div>
+         </li>
+         <!-- Товар (The End)-->
+         <!-- Товар-->
+         <li class="product">
+          <!-- Фото товара -->
+          <div class="image">
+           <a href="products/modul-isdn-pri-1-potok-ucp-prim">
+            <img alt="Модуль ISDN PRI-1 поток [UCP-PRIM]" src="https://www.ats-com.ru/files/products/ucp-prim.200x200.jpg?b393a8dc280c8730a4d55920e51a8721"/>
+           </a>
+          </div>
+          <!-- Фото товара (The End) -->
+          <div class="product_info">
+           <!-- Название товара -->
+           <h3 class="featured">
+            <a data-product="1253" href="products/modul-isdn-pri-1-potok-ucp-prim">
+             Модуль ISDN PRI-1 поток [UCP-PRIM]
+            </a>
+           </h3>
+           <!-- Название товара (The End) -->
+           <!-- Выбор варианта товара -->
+           <form action="/cart" class="variants">
+            <table>
+             <tr class="variant">
+              <td>
+               <input checked="" class="variant_radiobutton" id="variants_1265" name="variant" style="display:none;" type="radio" value="1265"/>
+              </td>
+              <td>
+              </td>
+              <td>
+               <span class="compare_price">
+                218 160,00
+               </span>
+               <span class="price">
+                185 436,00
+                <span class="currency">
+                 руб
+                </span>
+               </span>
+              </td>
+             </tr>
+            </table>
+            <input class="button" data-result-text="добавлено" type="submit" value="в корзину"/>
+           </form>
+           <!-- Выбор варианта товара (The End) -->
+          </div>
+         </li>
+         <!-- Товар (The End)-->
+         <!-- Товар-->
+         <li class="product">
+          <!-- Фото товара -->
+          <div class="image">
+           <a href="products/modul-voip-8-portov-ucp-voim8">
+            <img alt="Модуль VoIP, 8 портов [UCP-VOIM8]" src="https://www.ats-com.ru/files/products/ucp-voim8-3.200x200.jpg?c1252069a10b95d3abdc1241f8186699"/>
+           </a>
+          </div>
+          <!-- Фото товара (The End) -->
+          <div class="product_info">
+           <!-- Название товара -->
+           <h3 class="featured">
+            <a data-product="1161" href="products/modul-voip-8-portov-ucp-voim8">
+             Модуль VoIP, 8 портов [UCP-VOIM8]
+            </a>
+           </h3>
+           <!-- Название товара (The End) -->
+           <!-- Выбор варианта товара -->
+           <form action="/cart" class="variants">
+            <table>
+             <tr class="variant">
+              <td>
+               <input checked="" class="variant_radiobutton" id="variants_1173" name="variant" style="display:none;" type="radio" value="1173"/>
+              </td>
+              <td>
+              </td>
+              <td>
+               <span class="compare_price">
+                56 150,00
+               </span>
+               <span class="price">
+                47 727,00
+                <span class="currency">
+                 руб
+                </span>
+               </span>
+              </td>
+             </tr>
+            </table>
+            <input class="button" data-result-text="добавлено" type="submit" value="в корзину"/>
+           </form>
+           <!-- Выбор варианта товара (The End) -->
+          </div>
+         </li>
+         <!-- Товар (The End)-->
+         <!-- Товар-->
+         <li class="product">
+          <!-- Фото товара -->
+          <div class="image">
+           <a href="products/modul-voip-24-porta-ucp-voim24">
+            <img alt="Модуль VoIP, 24 порта [UCP-VOIM24]" src="https://www.ats-com.ru/files/products/voim24_front-left_1.200x200.jpg?394b24209ed0ef82ddfe5864de1c4b06"/>
+           </a>
+          </div>
+          <!-- Фото товара (The End) -->
+          <div class="product_info">
+           <!-- Название товара -->
+           <h3 class="featured">
+            <a data-product="1162" href="products/modul-voip-24-porta-ucp-voim24">
+             Модуль VoIP, 24 порта [UCP-VOIM24]
+            </a>
+           </h3>
+           <!-- Название товара (The End) -->
+           <!-- Выбор варианта товара -->
+           <form action="/cart" class="variants">
+            <table>
+             <tr class="variant">
+              <td>
+               <input checked="" class="variant_radiobutton" id="variants_1174" name="variant" style="display:none;" type="radio" value="1174"/>
+              </td>
+              <td>
+              </td>
+              <td>
+               <span class="compare_price">
+                131 520,00
+               </span>
+               <span class="price">
+                111 792,00
+                <span class="currency">
+                 руб
+                </span>
+               </span>
+              </td>
+             </tr>
+            </table>
+            <input class="button" data-result-text="добавлено" type="submit" value="в корзину"/>
+           </form>
+           <!-- Выбор варианта товара (The End) -->
+          </div>
+         </li>
+         <!-- Товар (The End)-->
+         <!-- Товар-->
+         <li class="product">
+          <!-- Фото товара -->
+          <div class="image">
+           <a href="products/modul-8-mi-tsifrovyh-telefonov-serii-ldp-ucp-dtim8">
+            <img alt="Модуль 8-ми цифровых телефонов серии LDP [UCP-DTIM8]" src="https://www.ats-com.ru/files/products/non_113.200x200.jpg?65af48070c81f0e32ca02440527eafd4"/>
+           </a>
+          </div>
+          <!-- Фото товара (The End) -->
+          <div class="product_info">
+           <!-- Название товара -->
+           <h3 class="featured">
+            <a data-product="1599" href="products/modul-8-mi-tsifrovyh-telefonov-serii-ldp-ucp-dtim8">
+             Модуль 8-ми цифровых телефонов серии LDP [UCP-DTIM8]
+            </a>
+           </h3>
+           <!-- Название товара (The End) -->
+           <!-- Выбор варианта товара -->
+           <form action="/cart" class="variants">
+            <table>
+             <tr class="variant">
+              <td>
+               <input checked="" class="variant_radiobutton" id="variants_1611" name="variant" style="display:none;" type="radio" value="1611"/>
+              </td>
+              <td>
+              </td>
+              <td>
+               <span class="compare_price">
+                70 920,00
+               </span>
+               <span class="price">
+                60 282,00
+                <span class="currency">
+                 руб
+                </span>
+               </span>
+              </td>
+             </tr>
+            </table>
+            <input class="button" data-result-text="добавлено" type="submit" value="в корзину"/>
+           </form>
+           <!-- Выбор варианта товара (The End) -->
+          </div>
+         </li>
+         <!-- Товар (The End)-->
+         <!-- Товар-->
+         <li class="product">
+          <!-- Фото товара -->
+          <div class="image">
+           <a href="products/modul-24-h-tsifrovyh-telefonov-serii-ldp-ucp-dtim24-">
+            <img alt="Модуль 24-х цифровых телефонов серии LDP [UCP-DTIM24 ]" src="https://www.ats-com.ru/files/products/non_4.200x200.jpg?42846fb83126f809006d626bd0010844"/>
+           </a>
+          </div>
+          <!-- Фото товара (The End) -->
+          <div class="product_info">
+           <!-- Название товара -->
+           <h3 class="featured">
+            <a data-product="1254" href="products/modul-24-h-tsifrovyh-telefonov-serii-ldp-ucp-dtim24-">
+             Модуль 24-х цифровых телефонов серии LDP [UCP-DTIM24 ]
+            </a>
+           </h3>
+           <!-- Название товара (The End) -->
+           <!-- Выбор варианта товара -->
+           <form action="/cart" class="variants">
+            <table>
+             <tr class="variant">
+              <td>
+               <input checked="" class="variant_radiobutton" id="variants_1266" name="variant" style="display:none;" type="radio" value="1266"/>
+              </td>
+              <td>
+              </td>
+              <td>
+               <span class="compare_price">
+                142 080,00
+               </span>
+               <span class="price">
+                120 768,00
+                <span class="currency">
+                 руб
+                </span>
+               </span>
+              </td>
+             </tr>
+            </table>
+            <input class="button" data-result-text="добавлено" type="submit" value="в корзину"/>
+           </form>
+           <!-- Выбор варианта товара (The End) -->
+          </div>
+         </li>
+         <!-- Товар (The End)-->
+         <!-- Товар-->
+         <li class="product">
+          <!-- Фото товара -->
+          <div class="image">
+           <a href="products/modul-4-h-analogovyh-telefonov-4slt-ucp-sltm4">
+            <img alt="Модуль 4-х аналоговых телефонов (4SLT) [UCP-SLTM4]" src="https://www.ats-com.ru/files/products/sltm4_front-left_1.200x200.jpg?dbcc65630655e5e642ef7929aea31eb9"/>
+           </a>
+          </div>
+          <!-- Фото товара (The End) -->
+          <div class="product_info">
+           <!-- Название товара -->
+           <h3 class="featured">
+            <a data-product="733" href="products/modul-4-h-analogovyh-telefonov-4slt-ucp-sltm4">
+             Модуль 4-х аналоговых телефонов (4SLT) [UCP-SLTM4]
+            </a>
+           </h3>
+           <!-- Название товара (The End) -->
+           <!-- Выбор варианта товара -->
+           <form action="/cart" class="variants">
+            <table>
+             <tr class="variant">
+              <td>
+               <input checked="" class="variant_radiobutton" id="variants_745" name="variant" style="display:none;" type="radio" value="745"/>
+              </td>
+              <td>
+              </td>
+              <td>
+               <span class="compare_price">
+                62 400,00
+               </span>
+               <span class="price">
+                53 040,00
+                <span class="currency">
+                 руб
+                </span>
+               </span>
+              </td>
+             </tr>
+            </table>
+            <input class="button" data-result-text="добавлено" type="submit" value="в корзину"/>
+           </form>
+           <!-- Выбор варианта товара (The End) -->
+          </div>
+         </li>
+         <!-- Товар (The End)-->
+         <!-- Товар-->
+         <li class="product">
+          <!-- Фото товара -->
+          <div class="image">
+           <a href="products/modul-8-mi-analogovyh-telefonov-8slt-ucp-sltm8">
+            <img alt="Модуль 8-ми аналоговых телефонов (8SLT) [UCP-SLTM8]" src="https://www.ats-com.ru/files/products/sltm8_front-left_1.200x200.jpg?d204ef7409974e28e32e2d916c991cdb"/>
+           </a>
+          </div>
+          <!-- Фото товара (The End) -->
+          <div class="product_info">
+           <!-- Название товара -->
+           <h3 class="featured">
+            <a data-product="734" href="products/modul-8-mi-analogovyh-telefonov-8slt-ucp-sltm8">
+             Модуль 8-ми аналоговых телефонов (8SLT) [UCP-SLTM8]
+            </a>
+           </h3>
+           <!-- Название товара (The End) -->
+           <!-- Выбор варианта товара -->
+           <form action="/cart" class="variants">
+            <table>
+             <tr class="variant">
+              <td>
+               <input checked="" class="variant_radiobutton" id="variants_746" name="variant" style="display:none;" type="radio" value="746"/>
+              </td>
+              <td>
+              </td>
+              <td>
+               <span class="compare_price">
+                124 680,00
+               </span>
+               <span class="price">
+                105 978,00
+                <span class="currency">
+                 руб
+                </span>
+               </span>
+              </td>
+             </tr>
+            </table>
+            <input class="button" data-result-text="добавлено" type="submit" value="в корзину"/>
+           </form>
+           <!-- Выбор варианта товара (The End) -->
+          </div>
+         </li>
+         <!-- Товар (The End)-->
+         <!-- Товар-->
+         <li class="product">
+          <!-- Фото товара -->
+          <div class="image">
+           <a href="products/modul-32-h-analogovyh-telefonov-ucp-sltm32">
+            <img alt="Модуль 32-х аналоговых телефонов [UCP-SLTM32]" src="https://www.ats-com.ru/files/products/sltm32_top_back_1_2.200x200.jpg?9db10952b8211a37408da292eda1cff7"/>
+           </a>
+          </div>
+          <!-- Фото товара (The End) -->
+          <div class="product_info">
+           <!-- Название товара -->
+           <h3 class="featured">
+            <a data-product="735" href="products/modul-32-h-analogovyh-telefonov-ucp-sltm32">
+             Модуль 32-х аналоговых телефонов [UCP-SLTM32]
+            </a>
+           </h3>
+           <!-- Название товара (The End) -->
+           <!-- Выбор варианта товара -->
+           <form action="/cart" class="variants">
+            <table>
+             <tr class="variant">
+              <td>
+               <input checked="" class="variant_radiobutton" id="variants_747" name="variant" style="display:none;" type="radio" value="747"/>
+              </td>
+              <td>
+              </td>
+              <td>
+               <span class="compare_price">
+                239 880,00
+               </span>
+               <span class="price">
+                203 898,00
+                <span class="currency">
+                 руб
+                </span>
+               </span>
+              </td>
+             </tr>
+            </table>
+            <input class="button" data-result-text="добавлено" type="submit" value="в корзину"/>
+           </form>
+           <!-- Выбор варианта товара (The End) -->
+          </div>
+         </li>
+         <!-- Товар (The End)-->
+         <!-- Товар-->
+         <li class="product">
+          <!-- Фото товара -->
+          <div class="image">
+           <a href="products/modul-podklyucheniya-4-h-retranslyatorov-minisotovoj-svyazi-dect-gdc-400b600bucp-wtim4">
+            <img alt="Модуль подключения 4-х ретрансляторов минисотовой связи DECT (GDC-400B/600B)[UCP-WTIM4]" src="https://www.ats-com.ru/files/products/non_5.200x200.jpg?33b6c69d313260140e2631f9c8784b8f"/>
+           </a>
+          </div>
+          <!-- Фото товара (The End) -->
+          <div class="product_info">
+           <!-- Название товара -->
+           <h3 class="featured">
+            <a data-product="1255" href="products/modul-podklyucheniya-4-h-retranslyatorov-minisotovoj-svyazi-dect-gdc-400b600bucp-wtim4">
+             Модуль подключения 4-х ретрансляторов минисотовой связи DECT (GDC-400B/600B)[UCP-WTIM4]
+            </a>
+           </h3>
+           <!-- Название товара (The End) -->
+           <!-- Выбор варианта товара -->
+           <form action="/cart" class="variants">
+            <table>
+             <tr class="variant">
+              <td>
+               <input checked="" class="variant_radiobutton" id="variants_1267" name="variant" style="display:none;" type="radio" value="1267"/>
+              </td>
+              <td>
+              </td>
+              <td>
+               <span class="compare_price">
+                84 000,00
+               </span>
+               <span class="price">
+                71 400,00
+                <span class="currency">
+                 руб
+                </span>
+               </span>
+              </td>
+             </tr>
+            </table>
+            <input class="button" data-result-text="добавлено" type="submit" value="в корзину"/>
+           </form>
+           <!-- Выбор варианта товара (The End) -->
+          </div>
+         </li>
+         <!-- Товар (The End)-->
+         <!-- Товар-->
+         <li class="product">
+          <!-- Фото товара -->
+          <div class="image">
+           <a href="products/multimedijnyj-modul-dlya-konferentsij-ucp-vcim">
+            <img alt="Мультимедийный модуль для конференций [UCP-VCIM]" src="https://www.ats-com.ru/files/products/non_114.200x200.jpg?adb7f31010a272523ab50e692441efe7"/>
+           </a>
+          </div>
+          <!-- Фото товара (The End) -->
+          <div class="product_info">
+           <!-- Название товара -->
+           <h3 class="featured">
+            <a data-product="1480" href="products/multimedijnyj-modul-dlya-konferentsij-ucp-vcim">
+             Мультимедийный модуль для конференций [UCP-VCIM]
+            </a>
+           </h3>
+           <!-- Название товара (The End) -->
+           <!-- Выбор варианта товара -->
+           <form action="/cart" class="variants">
+            <table>
+             <tr class="variant">
+              <td>
+               <input checked="" class="variant_radiobutton" id="variants_1492" name="variant" style="display:none;" type="radio" value="1492"/>
+              </td>
+              <td>
+              </td>
+              <td>
+               <span class="compare_price">
+                140 160,00
+               </span>
+               <span class="price">
+                119 136,00
+                <span class="currency">
+                 руб
+                </span>
+               </span>
+              </td>
+             </tr>
+            </table>
+            <input class="button" data-result-text="добавлено" type="submit" value="в корзину"/>
+           </form>
+           <!-- Выбор варианта товара (The End) -->
+          </div>
+         </li>
+         <!-- Товар (The End)-->
+         <!-- Товар-->
+         <li class="product">
+          <!-- Фото товара -->
+          <div class="image">
+           <a href="products/modul-golosovoj-pochty-816ch-50200hrs-dlya-ucp-ucp-uvm">
+            <img alt="Модуль голосовой почты 8(16)ch. 50(200)Hrs. для UCP [UCP-UVM]" src="https://www.ats-com.ru/files/products/uvm.200x200.jpg?a528291b207b57323334b6e2667833b6"/>
+           </a>
+          </div>
+          <!-- Фото товара (The End) -->
+          <div class="product_info">
+           <!-- Название товара -->
+           <h3 class="featured">
+            <a data-product="161" href="products/modul-golosovoj-pochty-816ch-50200hrs-dlya-ucp-ucp-uvm">
+             Модуль голосовой почты 8(16)ch. 50(200)Hrs. для UCP [UCP-UVM]
+            </a>
+           </h3>
+           <!-- Название товара (The End) -->
+           <!-- Выбор варианта товара -->
+           <form action="/cart" class="variants">
+            <table>
+             <tr class="variant">
+              <td>
+               <input checked="" class="variant_radiobutton" id="variants_173" name="variant" style="display:none;" type="radio" value="173"/>
+              </td>
+              <td>
+              </td>
+              <td>
+               <span class="compare_price">
+                171 240,00
+               </span>
+               <span class="price">
+                145 554,00
+                <span class="currency">
+                 руб
+                </span>
+               </span>
+              </td>
+             </tr>
+            </table>
+            <input class="button" data-result-text="добавлено" type="submit" value="в корзину"/>
+           </form>
+           <!-- Выбор варианта товара (The End) -->
+          </div>
+         </li>
+         <!-- Товар (The End)-->
+         <!-- Товар-->
+         <li class="product">
+          <!-- Фото товара -->
+          <div class="image">
+           <a href="products/kommutator-8-portov-poe-i300-poe8">
+            <img alt="Коммутатор (8 портов POE) [I300-POE8]" src="https://www.ats-com.ru/files/products/poe8_front-left.200x200.jpg?5637fdc9a5e60a9ae32b3cfea34ea38f"/>
+           </a>
+          </div>
+          <!-- Фото товара (The End) -->
+          <div class="product_info">
+           <!-- Название товара -->
+           <h3 class="featured">
+            <a data-product="160" href="products/kommutator-8-portov-poe-i300-poe8">
+             Коммутатор (8 портов POE) [I300-POE8]
+            </a>
+           </h3>
+           <!-- Название товара (The End) -->
+           <!-- Выбор варианта товара -->
+           <form action="/cart" class="variants">
+            <table>
+             <tr class="variant">
+              <td>
+               <input checked="" class="variant_radiobutton" id="variants_172" name="variant" style="display:none;" type="radio" value="172"/>
+              </td>
+              <td>
+              </td>
+              <td>
+               <span class="compare_price">
+                38 640,00
+               </span>
+               <span class="price">
+                32 844,00
+                <span class="currency">
+                 руб
+                </span>
+               </span>
+              </td>
+             </tr>
+            </table>
+            <input class="button" data-result-text="добавлено" type="submit" value="в корзину"/>
+           </form>
+           <!-- Выбор варианта товара (The End) -->
+          </div>
+         </li>
+         <!-- Товар (The End)-->
+         <!-- Товар-->
+         <li class="product">
+          <!-- Фото товара -->
+          <div class="image">
+           <a href="products/svitch-8-portov-1gb-ucp-es8g">
+            <img alt="Свитч 8 портов 1Gb [UCP-ES8G]" src="https://www.ats-com.ru/files/products/es8gp.200x200.jpg?44e140157e2164e859535689aa86e6d3"/>
+           </a>
+          </div>
+          <!-- Фото товара (The End) -->
+          <div class="product_info">
+           <!-- Название товара -->
+           <h3 class="featured">
+            <a data-product="656" href="products/svitch-8-portov-1gb-ucp-es8g">
+             Свитч 8 портов 1Gb [UCP-ES8G]
+            </a>
+           </h3>
+           <!-- Название товара (The End) -->
+           <!-- Выбор варианта товара -->
+           <form action="/cart" class="variants">
+            <table>
+             <tr class="variant">
+              <td>
+               <input checked="" class="variant_radiobutton" id="variants_668" name="variant" style="display:none;" type="radio" value="668"/>
+              </td>
+              <td>
+              </td>
+              <td>
+               <span class="compare_price">
+                39 960,00
+               </span>
+               <span class="price">
+                33 966,00
+                <span class="currency">
+                 руб
+                </span>
+               </span>
+              </td>
+             </tr>
+            </table>
+            <input class="button" data-result-text="добавлено" type="submit" value="в корзину"/>
+           </form>
+           <!-- Выбор варианта товара (The End) -->
+          </div>
+         </li>
+         <!-- Товар (The End)-->
+        </ul>
+        <script src="js/ctrlnavigate.js" type="text/javascript">
+        </script>
+        <!-- Листалка страниц -->
+        <div class="pagination">
+         <a class="selected" href="/catalog/iPECS-MG">
+          1
+         </a>
+         <a href="/catalog/iPECS-MG?page=2">
+          2
+         </a>
+         <a href="/catalog/iPECS-MG?page=all">
+          все сразу
+         </a>
+         <a class="next_page_link" href="/catalog/iPECS-MG?page=2">
+          вперед→
+         </a>
+        </div>
+        <!-- Листалка страниц (The End) -->
+        <!-- Список товаров (The End)-->
+        <!--Каталог товаров (The End)-->
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div id="content">
+   <div class="container">
+    <div class="row">
+     <div class="col-xs-12">
+      <div class="row">
+       <div class="col-xs-12">
+        <p>
+         <span style="font-family: arial, helvetica, sans-serif; font-size: small;">
+          <b>
+           <img height="310" src="/files/uploads/iPECS_UCP_5.jpg" style="float: left;" width="240"/>
+           iPECS UCP
+          </b>
+          - это платформа унифицированных коммуникаций компании Ericsson-LG Enterprise,             созданная специально для компаний малого и среднего бизнеса, а также крупных предприятий.
+          <b>
+           iPECS UCP
+          </b>
+          предлагает готовые решения по унификации коммуникаций и обеспечению мобильности. Кроме того, платформа
+          <b>
+           iPECS UCP
+          </b>
+          может быть масштабирована до версии UC премиум.
+         </span>
+        </p>
+        <p>
+         <span style="font-family: arial, helvetica, sans-serif; font-size: small;">
+          <span>
+           Благодаря простой архитектуре системы и установке устройств по принципу Plug&amp;Play, у IT-службы компании не возникнет никаких сложностей с созданием корпоративной сети на основе решений iPECS. Операторы системы могут осуществлять мониторинг и управление до 500 серверами обработки вызовов и иметь доступ к общей базе данных системы и к каждому из серверов из любого офиса компании.
+          </span>
+          <br>
+           <span>
+            Модульная структура оборудования и программного обеспечения позволяет увеличить емкость или расширить покрытие по мере роста компании, достаточно просто добавить дополнительный модуль.
+           </span>
+          </br>
+         </span>
+        </p>
+        <p>
+         <span style="font-family: arial, helvetica, sans-serif; font-size: small;">
+          <span>
+           Более подробное описание системы можно найти в "Библиотеке" на нашем сайте.
+          </span>
+         </span>
+        </p>
+        <p>
+         <span style="font-family: arial, helvetica, sans-serif; font-size: small;">
+          <span>
+           Технические вопросы можно задать  нашим инженерам по телефону 495-788-39-33
+          </span>
+         </span>
+        </p>
+        <p>
+        </p>
+        <p style="font-size: 16px;">
+         <span style="font-family: arial, helvetica, sans-serif; font-size: small;">
+          <img height="400" src="/files/uploads/iPECS-LIK1_general.jpg" style="float: right;" width="343"/>
+         </span>
+        </p>
+        <div>
+         <span style="font-family: arial, helvetica, sans-serif; font-size: small;">
+          <br/>
+         </span>
+        </div>
+        <p>
+        </p>
+        <p>
+        </p>
+        <p>
+         <span style="font-family: arial, helvetica, sans-serif; font-size: small;">
+          <br/>
+         </span>
+        </p>
+        <p>
+         <span style="font-family: arial, helvetica, sans-serif; font-size: small;">
+          Коммуникационный сервер
+          <b>
+           iPECS-LIK
+          </b>
+          разработан для компаний малого и среднего бизнеса, максимальная емкость системы - до 1200 портов.
+          <b>
+           iPECS-LIK
+          </b>
+          - модульное решение c управляющей и транспортной сетью на основе ip-протокола, что позволяет создавать распределенные системы c большим количеством узлов и легко добавлять новые. Использование
+          <b>
+           iPECS-LIK
+          </b>
+          позволяет объединить данные, голос и видео в единой корпоративной ip-сети. Коммуникационный сервер
+          <b>
+           iPECS-LIK
+          </b>
+          поддерживает технологии VoIP, ISDN PRI, ISDN BRI, DECT, аналоговые CO, цифровые, аналоговые и IP телефоны.
+         </span>
+        </p>
+        <p>
+        </p>
+        <p>
+        </p>
+        <p>
+         <span style="font-family: arial, helvetica, sans-serif; font-size: small;">
+          <span>
+           <span>
+            Разработка платформы iPECS - это 10 лет работы команды инженеров высочайшего уровня над созданием действительно уникального решения для предприятий малого/среднего бизнеса (SMB). При создании платформы IPECS компания Ericsson-LG акцентировала особое внимание на четырех важнейших факторах: Цена, Технология, Окружающая Среда, Люди, что позволило получить уникальную коммуникационную систему.
+           </span>
+          </span>
+         </span>
+        </p>
+        <p>
+         <span style="font-family: arial, helvetica, sans-serif; font-size: small;">
+          <span>
+           <span>
+            Более подробное описание системы можно найти в "Библиотеке" на нашем сайте.
+           </span>
+          </span>
+         </span>
+        </p>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <!-- Основная часть (The End) -->
+  <!-- Вся страница (The End)-->
+  <!-- Футер -->
+  <div id="footer">
+   <div class="container">
+    <div class="row">
+     <div class="col-xs-3">
+      <div class="title">
+       Компания
+      </div>
+      <ul>
+       <li>
+        <a data-page="1" href="">
+         Главная
+        </a>
+       </li>
+       <li>
+        <a data-page="8" href="http://ts-ats.ru">
+         О нас
+        </a>
+       </li>
+       <li>
+        <a data-page="9" href="tseny">
+         Библиотека
+        </a>
+       </li>
+       <li>
+        <a data-page="10" href="nashi-sertifikaty">
+         Сертификаты
+        </a>
+       </li>
+       <li>
+        <a data-page="11" href="skidki">
+         Скидки
+        </a>
+       </li>
+       <li>
+        <a data-page="12" href="obratnaya-svyaz">
+         Обратная связь
+        </a>
+       </li>
+       <li>
+        <a data-page="6" href="contact">
+         Контакты
+        </a>
+       </li>
+      </ul>
+     </div>
+     <div class="col-xs-6">
+      <div class="title">
+       Каталог товаров
+      </div>
+      <ul>
+       <li>
+        <a data-category="1" href="catalog/ats">
+         АТС
+        </a>
+       </li>
+       <li>
+        <a data-category="2" href="catalog/terminaly">
+         Терминалы
+        </a>
+       </li>
+       <li>
+        <a data-category="5" href="catalog/sip-telefony">
+         SIP-телефоны
+        </a>
+       </li>
+       <li>
+        <a data-category="6" href="catalog/analogovye-telefony">
+         Аналоговые телефоны
+        </a>
+       </li>
+       <li>
+        <a data-category="13" href="catalog/setevoe-oborudovanie">
+         Сетевое оборудование
+        </a>
+       </li>
+       <li>
+        <a data-category="16" href="catalog/oborudovanie-snyatoe-s-proizvodstva--bu-oborudovanie">
+         Оборудование снятое с производства | Б/У Оборудование
+        </a>
+       </li>
+      </ul>
+     </div>
+     <div class="col-xs-3">
+      <div class="title">
+       Контакты
+      </div>
+      <div class="tel">
+       +7 (495) 788-39-33
+      </div>
+      <div class="e-mail">
+       <a href="mailto:ats@ts-ats.ru">
+        ats@ts-ats.ru
+       </a>
+      </div>
+      <div class="clearfix">
+      </div>
+      <div class="title">
+       Прайс-листы
+      </div>
+      <div class="price-list">
+       <!--
+      <div class="price-list">
+      <a href="https://www.ats-com.ru/files/uploads/_-_Ericsson-LG_.pdf"><img src="design/default_1/images/price-img.png"> Прайс-лист Ericsson-LG (активация) </a>
+      </div>
+      <div class="price-list">
+      <a href="https://ats-com.ru/files/uploads/_-_Samsung.pdf"><img src="design/default_1/images/price-img.png"> Прайс-лист Samsung </a>
+-->
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <!-- Футер (The End)-->
+  <div class="foot">
+   <div class="container">
+    <div class="row">
+     <div class="col-xs-6">
+      <div class="title">
+       © 2015 - 2023, ТЦ АТСКОМ
+      </div>
+     </div>
+     <div class="col-xs-6" style="text-align: right;">
+      <!-- <div class="palitra-block">
+                    <a title="Создание и продвижение сайтов" target="_blank" href="http://www.it-palitra.ru/uslugi/cool_web/" class="palitra">
+                        <img src="design/default_1/images/palitra_w.png">
+                    </a>
+                    <a title="Создание и продвижение сайтов" alt="Создание и продвижение сайтов" target="_blank" href="http://www.it-palitra.ru/" class="palitra-txt">Создание и продвижение сайтов</a>
+                </div> -->
+      <span class="liveinternet">
+       <!--LiveInternet counter-->
+       <script type="text/javascript">
+        document.write("<a href='https://www.liveinternet.ru/click' target=_blank><img src='https://counter.yadro.ru/hit?t21.2;r;s" + escape(document.referrer) + ((typeof(screen)=="undefined")?"":";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?screen.colorDepth:screen.pixelDepth)) + ";u" + escape(document.URL) + ";" + Math.random() + "' border=0 width=80 height=30 alt='' title='LiveInternet: показано число просмотров за 24 часа, посетителей за 24 часа и за сегодня'><\/a>")
+       </script>
+       <!--/LiveInternet-->
+      </span>
+     </div>
+    </div>
+   </div>
+  </div>
+ </body>
+</html>
+<!--
+memory peak usage: 5299472 bytes
+page generation time: 0.029831886291504 seconds
+-->

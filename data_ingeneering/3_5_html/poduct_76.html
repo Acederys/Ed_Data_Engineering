@@ -1,0 +1,1662 @@
+<!DOCTYPE html>
+<html lang="ru">
+ <head>
+  <base href="https://www.ats-com.ru/"/>
+  <title>
+   eMG80-KSUA Базовый блок (CO)
+  </title>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="Базовый блок (4CO,1DKT,7DKT/SLT,2(8)VoIP,2(4)VM), 2 слота расширения" name="description"/>
+  <meta content="eMG80-KSUA Базовый блок (CO), Ericsson-LG, АТС, Ericsson-LG, iPECS-eMG80" name="keywords"/>
+  <meta content="width=1190" name="viewport"/>
+  <link href="https://www.ats-com.ru/products/emg80-ksua-bazovyj-blok-co" rel="canonical"/>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600&amp;subset=latin,cyrillic" rel="stylesheet" type="text/css"/>
+  <link href="design/default_1/css/bootstrap.min.css" media="screen" rel="stylesheet" type="text/css">
+   <link href="design/default_1/css/style.css" media="screen" rel="stylesheet" type="text/css"/>
+   <link href="design/default_1/images/fav-icon.ico" rel="icon" type="image/x-icon"/>
+   <link href="design/default_1/images/fav-icon.ico" rel="shortcut icon" type="image/x-icon"/>
+   <link href="design/default_1/bxslider/jquery.bxslider.css" rel="stylesheet"/>
+   <script src="js/jquery/jquery.js" type="text/javascript">
+   </script>
+   <script src="design/default_1/bxslider/jquery.bxslider.min.js">
+   </script>
+   <script src="js/ctrlnavigate.js" type="text/javascript">
+   </script>
+   <script src="design/default_1/js/jquery-ui.min.js">
+   </script>
+   <script src="design/default_1/js/ajax_cart.js">
+   </script>
+   <script src="js/baloon/js/baloon.js" type="text/javascript">
+   </script>
+   <link href="js/baloon/css/baloon.css" rel="stylesheet" type="text/css"/>
+   <script src="js/autocomplete/jquery.autocomplete-min.js" type="text/javascript">
+   </script>
+   <style>
+    .autocomplete-suggestions{
+         background-color: #ffffff;
+         overflow: hidden;
+         border: 1px solid #e0e0e0;
+         overflow-y: auto;
+        }
+		.autocomplete-suggestions .autocomplete-suggestion{cursor: default;}
+		.autocomplete-suggestions .selected { background:#F0F0F0; }
+		.autocomplete-suggestions div { padding:2px 5px; white-space:nowrap; }
+		.autocomplete-suggestions strong { font-weight:normal; color:#3399FF; }
+   </style>
+   <script>
+    $(function() {
+     $('div.catalog-main>ul>li:not(:has(ul))').addClass('img-center');
+     $('div.catalog-menu-side>ul>li:has(li.selected)').addClass('selected');
+     //  Автозаполнитель поиска
+		$(".input_search").autocomplete({
+         serviceUrl:'ajax/search_products.php',
+         minChars:1,
+         noCache: false, 
+         onSelect:
+				function(suggestion){
+                 $(".input_search").closest('form').submit();
+                },
+         formatResult:
+				function(suggestion, currentValue){
+					var reEscape = new RegExp('(\\' + ['/', '.', '*', '+', '?', '|', '(', ')', '[', ']', '{', '}', '\\'].join('|\\') + ')', 'g');
+                 var pattern = '(' + currentValue.replace(reEscape, '\\$1') + ')';
+                 return (suggestion.data.image?"<img align=absmiddle src='"+suggestion.data.image+"'> ":'') + suggestion.value.replace(new RegExp(pattern, 'gi'), '<strong>$1<\/strong>');
+                }	
+        });
+    });
+   </script>
+  </link>
+ </head>
+ <body>
+  <!-- Верхняя строка -->
+  <div class="head">
+   <div class="container">
+    <div class="row">
+     <div class="col-xs-4">
+      <div id="logo">
+       <a href="/">
+        <img alt="ATS-COM" src="design/default_1/images/logo.png" title="ATS-COM"/>
+       </a>
+      </div>
+      <div style="width: 170px;height: 56px;float: left;margin-left: 10px;background: url(design/default_1/images/supplier-portal.png) no-repeat;background-size: 100% 100%;">
+      </div>
+     </div>
+     <div class="col-xs-3">
+      <div class="slogan">
+       <span>
+        115583, г.Москва, ул.Генерала Белова, д.26
+       </span>
+       <br/>
+       <span>
+        Пн - Пт с 9.00 до 20.00
+       </span>
+      </div>
+     </div>
+     <div class="col-xs-3">
+      <!-- Вход пользователя -->
+      <div id="account">
+       <a href="user/login" id="login">
+        <img alt="" src="/design/default_1/images/cart-img.png"/>
+        Войти в кабинет
+       </a>
+      </div>
+      <!-- Вход пользователя (The End)-->
+     </div>
+     <div class="col-xs-2">
+      <div id="contact">
+       Тел: +7 (495)788-39-33
+       <!--<span id="phone"> </span> -->
+       <div id="address-email">
+        <a href="mailto:ats@ts-ats.ru">
+         Email: ats@ts-ats.ru
+        </a>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <!-- menu -->
+  <div class="menu">
+   <div class="container">
+    <div class="row">
+     <div class="col-xs-12">
+      <ul id="menu">
+       <li>
+        <a data-page="1" href="">
+         Главная
+        </a>
+       </li>
+       <li>
+        <a data-page="8" href="http://ts-ats.ru">
+         О нас
+        </a>
+       </li>
+       <li>
+        <a data-page="9" href="tseny">
+         Библиотека
+        </a>
+       </li>
+       <li>
+        <a data-page="10" href="nashi-sertifikaty">
+         Сертификаты
+        </a>
+       </li>
+       <li>
+        <a data-page="11" href="skidki">
+         Скидки
+        </a>
+       </li>
+       <li>
+        <a data-page="12" href="obratnaya-svyaz">
+         Обратная связь
+        </a>
+       </li>
+       <li>
+        <a data-page="6" href="contact">
+         Контакты
+        </a>
+       </li>
+      </ul>
+     </div>
+    </div>
+   </div>
+  </div>
+  <!-- menu end -->
+  <div id="top_background">
+   <div class="container">
+    <div class="row">
+     <div class="col-xs-12">
+      <div class="katalog">
+       <div class="kat-butt">
+        <img alt="" src="/design/default_1/images/cat-img.png"/>
+        Каталог товаров
+       </div>
+       <div class="catalog-menu">
+        <ul>
+         <li>
+          <a data-category="1" href="catalog/ats">
+           АТС
+          </a>
+          <ul>
+           <li>
+            <a data-category="18" href="catalog/ericsson-lg">
+             Ericsson-LG
+            </a>
+            <ul>
+             <li>
+              <a data-category="25" href="catalog/wireless-soho-">
+               Wireless SOHO
+              </a>
+             </li>
+             <li>
+              <a data-category="26" href="catalog/ipecs-sbg-1000">
+               iPECS SBG-1000
+              </a>
+             </li>
+             <li>
+              <a data-category="169" href="catalog/ipecs-emg100">
+               iPECS eMG100
+              </a>
+             </li>
+             <li>
+              <a data-category="80" href="catalog/ipecs-mgemg800-">
+               iPECS-MG/eMG800
+              </a>
+             </li>
+             <li>
+              <a data-category="29" href="catalog/iPECS-MG">
+               iPECS-LIK/UCP
+              </a>
+             </li>
+             <li>
+              <a class="selected" data-category="28" href="catalog/iPECS-eMG80">
+               iPECS-eMG80
+              </a>
+             </li>
+            </ul>
+           </li>
+           <li>
+            <a data-category="20" href="catalog/samsung">
+             Samsung
+            </a>
+            <ul>
+             <li>
+              <a data-category="107" href="catalog/officeserv-7070">
+               OFFICESERV 7070
+              </a>
+             </li>
+            </ul>
+           </li>
+           <li>
+            <a data-category="19" href="catalog/panasonic">
+             Panasonic
+            </a>
+            <ul>
+             <li>
+              <a data-category="113" href="catalog/kx-ns500">
+               KX-NS500
+              </a>
+             </li>
+            </ul>
+           </li>
+          </ul>
+         </li>
+         <li>
+          <a data-category="2" href="catalog/terminaly">
+           Терминалы
+          </a>
+          <ul>
+           <li>
+            <a data-category="4" href="catalog/ericsson">
+             Ericsson-LG
+            </a>
+            <ul>
+             <li>
+              <a data-category="83" href="catalog/ip-telefony">
+               IP-телефоны
+              </a>
+              <ul>
+               <li>
+                <a data-category="177" href="catalog/ip-telefony-lip-90-serii">
+                 IP-телефоны LIP-90** серии
+                </a>
+               </li>
+               <li>
+                <a data-category="178" href="catalog/ip-telefony-10i-serii">
+                 IP-телефоны 10**i серии
+                </a>
+               </li>
+              </ul>
+             </li>
+             <li>
+              <a data-category="158" href="catalog/tsifrovye-sistemnye-telefony-ldp-92-seriya">
+               Цифровые системные телефоны LDP-92** серия
+              </a>
+             </li>
+             <li>
+              <a data-category="84" href="catalog/dect--ip-dect">
+               DECT / IP DECT
+              </a>
+             </li>
+            </ul>
+           </li>
+           <li>
+            <a data-category="40" href="catalog/samsung-">
+             Samsung
+            </a>
+            <ul>
+             <li>
+              <a data-category="154" href="catalog/ip-telefony-serii-smt-">
+               IP телефоны серии SMT
+              </a>
+             </li>
+            </ul>
+           </li>
+           <li>
+            <a data-category="192" href="catalog/gigaset">
+             Gigaset
+            </a>
+            <ul>
+             <li>
+              <a data-category="179" href="catalog/ip-dect">
+               IP DECT
+              </a>
+             </li>
+             <li>
+              <a data-category="180" href="catalog/litsenzii-gigaset">
+               Лицензии IP DECT
+              </a>
+             </li>
+            </ul>
+           </li>
+           <li>
+            <a data-category="167" href="catalog/yealink-term">
+             Yealink
+            </a>
+            <ul>
+             <li>
+              <a data-category="168" href="catalog/dect-telefony">
+               DECT-телефоны
+              </a>
+             </li>
+            </ul>
+           </li>
+           <li>
+            <a data-category="3" href="catalog/avaya-">
+             Avaya
+            </a>
+            <ul>
+             <li>
+              <a data-category="156" href="catalog/9600-seriya-ip-telefony-">
+               9600 серия (IP-телефоны)
+              </a>
+             </li>
+             <li>
+              <a data-category="157" href="catalog/1600-seriya-ip-telefony">
+               1600 серия (IP-телефоны)
+              </a>
+             </li>
+            </ul>
+           </li>
+           <li>
+            <a data-category="30" href="catalog/p">
+             Panasonic
+            </a>
+            <ul>
+             <li>
+              <a data-category="148" href="catalog/terminals-ip-telefony-panasonic">
+               IP телефоны
+              </a>
+             </li>
+             <li>
+              <a data-category="149" href="catalog/terms-dect-panasonic">
+               DECT
+              </a>
+             </li>
+            </ul>
+           </li>
+          </ul>
+         </li>
+         <li>
+          <a data-category="5" href="catalog/sip-telefony">
+           SIP-телефоны
+          </a>
+          <ul>
+           <li>
+            <a data-category="166" href="catalog/sip-yealink">
+             Yealink
+            </a>
+           </li>
+           <li>
+            <a data-category="161" href="catalog/fanvil">
+             Fanvil
+            </a>
+           </li>
+          </ul>
+         </li>
+         <li>
+          <a data-category="6" href="catalog/analogovye-telefony">
+           Аналоговые телефоны
+          </a>
+          <ul>
+           <li>
+            <a data-category="184" href="catalog/analog-ericsson-lg">
+             Ericsson-LG
+            </a>
+           </li>
+           <li>
+            <a data-category="147" href="catalog/panasonic-analog-station">
+             Panasonic
+            </a>
+           </li>
+          </ul>
+         </li>
+         <li>
+          <a data-category="13" href="catalog/setevoe-oborudovanie">
+           Сетевое оборудование
+          </a>
+          <ul>
+           <li>
+            <a data-category="174" href="catalog/ericsson-lg-network">
+             Ericsson-LG
+            </a>
+            <ul>
+             <li>
+              <a data-category="175" href="catalog/ipecs-es-20-serii">
+               IPECS-ES 20* серии
+              </a>
+             </li>
+             <li>
+              <a data-category="176" href="catalog/ipecs-es-30-serii">
+               IPECS-ES 30* серии
+              </a>
+             </li>
+             <li>
+              <a data-category="183" href="catalog/ipecs-vucp">
+               iPECS vUCP
+              </a>
+             </li>
+            </ul>
+           </li>
+           <li>
+            <a data-category="77" href="catalog/wi-fi-oborudovanie">
+             Wi-Fi оборудование
+            </a>
+            <ul>
+             <li>
+              <a data-category="89" href="catalog/samsu">
+               Samsung
+              </a>
+             </li>
+            </ul>
+           </li>
+           <li>
+            <a data-category="193" href="catalog/yeastar-set">
+             Yeastar
+            </a>
+           </li>
+          </ul>
+         </li>
+         <li>
+          <a data-category="16" href="catalog/oborudovanie-snyatoe-s-proizvodstva--bu-oborudovanie">
+           Оборудование снятое с производства | Б/У Оборудование
+          </a>
+          <ul>
+           <li>
+            <a data-category="170" href="catalog/panasonic-BU">
+             Panasonic
+            </a>
+            <ul>
+             <li>
+              <a data-category="145" href="catalog/kx-tda100tde200">
+               KX-TDA100/TDE200
+              </a>
+             </li>
+            </ul>
+           </li>
+           <li>
+            <a data-category="172" href="catalog/ericsson-lg-bu">
+             Ericsson-LG
+            </a>
+            <ul>
+             <li>
+              <a data-category="27" href="catalog/ARIA SOHO">
+               ARIA SOHO
+              </a>
+             </li>
+             <li>
+              <a data-category="160" href="catalog/ip-telefony-serii-lip-80--snyato-s-proizvodstva">
+               IP-телефоны серии LIP-80** | Снято с производства
+              </a>
+             </li>
+            </ul>
+           </li>
+          </ul>
+         </li>
+        </ul>
+       </div>
+      </div>
+      <!-- Поиск-->
+      <div id="search">
+       <form action="products">
+        <input class="input_search" name="keyword" placeholder="Поиск товара" type="text" value=""/>
+        <input aria-label="Найти" class="button_search" placeholder="Найти" type="submit" value=""/>
+       </form>
+      </div>
+      <!-- Поиск (The End)-->
+      <!-- Корзина -->
+      <div id="cart_informer">
+       <span style="font-weight: 600;">
+        Корзина пуста
+       </span>
+      </div>
+      <!-- Корзина (The End)-->
+      <div class="uslov">
+       <a href="user/register">
+        <img alt="" src="/design/default_1/images/os-uslov.png"/>
+       </a>
+      </div>
+     </div>
+     <div class="clearfix">
+     </div>
+    </div>
+   </div>
+  </div>
+  <!-- Верхняя строка (The End)-->
+  <!-- Основная часть -->
+  <div id="content-a">
+   <div class="container">
+    <div class="row">
+     <div class="col-xs-12">
+      <!-- Хлебные крошки /-->
+      <div id="path">
+       <a href="./">
+        Главная
+       </a>
+       /
+       <a href="catalog/ats">
+        АТС
+       </a>
+       /
+       <a href="catalog/ericsson-lg">
+        Ericsson-LG
+       </a>
+       /
+       <a href="catalog/iPECS-eMG80">
+        iPECS-eMG80
+       </a>
+       /
+       <a href="catalog/iPECS-eMG80/ericsson-lg">
+        Ericsson-LG
+       </a>
+       /
+       <a href="products/emg80-ksua-bazovyj-blok-co">
+        eMG80-KSUA Базовый блок (4CO,1DKT,7DKT/SLT,2(8)VoIP)
+       </a>
+      </div>
+      <!-- Хлебные крошки #End /-->
+      <div class="row">
+       <div class="col-xs-3">
+        <div class="catalog-menu-side">
+         <ul>
+          <li>
+           <a href="">
+            Бренды
+           </a>
+          </li>
+         </ul>
+         <ul>
+          <li>
+           <a data-category="1" href="catalog/ats">
+            АТС
+           </a>
+           <ul>
+            <li>
+             <a data-category="18" href="catalog/ericsson-lg">
+              Ericsson-LG
+             </a>
+             <ul>
+              <li>
+               <a data-category="25" href="catalog/wireless-soho-">
+                Wireless SOHO
+               </a>
+              </li>
+              <li>
+               <a data-category="26" href="catalog/ipecs-sbg-1000">
+                iPECS SBG-1000
+               </a>
+              </li>
+              <li>
+               <a data-category="169" href="catalog/ipecs-emg100">
+                iPECS eMG100
+               </a>
+              </li>
+              <li>
+               <a data-category="80" href="catalog/ipecs-mgemg800-">
+                iPECS-MG/eMG800
+               </a>
+              </li>
+              <li>
+               <a data-category="29" href="catalog/iPECS-MG">
+                iPECS-LIK/UCP
+               </a>
+              </li>
+              <li class="selected">
+               <a data-category="28" href="catalog/iPECS-eMG80">
+                iPECS-eMG80
+               </a>
+              </li>
+             </ul>
+            </li>
+            <li>
+             <a data-category="20" href="catalog/samsung">
+              Samsung
+             </a>
+             <ul>
+              <li>
+               <a data-category="107" href="catalog/officeserv-7070">
+                OFFICESERV 7070
+               </a>
+              </li>
+             </ul>
+            </li>
+            <li>
+             <a data-category="19" href="catalog/panasonic">
+              Panasonic
+             </a>
+             <ul>
+              <li>
+               <a data-category="113" href="catalog/kx-ns500">
+                KX-NS500
+               </a>
+              </li>
+             </ul>
+            </li>
+           </ul>
+          </li>
+          <li>
+           <a data-category="2" href="catalog/terminaly">
+            Терминалы
+           </a>
+           <ul>
+            <li>
+             <a data-category="4" href="catalog/ericsson">
+              Ericsson-LG
+             </a>
+             <ul>
+              <li>
+               <a data-category="83" href="catalog/ip-telefony">
+                IP-телефоны
+               </a>
+               <ul>
+                <li>
+                 <a data-category="177" href="catalog/ip-telefony-lip-90-serii">
+                  IP-телефоны LIP-90** серии
+                 </a>
+                </li>
+                <li>
+                 <a data-category="178" href="catalog/ip-telefony-10i-serii">
+                  IP-телефоны 10**i серии
+                 </a>
+                </li>
+               </ul>
+              </li>
+              <li>
+               <a data-category="158" href="catalog/tsifrovye-sistemnye-telefony-ldp-92-seriya">
+                Цифровые системные телефоны LDP-92** серия
+               </a>
+              </li>
+              <li>
+               <a data-category="84" href="catalog/dect--ip-dect">
+                DECT / IP DECT
+               </a>
+              </li>
+             </ul>
+            </li>
+            <li>
+             <a data-category="40" href="catalog/samsung-">
+              Samsung
+             </a>
+             <ul>
+              <li>
+               <a data-category="154" href="catalog/ip-telefony-serii-smt-">
+                IP телефоны серии SMT
+               </a>
+              </li>
+             </ul>
+            </li>
+            <li>
+             <a data-category="192" href="catalog/gigaset">
+              Gigaset
+             </a>
+             <ul>
+              <li>
+               <a data-category="179" href="catalog/ip-dect">
+                IP DECT
+               </a>
+              </li>
+              <li>
+               <a data-category="180" href="catalog/litsenzii-gigaset">
+                Лицензии IP DECT
+               </a>
+              </li>
+             </ul>
+            </li>
+            <li>
+             <a data-category="167" href="catalog/yealink-term">
+              Yealink
+             </a>
+             <ul>
+              <li>
+               <a data-category="168" href="catalog/dect-telefony">
+                DECT-телефоны
+               </a>
+              </li>
+             </ul>
+            </li>
+            <li>
+             <a data-category="3" href="catalog/avaya-">
+              Avaya
+             </a>
+             <ul>
+              <li>
+               <a data-category="156" href="catalog/9600-seriya-ip-telefony-">
+                9600 серия (IP-телефоны)
+               </a>
+              </li>
+              <li>
+               <a data-category="157" href="catalog/1600-seriya-ip-telefony">
+                1600 серия (IP-телефоны)
+               </a>
+              </li>
+             </ul>
+            </li>
+            <li>
+             <a data-category="30" href="catalog/p">
+              Panasonic
+             </a>
+             <ul>
+              <li>
+               <a data-category="148" href="catalog/terminals-ip-telefony-panasonic">
+                IP телефоны
+               </a>
+              </li>
+              <li>
+               <a data-category="149" href="catalog/terms-dect-panasonic">
+                DECT
+               </a>
+              </li>
+             </ul>
+            </li>
+           </ul>
+          </li>
+          <li>
+           <a data-category="5" href="catalog/sip-telefony">
+            SIP-телефоны
+           </a>
+           <ul>
+            <li>
+             <a data-category="166" href="catalog/sip-yealink">
+              Yealink
+             </a>
+            </li>
+            <li>
+             <a data-category="161" href="catalog/fanvil">
+              Fanvil
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li>
+           <a data-category="6" href="catalog/analogovye-telefony">
+            Аналоговые телефоны
+           </a>
+           <ul>
+            <li>
+             <a data-category="184" href="catalog/analog-ericsson-lg">
+              Ericsson-LG
+             </a>
+            </li>
+            <li>
+             <a data-category="147" href="catalog/panasonic-analog-station">
+              Panasonic
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li>
+           <a data-category="13" href="catalog/setevoe-oborudovanie">
+            Сетевое оборудование
+           </a>
+           <ul>
+            <li>
+             <a data-category="174" href="catalog/ericsson-lg-network">
+              Ericsson-LG
+             </a>
+             <ul>
+              <li>
+               <a data-category="175" href="catalog/ipecs-es-20-serii">
+                IPECS-ES 20* серии
+               </a>
+              </li>
+              <li>
+               <a data-category="176" href="catalog/ipecs-es-30-serii">
+                IPECS-ES 30* серии
+               </a>
+              </li>
+              <li>
+               <a data-category="183" href="catalog/ipecs-vucp">
+                iPECS vUCP
+               </a>
+              </li>
+             </ul>
+            </li>
+            <li>
+             <a data-category="77" href="catalog/wi-fi-oborudovanie">
+              Wi-Fi оборудование
+             </a>
+             <ul>
+              <li>
+               <a data-category="89" href="catalog/samsu">
+                Samsung
+               </a>
+              </li>
+             </ul>
+            </li>
+            <li>
+             <a data-category="193" href="catalog/yeastar-set">
+              Yeastar
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li>
+           <a data-category="16" href="catalog/oborudovanie-snyatoe-s-proizvodstva--bu-oborudovanie">
+            Оборудование снятое с производства | Б/У Оборудование
+           </a>
+           <ul>
+            <li>
+             <a data-category="170" href="catalog/panasonic-BU">
+              Panasonic
+             </a>
+             <ul>
+              <li>
+               <a data-category="145" href="catalog/kx-tda100tde200">
+                KX-TDA100/TDE200
+               </a>
+              </li>
+             </ul>
+            </li>
+            <li>
+             <a data-category="172" href="catalog/ericsson-lg-bu">
+              Ericsson-LG
+             </a>
+             <ul>
+              <li>
+               <a data-category="27" href="catalog/ARIA SOHO">
+                ARIA SOHO
+               </a>
+              </li>
+              <li>
+               <a data-category="160" href="catalog/ip-telefony-serii-lip-80--snyato-s-proizvodstva">
+                IP-телефоны серии LIP-80** | Снято с производства
+               </a>
+              </li>
+             </ul>
+            </li>
+           </ul>
+          </li>
+         </ul>
+        </div>
+       </div>
+       <div class="col-xs-9 prod-page">
+        <div class="row product">
+         <div class="col-xs-5">
+          <!-- Большое фото -->
+          <div class="image">
+           <a class="zoom" href="https://www.ats-com.ru/files/products/ipecs_emg80_ksua_ksui_eksu_2.800x600w.jpg?1609ff0df50a7b13859a8571350dc9d4" rel="group">
+            <img alt="" src="https://www.ats-com.ru/files/products/ipecs_emg80_ksua_ksui_eksu_2.350x350.jpg?38d7f5c9b3dca79227bc09a8dc82f730"/>
+           </a>
+          </div>
+          <!-- Большое фото (The End)-->
+          <!-- Дополнительные фото продукта -->
+          <!-- Дополнительные фото продукта (The End)-->
+         </div>
+         <div class="col-xs-7">
+          <h1 data-product="82">
+           eMG80-KSUA Базовый блок (4CO,1DKT,7DKT/SLT,2(8)VoIP)
+          </h1>
+          <!-- Описание товара -->
+          <div class="description">
+           <p>
+            <span style="font-family: arial, helvetica, sans-serif; font-size: small;">
+             <strong>
+              Базовый блок (4CO,1DKT,7DKT/SLT,2(8)VoIP,2(4)VM), 2 слота расширения
+             </strong>
+            </span>
+           </p>
+           <p>
+            <span style="font-family: arial, helvetica, sans-serif; font-size: small;">
+             Системный блок KSUA управляет передачей информации между периферийными платами, контролирует все ресурсы системы, регулировку коэффициентов усиления сигналов импульсно-кодовой модуляции (PCM), генерирует системные тональные сигналы, управляет обработкой вызовов. На материнской плате MBUA, входящей в состав системного блока, находятся переключатели для защиты системной базы данных и инициализации системы. Встроенный порт локальной сети LAN обеспечивает доступ к веб-интерфейсу настройки системы iPECS eMG80 и основных каналов VoIP. Кроме того, для обеспечения возможностей резервного копирования и восстановления системной базы данных на материнской плате имеется порт USB.
+            </span>
+           </p>
+           <p>
+            <img height="450" src="/files/uploads/eMG-KSUA.jpg" width="600"/>
+           </p>
+           <ul>
+            <ul>
+             <ul>
+              <li>
+               <strong>
+                <span style="font-family: arial, helvetica, sans-serif; font-size: small;">
+                 В системный блок KSUA входят следующие компоненты:
+                </span>
+               </strong>
+              </li>
+              <li>
+               <span style="font-family: arial, helvetica, sans-serif; font-size: small;">
+                Источник питания
+               </span>
+              </li>
+              <ul type="disc">
+               <li>
+                <span style="font-family: arial, helvetica, sans-serif; font-size: small;">
+                 4 интерфейса аналоговой соединительной линии (CO Line)
+                </span>
+               </li>
+              </ul>
+              <ul type="disc">
+               <li>
+                <span style="font-family: arial, helvetica, sans-serif; font-size: small;">
+                 Интерфейс цифрового системного телефона (DKT) для абонентского терминала оператора
+                </span>
+               </li>
+              </ul>
+              <ul type="disc">
+               <li>
+                <span style="font-family: arial, helvetica, sans-serif; font-size: small;">
+                 7 интерфейсов гибридных портов (цифровых или аналоговых абонентских терминалов)
+                </span>
+               </li>
+              </ul>
+              <ul type="disc">
+               <li>
+                <span style="font-family: arial, helvetica, sans-serif; font-size: small;">
+                 Реле управления внешними устройствами: громкого вызова (LBC), оповещения или открытия двери
+                </span>
+               </li>
+              </ul>
+              <ul type="disc">
+               <li>
+                <span style="font-family: arial, helvetica, sans-serif; font-size: small;">
+                 Датчик внешней сигнализации, порт внешнего оповещения, порт внешнего источника музыки при удержании
+                </span>
+               </li>
+              </ul>
+              <ul type="disc">
+               <li>
+                <span style="font-family: arial, helvetica, sans-serif; font-size: small;">
+                 Источник встроенной музыки при удержании (13 мелодий)
+                </span>
+               </li>
+              </ul>
+              <ul type="disc">
+               <li>
+                <span style="font-family: arial, helvetica, sans-serif; font-size: small;">
+                 Встроенные каналы VoIP, по умолчанию 2 канала, возможно расширение до 8 каналов при установке лицензионного ключа
+                </span>
+               </li>
+              </ul>
+              <ul type="disc">
+               <li>
+                <span style="font-family: arial, helvetica, sans-serif; font-size: small;">
+                 Встроенные каналы голосовой почты, по умолчанию 2 канала, возможно расширение до 4 каналов при установке лицензионного ключа
+                </span>
+               </li>
+              </ul>
+              <ul type="disc">
+               <li>
+                <span style="font-family: arial, helvetica, sans-serif; font-size: small;">
+                 Генератор тактовой частоты и схема внешней сетевой синхронизации (PLL), обеспечивающая выделение сигнала тактовой частоты из цифрового потока линии ISDN.
+                </span>
+               </li>
+              </ul>
+              <ul type="disc">
+               <li>
+                <span style="font-family: arial, helvetica, sans-serif; font-size: small;">
+                 Схема аварийного переключения линий (PFT), порт CO1 подключается к последнему порту SLT (STA8)
+                </span>
+               </li>
+              </ul>
+              <ul type="disc">
+               <li>
+                <span style="font-family: arial, helvetica, sans-serif; font-size: small;">
+                 Порт последовательного интерфейса RS-232C
+                </span>
+               </li>
+              </ul>
+              <ul type="disc">
+               <li>
+                <span style="font-family: arial, helvetica, sans-serif; font-size: small;">
+                 Интерфейс локальной сети (LAN)
+                </span>
+               </li>
+              </ul>
+              <ul type="disc">
+               <li>
+                <span style="font-family: arial, helvetica, sans-serif; font-size: small;">
+                 Порт последовательного интерфейса USB
+                </span>
+               </li>
+              </ul>
+              <ul type="disc">
+               <li>
+                <span style="font-family: arial, helvetica, sans-serif; font-size: small;">
+                 Генератор тональных сигналов, регулировка коэффициентов усиления
+                </span>
+               </li>
+              </ul>
+              <ul type="disc">
+               <li>
+                <span style="font-family: arial, helvetica, sans-serif; font-size: small;">
+                 Детектирование тональных сигналов (DTMF / CPT / факс) и АОН (FSK / DTMF / RUS CID)
+                </span>
+               </li>
+               <li>
+                <span style="font-family: arial, helvetica, sans-serif; font-size: small;">
+                 <br/>
+                </span>
+               </li>
+              </ul>
+             </ul>
+            </ul>
+           </ul>
+           <div>
+            <strong>
+             <span style="font-family: arial, helvetica, sans-serif; font-size: small;">
+              Дополнительные модули, доступные для установки в системный блок KSUA включают в себя:
+             </span>
+            </strong>
+           </div>
+           <ul>
+            <ul>
+             <ul>
+              <ul type="disc">
+               <li>
+                <span style="font-family: arial, helvetica, sans-serif; font-size: small;">
+                 <strong>
+                  CH204
+                 </strong>
+                 - Плата интерфейсов аналоговых соединительных линий и гибридных портов: 2 порта аналоговых СЛ и 4 гибридных порта
+                </span>
+               </li>
+              </ul>
+              <ul type="disc">
+               <li>
+                <span style="font-family: arial, helvetica, sans-serif; font-size: small;">
+                 <strong>
+                  CH408
+                 </strong>
+                 - Плата интерфейсов аналоговых соединительных линий и гибридных портов: 4 порта аналоговых СЛ и 8 гибридных портов
+                </span>
+               </li>
+              </ul>
+              <ul type="disc">
+               <li>
+                <span style="font-family: arial, helvetica, sans-serif; font-size: small;">
+                 <strong>
+                  HYB8
+                 </strong>
+                 - Плата интерфейсов гибридных портов, 8 гибридных портов
+                </span>
+               </li>
+              </ul>
+              <ul type="disc">
+               <li>
+                <span style="font-family: arial, helvetica, sans-serif; font-size: small;">
+                 <strong>
+                  CS416
+                 </strong>
+                 - Плата интерфейсов аналоговых соединительных линий и SLT-телефонов: 4 порта аналоговых СЛ и 16 портов SLT
+                </span>
+               </li>
+              </ul>
+              <ul type="disc">
+               <li>
+                <span style="font-family: arial, helvetica, sans-serif; font-size: small;">
+                 <strong>
+                  SLB8
+                 </strong>
+                 - Плата интерфейсов SLT-телефонов, 16 портов SLT-телефонов
+                </span>
+               </li>
+              </ul>
+              <ul type="disc">
+               <li>
+                <span style="font-family: arial, helvetica, sans-serif; font-size: small;">
+                 <strong>
+                  BH104
+                 </strong>
+                 - Плата интерфейсов ISDN BRI и гибридных портов, 2 порта ISDN BRI (каналы 2B+D) и 4 гибридных порта
+                </span>
+               </li>
+              </ul>
+              <ul type="disc">
+               <li>
+                <span style="font-family: arial, helvetica, sans-serif; font-size: small;">
+                 <strong>
+                  BH208
+                 </strong>
+                 - Плата интерфейсов ISDN BRI и гибридных портов, 2 порта ISDN BRI (каналы 2B+D) и 8 гибридных портов
+                </span>
+               </li>
+              </ul>
+              <ul type="disc">
+               <li>
+                <span style="font-family: arial, helvetica, sans-serif; font-size: small;">
+                 <strong>
+                  WTIB4
+                 </strong>
+                 - Плата интерфейса DECT, 4 порта подключения базовых станций
+                </span>
+               </li>
+              </ul>
+              <ul type="disc">
+               <li>
+                <span style="font-family: arial, helvetica, sans-serif; font-size: small;">
+                 <strong>
+                  VVMU
+                 </strong>
+                 (VoIP and Voice Mail expansion Unit) - Модуль расширения каналов VoIP и голосовой почты
+                </span>
+               </li>
+              </ul>
+              <ul type="disc">
+               <li>
+                <span style="font-family: arial, helvetica, sans-serif; font-size: small;">
+                 <strong>
+                  MEMU
+                 </strong>
+                 (Memory expansion Module Unit) - Модуль расширения памяти
+                </span>
+               </li>
+              </ul>
+              <ul type="disc">
+               <li>
+                <span style="font-family: arial, helvetica, sans-serif; font-size: small;">
+                 <strong>
+                  MODU
+                 </strong>
+                 (Modem function Unit) - Модуль модема
+                </span>
+               </li>
+              </ul>
+              <ul type="disc">
+               <li>
+                <span style="font-family: arial, helvetica, sans-serif; font-size: small;">
+                 <strong>
+                  MG-CMU4
+                 </strong>
+                 (Модуль определения импульсов тарификации - 50Гц/ 12КГц/ 16КГц)
+                </span>
+               </li>
+              </ul>
+             </ul>
+            </ul>
+           </ul>
+           <p>
+           </p>
+           <p>
+            <span style="font-family: arial, helvetica, sans-serif; font-size: small;">
+             Схема обработки речевых сигналов импульсно-кодовой модуляции (ИКМ), на базе СБИС-микросхемы ACT2 (обеспечивает коммутацию каналов ИКМ и включает в себя цифровой сигнальный процессор DSP):
+            </span>
+           </p>
+           <p>
+            <span style="font-family: arial, helvetica, sans-serif; font-size: small;">
+             <br/>
+            </span>
+           </p>
+           <div>
+           </div>
+           <p>
+            <span style="font-family: arial, helvetica, sans-serif; font-size: small;">
+             <br/>
+            </span>
+           </p>
+           <!-- Выбор варианта товара -->
+           <form action="/cart" class="variants">
+            <table>
+             <tr class="variant">
+              <td>
+               <input checked="" class="variant_radiobutton" id="product_94" name="variant" style="display:none;" type="radio" value="94"/>
+              </td>
+              <td>
+              </td>
+              <td>
+               <span class="price">
+                71 520,00
+                <span class="currency">
+                 руб
+                </span>
+               </span>
+              </td>
+             </tr>
+            </table>
+            <hr/>
+            <input class="button" data-result-text="добавлено" type="submit" value="в корзину"/>
+           </form>
+           <!-- Выбор варианта товара (The End) -->
+          </div>
+          <!-- Описание товара (The End)-->
+         </div>
+        </div>
+       </div>
+       <div class="clearfix">
+       </div>
+       <div class="col-xs-12 product">
+       </div>
+       <div class="clearfix">
+       </div>
+       <div class="col-xs-12">
+        <!-- Соседние товары /-->
+        <div id="back_forward">
+         ←
+         <a class="prev_page_link" href="products/emg80-ch204-plata-2-vnesh-lin-4-gibrid-abon">
+          eMG80-CH204 Плата (2 внеш. лин., 4 гибрид. абон.)
+         </a>
+         <a class="next_page_link" href="products/blok-rasshireniya-4co-8dktslt-2-slota-rasshireniya-emg80-eksu">
+          Блок расширения (4CO, 8DKT/SLT), 2 слота расширения [eMG80-EKSU]
+         </a>
+         →
+        </div>
+       </div>
+      </div>
+      <!-- Описание товара (The End)-->
+      <div class="row">
+       <div class="col-xs-12">
+        <div class="recomend">
+         <h2>
+          С этим товаром покупают
+         </h2>
+         <!-- Список каталога товаров-->
+         <ul class="tiny_products">
+          <!-- Товар-->
+          <li class="product">
+           <!-- Фото товара -->
+           <div class="image">
+            <a href="products/emg80-cs416-plata-4-vneshlin-16-analogabon">
+             <img alt="eMG80-CS416 Плата (4 внеш.лин., 16 аналог.абон.)" src="https://www.ats-com.ru/files/products/emg80-cs416_front.200x200.jpg?473d576319ba9e8e0923a6b243824ca4"/>
+            </a>
+           </div>
+           <!-- Фото товара (The End) -->
+           <!-- Выбор варианта товара -->
+           <form action="/cart" class="variants">
+            <table>
+             <tr class="variant">
+              <td>
+               <input checked="" class="variant_radiobutton" id="related_99" name="variant" style="display:none;" type="radio" value="99"/>
+              </td>
+              <td>
+              </td>
+              <td>
+               <span class="compare_price">
+                43 320,00
+               </span>
+               <span class="price">
+                36 822,00
+                <span class="currency">
+                 руб
+                </span>
+               </span>
+              </td>
+             </tr>
+            </table>
+            <!-- 
+			<input type="submit" class="button" value="в корзину" data-result-text="добавлено"/>
+-->
+           </form>
+           <!-- Выбор варианта товара (The End) -->
+           <!-- Название товара -->
+           <h3>
+            <a data-product="87" href="products/emg80-cs416-plata-4-vneshlin-16-analogabon">
+             eMG80-CS416 Плата (4 внеш.лин., 16 аналог.абон.)
+            </a>
+           </h3>
+           <!-- Название товара (The End) -->
+          </li>
+          <!-- Товар (The End)-->
+          <!-- Товар-->
+          <li class="product">
+           <!-- Фото товара -->
+           <div class="image">
+            <a href="products/emg80-ch204-plata-2-vnesh-lin-4-gibrid-abon">
+             <img alt="eMG80-CH204 Плата (2 внеш. лин., 4 гибрид. абон.)" src="https://www.ats-com.ru/files/products/emg80-ch204_front.200x200.jpg?ee4f92d70fc8c8369144c34b04cca534"/>
+            </a>
+           </div>
+           <!-- Фото товара (The End) -->
+           <!-- Выбор варианта товара -->
+           <form action="/cart" class="variants">
+            <table>
+             <tr class="variant">
+              <td>
+               <input checked="" class="variant_radiobutton" id="related_97" name="variant" style="display:none;" type="radio" value="97"/>
+              </td>
+              <td>
+              </td>
+              <td>
+               <span class="compare_price">
+                17 640,00
+               </span>
+               <span class="price">
+                14 994,00
+                <span class="currency">
+                 руб
+                </span>
+               </span>
+              </td>
+             </tr>
+            </table>
+            <!-- 
+			<input type="submit" class="button" value="в корзину" data-result-text="добавлено"/>
+-->
+           </form>
+           <!-- Выбор варианта товара (The End) -->
+           <!-- Название товара -->
+           <h3>
+            <a data-product="85" href="products/emg80-ch204-plata-2-vnesh-lin-4-gibrid-abon">
+             eMG80-CH204 Плата (2 внеш. лин., 4 гибрид. абон.)
+            </a>
+           </h3>
+           <!-- Название товара (The End) -->
+          </li>
+          <!-- Товар (The End)-->
+          <!-- Товар-->
+          <li class="product">
+           <!-- Фото товара -->
+           <div class="image">
+            <a href="products/emg80-ch408-4-vneshnie-linii-8-gibridnyh-abonentov">
+             <img alt="eMG80-CH408 (4 внешние линии, 8 гибридных абонентов)" src="https://www.ats-com.ru/files/products/emg80-ch408_front.200x200.jpg?25495f4171c64a26203f464a48c87223"/>
+            </a>
+           </div>
+           <!-- Фото товара (The End) -->
+           <!-- Выбор варианта товара -->
+           <form action="/cart" class="variants">
+            <table>
+             <tr class="variant">
+              <td>
+               <input checked="" class="variant_radiobutton" id="related_98" name="variant" style="display:none;" type="radio" value="98"/>
+              </td>
+              <td>
+              </td>
+              <td>
+               <span class="price">
+                28 440,00
+                <span class="currency">
+                 руб
+                </span>
+               </span>
+              </td>
+             </tr>
+            </table>
+            <!-- 
+			<input type="submit" class="button" value="в корзину" data-result-text="добавлено"/>
+-->
+           </form>
+           <!-- Выбор варианта товара (The End) -->
+           <!-- Название товара -->
+           <h3>
+            <a data-product="86" href="products/emg80-ch408-4-vneshnie-linii-8-gibridnyh-abonentov">
+             eMG80-CH408 (4 внешние линии, 8 гибридных абонентов)
+            </a>
+           </h3>
+           <!-- Название товара (The End) -->
+          </li>
+          <!-- Товар (The End)-->
+          <!-- Товар-->
+          <li class="product">
+           <!-- Фото товара -->
+           <div class="image">
+            <a href="products/emg80-priu-plata-pri-interfejsa-1pri">
+             <img alt="eMG80-PRIU Плата PRI интерфейса (1PRI)" src="https://www.ats-com.ru/files/products/emg80_priu-1.200x200.jpg?13a0bd1527ee3cca2c65bd11d22750b8"/>
+            </a>
+           </div>
+           <!-- Фото товара (The End) -->
+           <!-- Выбор варианта товара -->
+           <form action="/cart" class="variants">
+            <table>
+             <tr class="variant">
+              <td>
+               <input checked="" class="variant_radiobutton" id="related_102" name="variant" style="display:none;" type="radio" value="102"/>
+              </td>
+              <td>
+              </td>
+              <td>
+               <span class="compare_price">
+                70 080,00
+               </span>
+               <span class="price">
+                59 568,00
+                <span class="currency">
+                 руб
+                </span>
+               </span>
+              </td>
+             </tr>
+            </table>
+            <!-- 
+			<input type="submit" class="button" value="в корзину" data-result-text="добавлено"/>
+-->
+           </form>
+           <!-- Выбор варианта товара (The End) -->
+           <!-- Название товара -->
+           <h3>
+            <a data-product="90" href="products/emg80-priu-plata-pri-interfejsa-1pri">
+             eMG80-PRIU Плата PRI интерфейса (1PRI)
+            </a>
+           </h3>
+           <!-- Название товара (The End) -->
+          </li>
+          <!-- Товар (The End)-->
+          <!-- Товар-->
+          <li class="product">
+           <!-- Фото товара -->
+           <div class="image">
+            <a href="products/emg80-vvmu-plata-ip-telefonii-i-golosovoj-pochty-8voip-4vm">
+             <img alt="eMG80-VVMU Плата IP телефонии и голосовой почты (8VoIP, 4VM)" src="https://www.ats-com.ru/files/products/emg80-vvmu.200x200.jpg?b4b83966617252fb5fe7d722e5b71bf4"/>
+            </a>
+           </div>
+           <!-- Фото товара (The End) -->
+           <!-- Выбор варианта товара -->
+           <form action="/cart" class="variants">
+            <table>
+             <tr class="variant">
+              <td>
+               <input checked="" class="variant_radiobutton" id="related_107" name="variant" style="display:none;" type="radio" value="107"/>
+              </td>
+              <td>
+              </td>
+              <td>
+               <span class="compare_price">
+                24 840,00
+               </span>
+               <span class="price">
+                21 114,00
+                <span class="currency">
+                 руб
+                </span>
+               </span>
+              </td>
+             </tr>
+            </table>
+            <!-- 
+			<input type="submit" class="button" value="в корзину" data-result-text="добавлено"/>
+-->
+           </form>
+           <!-- Выбор варианта товара (The End) -->
+           <!-- Название товара -->
+           <h3>
+            <a data-product="95" href="products/emg80-vvmu-plata-ip-telefonii-i-golosovoj-pochty-8voip-4vm">
+             eMG80-VVMU Плата IP телефонии и голосовой почты (8VoIP, 4VM)
+            </a>
+           </h3>
+           <!-- Название товара (The End) -->
+          </li>
+          <!-- Товар (The End)-->
+          <!-- Товар-->
+          <li class="product">
+           <!-- Фото товара -->
+           <div class="image">
+            <a href="products/emg80-memu-plata-pamyati-golosovoj-pochty-15-chasov-">
+             <img alt="eMG80-MEMU  Плата памяти голосовой почты (15 часов) " src="https://www.ats-com.ru/files/products/emg80-memu_front.200x200.jpg?4865d04e7956d5d98fdce994546a6af5"/>
+            </a>
+           </div>
+           <!-- Фото товара (The End) -->
+           <!-- Выбор варианта товара -->
+           <form action="/cart" class="variants">
+            <table>
+             <tr class="variant">
+              <td>
+               <input checked="" class="variant_radiobutton" id="related_108" name="variant" style="display:none;" type="radio" value="108"/>
+              </td>
+              <td>
+              </td>
+              <td>
+               <span class="compare_price">
+                34 720,00
+               </span>
+               <span class="price">
+                29 512,00
+                <span class="currency">
+                 руб
+                </span>
+               </span>
+              </td>
+             </tr>
+            </table>
+            <!-- 
+			<input type="submit" class="button" value="в корзину" data-result-text="добавлено"/>
+-->
+           </form>
+           <!-- Выбор варианта товара (The End) -->
+           <!-- Название товара -->
+           <h3>
+            <a data-product="96" href="products/emg80-memu-plata-pamyati-golosovoj-pochty-15-chasov-">
+             eMG80-MEMU  Плата памяти голосовой почты (15 часов)
+            </a>
+           </h3>
+           <!-- Название товара (The End) -->
+          </li>
+          <!-- Товар (The End)-->
+         </ul>
+        </div>
+       </div>
+      </div>
+      <!-- Комментарии -->
+      <!-- Комментарии (The End) -->
+      <script src="js/fancybox/jquery.fancybox.pack.js" type="text/javascript">
+      </script>
+      <link href="js/fancybox/jquery.fancybox.css" media="screen" rel="stylesheet" type="text/css"/>
+      <script>
+       $(function() {
+	// Раскраска строк характеристик
+	$(".features li:even").addClass('even');
+
+	// Зум картинок
+	$("a.zoom").fancybox({
+		prevEffect	: 'fade',
+		nextEffect	: 'fade'});
+	});
+      </script>
+     </div>
+    </div>
+   </div>
+  </div>
+  <!-- Основная часть (The End) -->
+  <!-- Вся страница (The End)-->
+  <!-- Футер -->
+  <div id="footer">
+   <div class="container">
+    <div class="row">
+     <div class="col-xs-3">
+      <div class="title">
+       Компания
+      </div>
+      <ul>
+       <li>
+        <a data-page="1" href="">
+         Главная
+        </a>
+       </li>
+       <li>
+        <a data-page="8" href="http://ts-ats.ru">
+         О нас
+        </a>
+       </li>
+       <li>
+        <a data-page="9" href="tseny">
+         Библиотека
+        </a>
+       </li>
+       <li>
+        <a data-page="10" href="nashi-sertifikaty">
+         Сертификаты
+        </a>
+       </li>
+       <li>
+        <a data-page="11" href="skidki">
+         Скидки
+        </a>
+       </li>
+       <li>
+        <a data-page="12" href="obratnaya-svyaz">
+         Обратная связь
+        </a>
+       </li>
+       <li>
+        <a data-page="6" href="contact">
+         Контакты
+        </a>
+       </li>
+      </ul>
+     </div>
+     <div class="col-xs-6">
+      <div class="title">
+       Каталог товаров
+      </div>
+      <ul>
+       <li>
+        <a data-category="1" href="catalog/ats">
+         АТС
+        </a>
+       </li>
+       <li>
+        <a data-category="2" href="catalog/terminaly">
+         Терминалы
+        </a>
+       </li>
+       <li>
+        <a data-category="5" href="catalog/sip-telefony">
+         SIP-телефоны
+        </a>
+       </li>
+       <li>
+        <a data-category="6" href="catalog/analogovye-telefony">
+         Аналоговые телефоны
+        </a>
+       </li>
+       <li>
+        <a data-category="13" href="catalog/setevoe-oborudovanie">
+         Сетевое оборудование
+        </a>
+       </li>
+       <li>
+        <a data-category="16" href="catalog/oborudovanie-snyatoe-s-proizvodstva--bu-oborudovanie">
+         Оборудование снятое с производства | Б/У Оборудование
+        </a>
+       </li>
+      </ul>
+     </div>
+     <div class="col-xs-3">
+      <div class="title">
+       Контакты
+      </div>
+      <div class="tel">
+       +7 (495) 788-39-33
+      </div>
+      <div class="e-mail">
+       <a href="mailto:ats@ts-ats.ru">
+        ats@ts-ats.ru
+       </a>
+      </div>
+      <div class="clearfix">
+      </div>
+      <div class="title">
+       Прайс-листы
+      </div>
+      <div class="price-list">
+       <!--
+      <div class="price-list">
+      <a href="https://www.ats-com.ru/files/uploads/_-_Ericsson-LG_.pdf"><img src="design/default_1/images/price-img.png"> Прайс-лист Ericsson-LG (активация) </a>
+      </div>
+      <div class="price-list">
+      <a href="https://ats-com.ru/files/uploads/_-_Samsung.pdf"><img src="design/default_1/images/price-img.png"> Прайс-лист Samsung </a>
+-->
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <!-- Футер (The End)-->
+  <div class="foot">
+   <div class="container">
+    <div class="row">
+     <div class="col-xs-6">
+      <div class="title">
+       © 2015 - 2023, ТЦ АТСКОМ
+      </div>
+     </div>
+     <div class="col-xs-6" style="text-align: right;">
+      <!-- <div class="palitra-block">
+                    <a title="Создание и продвижение сайтов" target="_blank" href="http://www.it-palitra.ru/uslugi/cool_web/" class="palitra">
+                        <img src="design/default_1/images/palitra_w.png">
+                    </a>
+                    <a title="Создание и продвижение сайтов" alt="Создание и продвижение сайтов" target="_blank" href="http://www.it-palitra.ru/" class="palitra-txt">Создание и продвижение сайтов</a>
+                </div> -->
+      <span class="liveinternet">
+       <!--LiveInternet counter-->
+       <script type="text/javascript">
+        document.write("<a href='https://www.liveinternet.ru/click' target=_blank><img src='https://counter.yadro.ru/hit?t21.2;r;s" + escape(document.referrer) + ((typeof(screen)=="undefined")?"":";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?screen.colorDepth:screen.pixelDepth)) + ";u" + escape(document.URL) + ";" + Math.random() + "' border=0 width=80 height=30 alt='' title='LiveInternet: показано число просмотров за 24 часа, посетителей за 24 часа и за сегодня'><\/a>")
+       </script>
+       <!--/LiveInternet-->
+      </span>
+     </div>
+    </div>
+   </div>
+  </div>
+ </body>
+</html>
+<!--
+memory peak usage: 4923384 bytes
+page generation time: 0.022695064544678 seconds
+-->
