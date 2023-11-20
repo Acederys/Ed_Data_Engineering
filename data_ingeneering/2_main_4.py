@@ -49,6 +49,7 @@ products = dict()
 
 for elem in data_json:
     products[elem['name']] = elem
+print(products)
 
 # Ищем элемент файле с ценами
 for elem in data:
@@ -56,8 +57,8 @@ for elem in data:
     item = products[elem['name']]
     update_priece(elem, item)
 
-with open(r'result_2_4.pkl', 'wb') as result:
-    result.write(pickle.dumps(data))
+# with open(r'result_2_4.pkl', 'wb') as result:
+#     result.write(pickle.dumps(data))
 
 
 
