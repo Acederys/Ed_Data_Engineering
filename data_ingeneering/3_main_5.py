@@ -109,6 +109,9 @@ for i in range(1, 83):
             }
         print(element)
         all_element.append(element)
+for item in all_element:
+    if item['compare_price'] == '':
+        item.pop('compare_price')
 # записываем json для продуктов
 with open(r'result_3_5_elem.json', 'w', encoding='utf-8') as elem_pr:
     elem_pr.write(json.dumps(all_element, ensure_ascii=False))
