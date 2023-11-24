@@ -61,13 +61,22 @@ for link in links:
         for product in products:
             dom = etree.HTML(str(product))
             links_item.append(''.join(dom.xpath('//h3/a/@href')).strip())
+            if ''.join(dom.xpath('//*[@class="compare_price"]/text()')).replace(' ','').replace(',','.').strip() !='':
+                compare_price = float(''.join(dom.xpath('//*[@class="compare_price"]/text()')).replace(' ','').replace(',','.').strip())
+            else:
+                compare_price = ''
             item = {
                 'caption': ''.join(dom.xpath('//h3//text()')).strip(),
                 'price': float(''.join(dom.xpath('//*[@class="price"]/text()')).replace(' ','').replace(',','.').strip()),
-                'compare_price': ''.join(dom.xpath('//*[@class="compare_price"]/text()')).replace(' ','').replace(',','.').strip(),
+                'compare_price': compare_price,
             }
             product_list.append(item)
+            # print(item)
 full_item = []
+for item in product_list:
+    if item['compare_price'] == '':
+        item.pop('compare_price')
+    # print(item)
 # забираем все страницы продуктов
 for links_item in links_item:
     r_item = requests.get(f'https://www.ats-com.ru/{links_item}', auth=('user', 'pass'))
@@ -88,12 +97,17 @@ for i in range(1, 83):
         soup = BeautifulSoup(file_products, 'html.parser')
         proct_item = soup.find_all('div', class_="row product")
         dom_product = etree.HTML(str(proct_item))
+        if ''.join(dom_product.xpath('//*[@class="compare_price"]/text()')).replace(' ','').replace(',','.').strip() !='':
+            compare_price = float(''.join(dom_product.xpath('//*[@class="compare_price"]/text()')).replace(' ','').replace(',','.').strip())
+        else:
+            compare_price = ''
         element = {
             'caption': ''.join(dom_product.xpath('//h1/text()')).strip(),
-            'description': ''.join(dom_product.xpath('//*[@class="description"]//text()')).replace('\n','').strip(),
+            'description': ''.join(dom_product.xpath('//*[@class="description"]/*[not(form)]//text()')).replace('\n','').replace('  ','').strip(),
             'price': float(''.join(dom_product.xpath('//*[@class="price"]/text()')).replace(' ','').replace(',','.').strip()),
-            'compare_price': ''.join(dom_product.xpath('//*[@class="compare_price"]/text()')).replace(' ','').replace(',','.').strip(),
+            'compare_price': compare_price,
             }
+        print(element)
         all_element.append(element)
 # записываем json для продуктов
 with open(r'result_3_5_elem.json', 'w', encoding='utf-8') as elem_pr:
@@ -113,14 +127,17 @@ for i in files_sort:
             items_caption[i['price']]=1
 print(items_caption)
 item_compare_price = list()
-for item in files_sort:
-    if item['compare_price'] != '':
-        item_compare_price.append(item)
+for i in files_sort:
+    if i.get('compare_price', False) != False:
+        if i['compare_price'] in items_caption:
+            items_caption[i['compare_price']]+=1
+        else:
+            items_caption[i['compare_price']]=1
 with open(r'result_3_5_filter.json', 'w', encoding='utf-8') as rezults_filter:
     rezults_filter.write(json.dumps(item_compare_price, ensure_ascii=False))
 
 df = pd.read_json('result_3_5.json')
 df_price = df['price'].describe()
 print(df_price)
-
-
+#
+#

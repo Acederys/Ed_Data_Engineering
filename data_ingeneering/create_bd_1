@@ -49,5 +49,18 @@ CREATE TABLE products_1 (
     views       INTEGER,
     version     INTEGER
 );
+создание таблицы 5
+CREATE TABLE apartament (
+    id              INTEGER PRIMARY KEY AUTOINCREMENT,
+    ListYear        INTEGER,
+    DateRecorded    TEXT,
+    Town            TEXT,
+    Address         TEXT,
+    AssessedValue   REAL,
+    SaleAmount      REAL,
+    PropertyType    TEXT,
+    ResidentialType TEXT,
+    version         INTEGER
+);
 
 

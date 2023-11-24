@@ -20,26 +20,29 @@ for i in range(1,1000):
     i = '3_var_7/'+str(i)+'.html'
     urls.append(i)
 full_aside = list()
+
 #записываем словарь значений. Если значение не найдено ставим пустуюс строку
 for url in urls:
     with open(url, 'r', encoding='utf-8') as html_file:
         soup = BeautifulSoup(html_file, 'html.parser')
         dom = etree.HTML(str(soup))
+        fff = ''.join(dom.xpath('substring-after(//h1[contains(text(),"Турнир")],":")'))
         item = {
             'Тип': ''.join(dom.xpath('substring-after(//*[contains(text(),"Тип")],":")')).strip(),
             'Турнир': ''.join(dom.xpath('substring-after(//h1[contains(text(),"Турнир")],":")')).strip(),
             'Адрес': {
-                  'Город': ''.join(dom.xpath('substring-after(substring-before(//*[contains(text(),"Город")],"Начало"),"Город: ")')).strip(),
-                   'Начало': ''.join(dom.xpath('substring-after(//*[contains(text(),"Начало:")],"Начало: ")')).strip(),
+                    'Город': ''.join(dom.xpath('substring-before(substring-after(normalize-space(//*[contains(text(),"Город")]),":"),"Начало:")')).strip(),
+                    'Начало': ''.join(dom.xpath('substring-after(normalize-space(//*[contains(text(),"Город")]),"Начало:")')).strip(),
                 },
             'Количество туров': ''.join(dom.xpath('substring-after(//*[contains(text(),"Количество туров")],":")')).strip(),
             'Контроль времени:': ''.join(dom.xpath('substring-after(//*[contains(text(),"Контроль времени:")],":")')).strip(),
             'Минимальный рейтинг для участия': ''.join(dom.xpath('substring-after(//*[contains(text(),"Минимальный рейтинг")],":")')).strip(),
             'Рейтинг': ''.join(dom.xpath('substring-after(//*[contains(text(),"Рейтинг")],":")')).strip(),
             'Изображение': ''.join(dom.xpath('//img/@src')),
-            'Просмотры': ''.join(dom.xpath('substring-after(//*[contains(text(),"Просмотры")],":")')).strip(),
+            'Просмотры': ''.join(dom.xpath('substring-after(//*[contains(text(),"Просмотры")],":")')).strip()
         }
         full_aside.append(item)
+        # print(item)
 # записываем чистый json
 with open(r'result_3_1.json', 'w', encoding='utf-8') as rezults:
     rezults.write(json.dumps(full_aside, ensure_ascii=False))

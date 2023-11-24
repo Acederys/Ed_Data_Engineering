@@ -30,7 +30,7 @@ for url in urls:
                 'image': ''.join(dom.xpath('//*[@class="product-item"]/div[1]/img/@src')).strip(),
                 'caption': ''.join(dom.xpath('//*[@class="product-item"]/span[1]/text()')).strip(),
                 'price': int(dom.xpath('//*[@class="product-item"]/price/text()')[0].replace('₽','').replace(' ','')),
-                'bonus': ''.join(dom.xpath('//*[@class="product-item"]/strong/text()')).strip(),
+                'bonus': int(''.join(dom.xpath('substring-before(substring-after(normalize-space(//*[@class="product-item"]/strong/text()),"начислим "),"бону")')).strip()),
                 'processor': ''.join(dom.xpath('//*[@class="product-item"]/ul/li[@type="processor"]/text()')).strip(),
                 'ram': ''.join(dom.xpath('//*[@class="product-item"]/ul/li[@type="ram"]/text()')).strip(),
                 'sim': ''.join(dom.xpath('//*[@class="product-item"]/ul/li[@type="sim"]/text()')).strip(),
@@ -40,7 +40,24 @@ for url in urls:
                 'acc': ''.join(dom.xpath('//*[@class="product-item"]/ul/li[@type="acc"]/text()')).strip()
             }
             items.append(item)
-# print(items)
+for item in items:
+    if item['processor'] == '':
+        item.pop('processor')
+    if item['ram'] == '':
+        item.pop('ram')
+    if item['sim'] == '':
+        item.pop('sim')
+    if item['matrix'] == '':
+        item.pop('matrix')
+    if item['resolution'] == '':
+        item.pop('resolution')
+    if item['camera'] == '':
+        item.pop('camera')
+    if item['acc'] == '':
+        item.pop('acc')
+# for item in items:
+#     if item.get('processor', False) != False:
+#         print(item['processor'])
 with open(r'result_3_2.json', 'w', encoding='utf-8') as rezults:
     rezults.write(json.dumps(items, ensure_ascii=False))
 with open('result_3_2.json', 'r', encoding='utf-8') as file:
@@ -50,7 +67,7 @@ with open(r'result_3_2_sort.json', 'w', encoding='utf-8') as rezults_sort:
     rezults_sort.write(json.dumps(files_sort, ensure_ascii=False))
 items_caption = dict()
 for i in files_sort:
-    if i['processor'] != '':
+    if i.get('processor', False) != False:
         if i['processor'] in items_caption:
             items_caption[i['processor']]+=1
         else:
@@ -58,7 +75,7 @@ for i in files_sort:
 print(items_caption)
 item_camera = list()
 for item in files_sort:
-    if item['camera'] != '':
+    if item.get('camera', False) != False:
         item_camera.append(item)
 with open(r'result_3_2_filter.json', 'w', encoding='utf-8') as rezults_filter:
     rezults_filter.write(json.dumps(item_camera, ensure_ascii=False))

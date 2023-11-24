@@ -27,3 +27,33 @@
 # файл базы данных
 #
 # скрипт с выполнением запросов к базе данных  
+import csv
+import pandas as pd
+import sqlite3
+df = pd.read_csv('df_2009.csv')
+clear_df = df.drop_duplicates(subset=['Address'])
+clear_df.rename(columns = {'List Year':' ListYear', 'Date Recorded':'DateRecorded', 'Assessed Value':'AssessedValue', 'Sale Amount':'SaleAmount', 'Property Type': 'PropertyType', 'Residential Type':'ResidentialType'}, inplace = True )
+clear_df.insert(loc= len(clear_df.columns) , column='version', value=0)
+
+#подключаемся к базе данных
+def connect_to_db(elem):
+    connection = sqlite3.connect(elem)
+    connection.row_factory = sqlite3.Row
+    return connection
+
+# def insert_price(db, data):
+#     cursor = db.cursor()
+#     cursor.executemany("""
+#         INSERT INTO apartament (ListYear, DateRecorded, Town, Address, AssessedValue, SaleAmount, PropertyType, ResidentialType, version)
+#         VALUES(
+#         :ListYear, :DateRecorded, :Town, :Address, :AssessedValue, :SaleAmount, :PropertyType, :ResidentialType, :version
+#         )
+#     """, data)
+#     db.commit()
+db = connect_to_db('4_1_db.db')
+# insert_price(db, clear_df)
+df.to_sql("apartament", con=con, if_exists="append", index=False)
+# pd.read_sql('''
+#     SELECT *
+#     FROM user
+# ''', con)
