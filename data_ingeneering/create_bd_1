@@ -38,7 +38,7 @@ CREATE TABLE music (
 );
 
 создание таблицы 4
-CREATE TABLE products_1 (
+CREATE TABLE products (
     id          INTEGER PRIMARY KEY AUTOINCREMENT,
     name        TEXT,
     price       REAL,
@@ -47,20 +47,33 @@ CREATE TABLE products_1 (
     fromCity    TEXT,
     isAvailable TEXT,
     views       INTEGER,
-    version     INTEGER
-);
-создание таблицы 5
-CREATE TABLE apartament (
-    id              INTEGER PRIMARY KEY AUTOINCREMENT,
-    ListYear        INTEGER,
-    DateRecorded    TEXT,
-    Town            TEXT,
-    Address         TEXT,
-    AssessedValue   REAL,
-    SaleAmount      REAL,
-    PropertyType    TEXT,
-    ResidentialType TEXT,
-    version         INTEGER
+    version     INTEGER DEFAULT (0)
 );
 
+создание таблицы 5
+
+CREATE TABLE apartament (
+    id           INTEGER PRIMARY KEY AUTOINCREMENT,
+    ListYear     INTEGER,
+    Address      TEXT,
+    SaleAmount   REAL,
+    PropertyType TEXT,
+    version      INTEGER DEFAULT (0)
+);
+
+
+CREATE TABLE AsessedValue (
+    id              INTEGER PRIMARY KEY AUTOINCREMENT,
+    id_AsessedValue INTEGER REFERENCES apartament (id),
+    Address         TEXT    UNIQUE ON CONFLICT IGNORE,
+    AssessedValue   REAL
+);
+
+
+CREATE TABLE town (
+    id      INTEGER PRIMARY KEY AUTOINCREMENT,
+    id_town INTEGER REFERENCES apartament (id),
+    Town    TEXT,
+    Address TEXT    UNIQUE ON CONFLICT IGNORE
+);
 
