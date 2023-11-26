@@ -1,6 +1,141 @@
 <h2>Ed_Data_Engineering</h2>
 <h2>Решение учебных задач по инженирингу данных</h2>
 <p>Вариант 7</p>
+<h2>Файлы для задания к четвертой практической</h2>
+<p>Все таблицы создавались через SQLite и описаны в <code>create_bd_1</code></p>
+<table>
+  <tr>
+    <th>Название файла</th>
+    <th>Номер задания</th>
+    <th>Описание</th>
+  </tr>
+  <tr>
+    <td>
+      <p>4_main_1.py</p>
+      <p>task_1_var_07_item.json</p>
+      <p>result_4_1_filter_rating.json</p>
+      <p>result_4_1_order_pages.json</p>
+      <p>4_1_db.db</p>
+    </td>
+    <td>Задача 1</td>
+    <td>Входные данные task_1_var_07_item.json, <br>Выходные 4_1_db.db (табл. biblio), result_4_1_order_pages.json, result_4_1_filter_rating.json 
+    </td>
+  </tr>
+  <td>
+      <p>4_main_2.py</p>
+      <p>task_2_var_07_subitem.text</p>
+      <p>4_1_db.db</p>
+    </td>
+    <td>Задача 2</td>
+    <td>Входные данные task_2_var_07_subitem.text, <br>Выходные 4_1_db.db (табл. book)
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <p>4_main_3.py</p>
+      <p>task_3_var_07_part_1.text</p>
+      <p>task_3_var_07_part_2.msgpack</p>
+      <p>result_4_3_order_artist.json</p>
+      <p>result_4_3_filter_year.json</p>
+      <p>4_1_db.db</p>
+    </td>
+    <td>Задача 3</td>
+    <td>Входные данные task_3_var_07_part_1.text, task_3_var_07_part_2.msgpack, <br>Выходные 4_1_db.db (табл. music), result_4_3_filter_year.json, result_4_3_order_artist.json
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <p>4_main_4.py</p>
+      <p>task_4_var_07_product_data.text</p>
+      <p>task_4_var_07_update_data.msgpack</p>
+    </td>
+    <td>Задача 4</td>
+    <td>Входные данные task_4_var_07_product_data.text task_4_var_07_update_data.msgpack, <br>Выходные 4_1_db.db (табл. products)
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <p>4_main_5.py</p>
+      <p>apartment.csv</p>
+      <p>AssessedValue.json</p>
+      <p>town.csv</p>
+      <p>SaleAmount_10000.json</p>
+      <p>Residential.json</p>
+      <p>Ansonia.json</p>
+      <p>AssessedValue_10000.json</p>
+      <p>avg_AssessedValue.json</p>
+      <p>AssessedValue_9999999.json</p>
+      <p>4_5_db.db</p>
+    </td>
+    <td>Задача 5</td>
+    <td>Входные данные apartment.csv, AssessedValue.json, town.csv <br>Выходные 4_5_db.db (табл. products), SaleAmount_10000.json, Residential.json, Ansonia.json, AssessedValue_10000.json, avg_AssessedValue.json, AssessedValue_9999999.json</td>
+  </tr>
+</table>
+  <h3>
+    Пояснения к 5-ой задаче
+  </h3>
+  <p>
+    Предметной областью были выбраны данные о продаже недвижимости в США. Из данных были выбраны: город, год продажи, адрес недвижимости, оценочная стоимость, фактическая цена продажи и тип недвижимости. Данные были распределены в три файла для формирования трех таблиц:
+  </p>
+<table>
+  <tr>
+    <th>Название таблицы</th>
+    <th>Столбцы</th>
+  </tr>
+  <tr>
+    <td>apartament</td>
+    <td>год, адрес, фактическая стоимотсь, тип недвижимости</td>
+  </tr>
+  <tr>
+    <td>AsessedValue</td>
+    <td>адрес, оценочная стоимость</td>
+  </tr>
+  <tr>
+    <td>town</td>
+    <td>город, адрес</td>
+  </tr>
+</table>
+  <p>
+    Создание таблиц производилось в SQLite, данные представлены в  <code>create_bd_1</code>
+  </p>
+  <h5>Описание запросов</h5>
+  <table>
+  <tr>
+    <th>Название файла</th>
+    <th>Запрос</th>
+  </tr>
+  <tr>
+    <td>SaleAmount_10000.json</td>
+    <td>Из таблицы apartament взять все данные, фактическая стоимость продажи которых больше 100000, сгруппировать по типу и взять не больше 100
+      <code>SELECT * FROM apartament WHERE SaleAmount > 10000 ORDER BY PropertyType DESC LIMIT ?</code>
+    </td>
+  </tr>
+  <tr>
+    <td>Residential.json</td>
+    <td>Взять из таблицы town все данные id_town которых равен id из таблицы apartament, тип которых Residential
+    <code>SELECT * FROM town WHERE id_town = (SELECT id FROM apartament WHERE PropertyType = ?)</code></td>
+  </tr>
+  <tr>
+    <td>Ansonia.json</td>
+    <td>Взять из таблицы apartament все данные id которых равен id_town из таблицы town, город которых Ansonia
+    <code>SELECT * FROM apartament WHERE id = (SELECT id_town FROM town WHERE Town = ?)</code></td>
+  </tr>
+  <tr>
+    <td>avg_AssessedValue.json</td>
+    <td>Взять из таблицы AsessedValue все данные оценочная стоимость которых больше 10000 с лимитом 10
+    <code>SELECT * FROM AsessedValue WHERE AssessedValue > 10000 LIMIT ?</code></td>
+  </tr>
+  <tr>
+    <td>AssessedValue_10000.json</td>
+    <td>Взять из таблицы AsessedValue среднее по стобцу стоимости, и вывести все данные, id_AsessedValue которых равен id из таблицы town, город которых Ansonia
+    <code>SELECT AVG(AssessedValue) as avg_AssessedValue, * FROM AsessedValue WHERE id_AsessedValue = (SELECT id FROM town WHERE Town = ?)</code></td>
+  </tr>
+  <tr>
+    <td>AssessedValue_9999999.json</td>
+    <td>Взять из таблицы apartament id которых равен, id_AsessedValue из таблицы AsessedValue, оценочная стоимость которых меньше 9999999
+    <code>SELECT * FROM apartament WHERE id = (SELECT id_AsessedValue FROM AsessedValue  WHERE AssessedValue < ?)</code></td>
+  </tr>
+  </table>
 <h2>Файлы для задания к третьей практической</h2>
 <table>
   <tr>
