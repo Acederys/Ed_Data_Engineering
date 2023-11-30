@@ -129,7 +129,7 @@ def get_sort_year(db,min_rating, limit):
         items.append(dict(row))
     cursor.close()
     # return items
-    with open(f'result_4_3_filter_year.json', 'w', encoding='utf-8') as file:
-        file.write(json.dumps(items, ensure_ascii=False))
+    # with open(f'result_4_3_filter_year.json', 'w', encoding='utf-8') as file:
+    #     file.write(json.dumps(items, ensure_ascii=False))
 # вывод первых (VAR+10) отфильтрованных по произвольному предикату отсортированных по произвольному числовому полю строк из таблицы в файл формате json.
 get_sort_year(db, 2010, 17)
