@@ -15,19 +15,24 @@
       <p>task_1_var_07_item.json</p>
       <p>result_4_1_filter_rating.json</p>
       <p>result_4_1_order_pages.json</p>
+      <p>result_4_1_2_order_pages.json</p>
+      <p>result_4_1_3_order_pages.json</p>
       <p>4_1_db.db</p>
     </td>
     <td>Задача 1</td>
-    <td>Входные данные task_1_var_07_item.json, <br>Выходные 4_1_db.db (табл. biblio), result_4_1_order_pages.json, result_4_1_filter_rating.json 
+    <td>Входные данные task_1_var_07_item.json, <br>Выходные 4_1_db.db (табл. biblio), result_4_1_order_pages.json, result_4_1_filter_rating.json, result_4_1_3_order_pages.json, result_4_1_2_order_pages.json
     </td>
   </tr>
   <td>
       <p>4_main_2.py</p>
       <p>task_2_var_07_subitem.text</p>
+      <p>result_4_2_1_order_pages.json</p>
+      <p>result_4_2_2_order_pages.json</p>
+      <p>result_4_2_3_order_pages.json</p>
       <p>4_1_db.db</p>
     </td>
     <td>Задача 2</td>
-    <td>Входные данные task_2_var_07_subitem.text, <br>Выходные 4_1_db.db (табл. book)
+    <td>Входные данные task_2_var_07_subitem.text, <br>Выходные 4_1_db.db (табл. book), result_4_2_1_order_pages.json, result_4_2_2_order_pages.json, result_4_2_3_order_pages.json
     </td>
   </tr>
   <tr>
@@ -37,10 +42,11 @@
       <p>task_3_var_07_part_2.msgpack</p>
       <p>result_4_3_order_artist.json</p>
       <p>result_4_3_filter_year.json</p>
+      <p>result_4_3_occuerrence.json</p>
       <p>4_1_db.db</p>
     </td>
     <td>Задача 3</td>
-    <td>Входные данные task_3_var_07_part_1.text, task_3_var_07_part_2.msgpack, <br>Выходные 4_1_db.db (табл. music), result_4_3_filter_year.json, result_4_3_order_artist.json
+    <td>Входные данные task_3_var_07_part_1.text, task_3_var_07_part_2.msgpack, <br>Выходные 4_1_db.db (табл. music), result_4_3_filter_year.json, result_4_3_order_artist.json, result_4_3_occuerrence.json
     </td>
   </tr>
   <tr>
@@ -48,9 +54,13 @@
       <p>4_main_4.py</p>
       <p>task_4_var_07_product_data.text</p>
       <p>task_4_var_07_update_data.msgpack</p>
+      <p>result_4_4_1_.json</p>
+      <p>result_4_4_2.json</p>
+      <p>result_4_4_analis.json</p>
+      <p>result_4_4_3.json</p>
     </td>
     <td>Задача 4</td>
-    <td>Входные данные task_4_var_07_product_data.text task_4_var_07_update_data.msgpack, <br>Выходные 4_1_db.db (табл. products)
+    <td>Входные данные task_4_var_07_product_data.text task_4_var_07_update_data.msgpack, <br>Выходные 4_1_db.db (табл. products), result_4_4_1_.json, result_4_4_2.json, result_4_4_analis.json, result_4_4_3.json
     </td>
   </tr>
   <tr>
