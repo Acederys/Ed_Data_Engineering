@@ -51,11 +51,6 @@ def connect_to_db(elem):
     connection.row_factory = sqlite3.Row
     return connection
 
-item_1 = parce_data('task_3_var_07_part_1.text')
-item_2 = parce_data_mp('task_3_var_07_part_2.msgpack')
-db = connect_to_db('4_1_db.db')
-items = item_1 + item_2
-
 def insert_price(db, data):
     cursor = db.cursor()
     cursor.executemany("""
@@ -65,8 +60,6 @@ def insert_price(db, data):
         )
     """, data)
     db.commit()
-
-# insert_price(db, items)
 
 # вывод первых (VAR+10) отсортированных по произвольному числовому полю строк из таблицы в файл формата json;
 def get_top_by_views(db, limit):
@@ -80,8 +73,6 @@ def get_top_by_views(db, limit):
     return items
     # with open(f'result_4_3_order_artist.json', 'w', encoding='utf-8') as file:
     #     file.write(json.dumps(items, ensure_ascii=False))
-
-get_top_by_views(db, 17)
 # вывод (сумму, мин, макс, среднее) по произвольному числовому полю
 def min_max(db):
     cursor = db.cursor()
@@ -96,10 +87,6 @@ def min_max(db):
     print(dict(result.fetchone()))
     cursor.close()
     return []
-
-min_max(db)
-
-
 # вывод частоты встречаемости для категориального поля;
 def get_occuerrence(db):
     cursor = db.cursor()
@@ -113,8 +100,6 @@ def get_occuerrence(db):
     print(dict(result.fetchall()))
     cursor.close()
     return []
-get_occuerrence(db)
-
 def get_sort_year(db,min_rating, limit):
     cursor = db.cursor()
     result = cursor.execute("""
@@ -132,4 +117,12 @@ def get_sort_year(db,min_rating, limit):
     # with open(f'result_4_3_filter_year.json', 'w', encoding='utf-8') as file:
     #     file.write(json.dumps(items, ensure_ascii=False))
 # вывод первых (VAR+10) отфильтрованных по произвольному предикату отсортированных по произвольному числовому полю строк из таблицы в файл формате json.
+item_1 = parce_data('task_3_var_07_part_1.text')
+item_2 = parce_data_mp('task_3_var_07_part_2.msgpack')
+db = connect_to_db('4_1_db.db')
+items = item_1 + item_2
+# insert_price(db, items)
+get_top_by_views(db, 17)
+min_max(db)
+get_occuerrence(db)
 get_sort_year(db, 2010, 17)

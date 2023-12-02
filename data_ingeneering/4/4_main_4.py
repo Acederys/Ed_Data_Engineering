@@ -42,7 +42,7 @@ def parce_data(data_1):
         if i.get('name', False) != False:
             clear_items.append(i)
     return clear_items
-item_1 = parce_data('task_4_var_07_product_data.text')
+
 # print(len(item_1))
 # print(item_1)
 
@@ -51,8 +51,6 @@ def connect_to_db(elem):
     connection = sqlite3.connect(elem)
     connection.row_factory = sqlite3.Row
     return connection
-db = connect_to_db('4_1_db.db')
-
 def insert_price(db, data):
     cursor = db.cursor()
     cursor.executemany("""
@@ -62,9 +60,6 @@ def insert_price(db, data):
         )
     """, data)
     db.commit()
-
-# insert_price(db, item_1)
-
 def delete_by_name(db, name):
     cursor = db.cursor()
     cursor.execute('DELETE FROM products WHERE name = ?', [name])
@@ -91,8 +86,6 @@ def available(db, name, value):
     res = cursor.execute('UPDATE products SET isAvailable = ? WHERE (name = ?)', [value, name])
     cursor.execute('UPDATE products SET version = version +1 WHERE  name = ?', [name])
     db.commit()
-
-
 def parce_data_mp(data_2):
     with open(data_2, 'rb') as mp_file:
         data_mp = msgpack.load(mp_file)
@@ -102,8 +95,6 @@ def parce_data_mp(data_2):
         elif elem['method'] == 'available' and elem['param'] == False:
             elem['param'] = 'False'
     return data_mp
-item_2 = parce_data_mp('task_4_var_07_update_data.msgpack')
-
 def hungle_update(db, update_items):
     for item in update_items:
         match item['method']:
@@ -125,12 +116,7 @@ def hungle_update(db, update_items):
             case 'quantity_sub':
                 print(f"Изменение количества {item['name']} {item['param']}")
                 price_abs(db, item['name'], item['param'])
-
-
-# hungle_update(db, item_2)
-
 #вывести топ-10 самых обновляемых товаров
-
 def first_query(db, limit):
     cursor = db.cursor()
     result = cursor.execute("""
@@ -145,7 +131,6 @@ def first_query(db, limit):
         items.append(item)
     cursor.close()
     print(items)
-first_query(db, 10)
 # проанализировать цены товаров, найдя (сумму, мин, макс, среднее) для каждой группы, а также количество товаров в группе
 def min_max(db):
     cursor = db.cursor()
@@ -168,9 +153,6 @@ def min_max(db):
     print(dict(result.fetchone()))
     cursor.close()
     return []
-
-min_max(db)
-
 # проанализировать остатки товаров, найдя (сумму, мин, макс, среднее) для каждой группы товаров
 def anasis_quality(db):
     cursor = db.cursor()
@@ -182,9 +164,6 @@ def anasis_quality(db):
     print(dict(result.fetchall()))
     cursor.close()
     return []
-
-anasis_quality(db)
-
 # произвольный запрос
 def second_query(db):
     cursor = db.cursor()
@@ -201,5 +180,12 @@ def second_query(db):
         items.append(item)
     cursor.close()
     print(items)
-
+item_1 = parce_data('task_4_var_07_product_data.text')
+db = connect_to_db('4_1_db.db')
+# insert_price(db, item_1)
+item_2 = parce_data_mp('task_4_var_07_update_data.msgpack')
+# hungle_update(db, item_2)
+first_query(db, 10)
+min_max(db)
 second_query(db)
+anasis_quality(db)
