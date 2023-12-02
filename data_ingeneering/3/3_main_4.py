@@ -62,12 +62,27 @@ for item in items:
         item.pop('rating')
     if item['new'] == '':
         item.pop('new')
+    else:
+        if item['new'] == '+':
+            item['new'] = True
+        else:
+            item['new'] = False
     if item['reviews'] == '':
         item.pop('reviews')
     if item['exclusive'] == '':
         item.pop('exclusive')
+    else:
+        if item['exclusive'] == 'yes':
+            item['exclusive'] = True
+        else:
+            item['exclusive'] = False
     if item['sporty'] == '':
         item.pop('sporty')
+    else:
+        if item['sporty'] == 'yes':
+            item['sporty'] = True
+        else:
+            item['sporty'] = False
 with open(r'result_3_4.json', 'w', encoding='utf-8') as rezults:
     rezults.write(json.dumps(items, ensure_ascii=False))
 with open('result_3_4.json', 'r', encoding='utf-8') as file:
@@ -86,7 +101,7 @@ print(items_caption)
 item_exclusive = list()
 for item in files_sort:
     if item.get('exclusive', False) != False:
-        if item['exclusive'] != 'no':
+        if item['exclusive'] != False:
             item_exclusive.append(item)
 with open(r'result_3_4_filter.json', 'w', encoding='utf-8') as rezults_filter:
     rezults_filter.write(json.dumps(item_exclusive, ensure_ascii=False))
