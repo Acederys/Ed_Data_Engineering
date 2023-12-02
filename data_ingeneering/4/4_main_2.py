@@ -47,7 +47,9 @@ def first_query(db, name):
         FROM book
         WHERE biblio_id = (SELECT id FROM biblio WHERE author = ?)
         """, [name])
-    print(dict(result.fetchone()))
+    items = dict(result.fetchone())
+    with open(f'result_4_2_1_order_pages.json', 'w', encoding='utf-8') as file:
+        file.write(json.dumps(items, ensure_ascii=False))
     cursor.close()
     return []
 
@@ -63,8 +65,9 @@ def second_query(db, name):
     for row in result.fetchall():
         item = dict(row)
         items.append(item)
+    with open(f'result_4_2_2_order_pages.json', 'w', encoding='utf-8') as file:
+        file.write(json.dumps(items, ensure_ascii=False))
     cursor.close()
-    print(items)
 
 def third_query(db):
     cursor = db.cursor()
@@ -80,8 +83,9 @@ def third_query(db):
     for row in result.fetchall():
         item = dict(row)
         items.append(item)
+    with open(f'result_4_2_3_order_pages.json', 'w', encoding='utf-8') as file:
+        file.write(json.dumps(items, ensure_ascii=False))
     cursor.close()
-    print(items)
 item = parce_data('task_2_var_07_subitem.text')
 db = connect_to_db('4_1_db.db')
 # insert_price(db, item)

@@ -17,6 +17,7 @@
 # произвольный запрос
 import msgpack
 import sqlite3
+import json
 
 def parce_data(data_1):
     items = []
@@ -83,7 +84,7 @@ def price_abs(db, name, value):
         db.commit()
 def available(db, name, value):
     cursor = db.cursor()
-    res = cursor.execute('UPDATE products SET isAvailable = ? WHERE (name = ?)', [value, name])
+    cursor.execute('UPDATE products SET isAvailable = ? WHERE (name = ?)', [value, name])
     cursor.execute('UPDATE products SET version = version +1 WHERE  name = ?', [name])
     db.commit()
 def parce_data_mp(data_2):
@@ -109,13 +110,13 @@ def hungle_update(db, update_items):
                 price_abs(db, item['name'], item['param'])
             case 'available':
                 print(f"Изменение доступности {item['name']} {item['param']}")
-                price_abs(db, item['name'], item['param'])
+                available(db, item['name'], item['param'])
             case 'quantity_add':
                 print(f"Изменение количества {item['name']} {item['param']}")
                 quantity_add(db, item['name'], item['param'])
             case 'quantity_sub':
                 print(f"Изменение количества {item['name']} {item['param']}")
-                price_abs(db, item['name'], item['param'])
+                quantity_add(db, item['name'], item['param'])
 #вывести топ-10 самых обновляемых товаров
 def first_query(db, limit):
     cursor = db.cursor()
@@ -129,8 +130,10 @@ def first_query(db, limit):
     for row in result.fetchall():
         item = dict(row)
         items.append(item)
+    with open(f'result_4_4_1_.json', 'w', encoding='utf-8') as file:
+        file.write(json.dumps(items, ensure_ascii=False))
     cursor.close()
-    print(items)
+
 # проанализировать цены товаров, найдя (сумму, мин, макс, среднее) для каждой группы, а также количество товаров в группе
 def min_max(db):
     cursor = db.cursor()
@@ -150,7 +153,9 @@ def min_max(db):
             MAX(views) as max_views
         FROM products
         """)
-    print(dict(result.fetchone()))
+    items = dict(result.fetchone())
+    with open(f'result_4_4_2.json', 'w', encoding='utf-8') as file:
+        file.write(json.dumps(items, ensure_ascii=False))
     cursor.close()
     return []
 # проанализировать остатки товаров, найдя (сумму, мин, макс, среднее) для каждой группы товаров
@@ -161,7 +166,9 @@ def anasis_quality(db):
         FROM products
         GROUP BY category
         """)
-    print(dict(result.fetchall()))
+    items = dict(result.fetchall())
+    with open(f'result_4_4_analis.json', 'w', encoding='utf-8') as file:
+        file.write(json.dumps(items, ensure_ascii=False))
     cursor.close()
     return []
 # произвольный запрос
@@ -178,13 +185,14 @@ def second_query(db):
     for row in result.fetchall():
         item = dict(row)
         items.append(item)
+    with open(f'result_4_4_3.json', 'w', encoding='utf-8') as file:
+        file.write(json.dumps(items, ensure_ascii=False))
     cursor.close()
-    print(items)
 item_1 = parce_data('task_4_var_07_product_data.text')
 db = connect_to_db('4_1_db.db')
-# insert_price(db, item_1)
+insert_price(db, item_1)
 item_2 = parce_data_mp('task_4_var_07_update_data.msgpack')
-# hungle_update(db, item_2)
+hungle_update(db, item_2)
 first_query(db, 10)
 min_max(db)
 second_query(db)

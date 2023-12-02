@@ -84,7 +84,9 @@ def min_max(db):
             MAX(duration_ms) as max
         FROM music
         """)
-    print(dict(result.fetchone()))
+    items = dict(result.fetchone())
+    with open(f'result_4_3_max_.json', 'w', encoding='utf-8') as file:
+        file.write(json.dumps(items, ensure_ascii=False))
     cursor.close()
     return []
 # вывод частоты встречаемости для категориального поля;
@@ -97,7 +99,9 @@ def get_occuerrence(db):
             FROM music
             GROUP BY artist
         """)
-    print(dict(result.fetchall()))
+    items = dict(result.fetchall())
+    with open(f'result_4_3_occuerrence.json', 'w', encoding='utf-8') as file:
+        file.write(json.dumps(items, ensure_ascii=False))
     cursor.close()
     return []
 def get_sort_year(db,min_rating, limit):

@@ -59,7 +59,9 @@ def min_max(db):
             MAX(views) as max
         FROM biblio
         """)
-    print(dict(result.fetchone()))
+    items = dict(result.fetchone())
+    with open(f'result_4_1_2_order_pages.json', 'w', encoding='utf-8') as file:
+        file.write(json.dumps(items, ensure_ascii=False))
     cursor.close()
     return []
 # вывод частоты встречаемости для категориального поля;
@@ -72,7 +74,9 @@ def get_occuerrence(db):
             FROM biblio
             GROUP BY author
         """)
-    print([dict(row) for row in result.fetchall()])
+    items = [dict(row) for row in result.fetchall()]
+    with open(f'result_4_1_3_order_pages.json', 'w', encoding='utf-8') as file:
+        file.write(json.dumps(items, ensure_ascii=False))
     cursor.close()
     return []
 def get_sort_rating(db,min_rating, limit):

@@ -41,7 +41,7 @@ def first_query(collection):
     # json_data = dumps(list_cur, indent = 2)
     with open(f'result_5_1_q1.json', 'w', encoding='utf-8') as f:
         f.write(json_data)
-first_query(connect())
+
 
 def second_query(collection):
     query = []
@@ -52,7 +52,7 @@ def second_query(collection):
     # json_data = dumps(list_cur, indent = 2)
     with open(f'result_5_1_q2.json', 'w', encoding='utf-8') as f:
         f.write(json_data)
-second_query(connect())
+
 
 def third_qyery(collection):
     query = []
@@ -64,7 +64,7 @@ def third_qyery(collection):
     # json_data = dumps(list_cur, indent = 2)
     with open(f'result_5_1_q3.json', 'w', encoding='utf-8') as f:
         f.write(json_data)
-third_qyery(connect())
+
 
 def fourth_qyery(collection):
     result = collection.count_documents({
@@ -79,9 +79,12 @@ def fourth_qyery(collection):
     # json_data = dumps(list_cur, indent = 2)
     with open(f'result_5_1_q4.json', 'w', encoding='utf-8') as f:
         f.write(json_data)
-fourth_qyery(connect())
+
 
 # data = get_from_json('5_var_7/task_1_item.json')
 # insert_many(connect(), data)
-
+first_query(connect())
+second_query(connect())
+third_qyery(connect())
+fourth_qyery(connect())
 
