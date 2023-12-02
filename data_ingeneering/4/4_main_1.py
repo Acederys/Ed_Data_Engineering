@@ -72,7 +72,7 @@ def get_occuerrence(db):
             FROM biblio
             GROUP BY author
         """)
-    print(dict(result.fetchall()))
+    print([dict(row) for row in result.fetchall()])
     cursor.close()
     return []
 def get_sort_rating(db,min_rating, limit):
@@ -99,4 +99,4 @@ db = connect_to_db('4_1_db.db')
 get_top_by_views(db, 17)
 min_max(db)
 get_occuerrence(db)
-get_sort_rating(db, 4.0 , 17)
+get_sort_rating(db, 4.0, 17)
