@@ -1,6 +1,75 @@
 <h2>Ed_Data_Engineering</h2>
 <h2>Решение учебных задач по инженирингу данных</h2>
 <p>Вариант 7</p>
+<h2>Файлы для задания к пятой практической</h2>
+<table>
+  <tr>
+    <th>Название файла</th>
+    <th>Номер задания</th>
+    <th>Описание</th>
+  </tr>
+  <tr>
+    <td>
+      <p>5_main_1.py</p>
+      <p>task_1_item.json</p>
+      <p>result_5_1_q1.json</p>
+      <p>result_5_1_q2.jsonn</p>
+      <p>result_5_1_q3.json</p>
+      <p>result_5_1_q4.json</p>
+    </td>
+    <td>Задача 1</td>
+    <td>Входные данные task_1_item.json, <br>Выходные result_5_1_q1.json, result_5_1_q2.jsonn, result_5_1_q3.json, result_5_1_q4.json
+    </td>
+  </tr>
+  <td>
+      <p>5_main_2.py</p>
+      <p>task_2_item.csv</p>
+      <p>result_5_2_q1.json</p>
+      <p>result_5_2_q2.json</p>
+      <p>result_5_2_q3.json</p>
+      <p>result_5_2_q4.json</p>
+      <p>result_5_2_q5.json</p>
+      <p>result_5_2_q6.json</p>
+      <p>result_5_2_q7.json</p>
+      <p>result_5_2_q8.json</p>
+      <p>result_5_2_q9.json</p>
+      <p>result_5_2_q10.json</p>
+      <p>result_5_2_q11.json</p>
+    </td>
+    <td>Задача 2</td>
+    <td>Входные данные task_2_item.csv, <br>Выходные result_5_2_q1.json, result_5_2_q2.json, result_5_2_q3.json, result_5_2_q4.json, 
+ result_5_2_q5.json, result_5_2_q6.json, result_5_2_q7.json, result_5_2_q8.json, result_5_2_q9.json, result_5_2_q10.json, result_5_2_q11.json
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <p>5_main_3.py</p>
+      <p>task_3_item.msgpack</p>
+    </td>
+    <td>Задача 3</td>
+    <td>Входные данные task_3_item.msgpack
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <p>5_main_4.py</p>
+      <p>finans_year.csv</p>
+      <p>finans_year.json</p>
+      <p>result_5_4_q1.json</p>
+      <p>result_5_4_q2.json</p>
+      <p>result_5_4_q2_1.json</p>
+      <p>result_5_4_q2_2.json</p>
+      <p>result_5_4_q2_3.json</p>
+      <p>result_5_4_q2_4.json</p>
+      <p>result_5_4_q2_5.json</p>
+      <p>result_5_4_q3.json</p>
+      <p>result_5_4_q4.json</p>
+    </td>
+    <td>Задача 4</td>
+    <td>Входные данные task_4_var_07_product_data.text task_4_var_07_update_data.msgpack, <br>Выходные result_5_4_q1.json, result_5_4_q2.json, result_5_4_q2_1.json, result_5_4_q2_2.json, result_5_4_q2_3.json, result_5_4_q2_4.json, result_5_4_q2_5.json, result_5_4_q3.json, result_5_4_q4.json
+    </td>
+  </tr>
+</table>
 <h2>Файлы для задания к четвертой практической</h2>
 <p>Все таблицы создавались через SQLite и описаны в <code>create_bd_1</code></p>
 <table>
