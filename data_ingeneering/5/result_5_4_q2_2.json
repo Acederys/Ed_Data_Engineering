@@ -1,0 +1,86 @@
+[
+  {
+    "_id": "Pulp, Paper and Converted Paper Product Manufacturing",
+    "count": 72
+  },
+  {
+    "_id": "Petroleum and Coal Product Manufacturing",
+    "count": 72
+  },
+  {
+    "_id": "Wood Product Manufacturing",
+    "count": 72
+  },
+  {
+    "_id": "Beverage and Tobacco Product Manufacturing",
+    "count": 72
+  },
+  {
+    "_id": "Printing",
+    "count": 72
+  },
+  {
+    "_id": "Forestry and Logging",
+    "count": 62
+  },
+  {
+    "_id": "Poultry, Deer and Other Livestock Farming",
+    "count": 60
+  },
+  {
+    "_id": "Horticulture and Fruit Growing",
+    "count": 60
+  },
+  {
+    "_id": "Sheep, Beef Cattle and Grain Farming",
+    "count": 60
+  },
+  {
+    "_id": "Dairy Cattle Farming",
+    "count": 60
+  },
+  {
+    "_id": "Textile and Leather Manufacturing",
+    "count": 36
+  },
+  {
+    "_id": "Textile, Leather, Clothing and Footwear Manufacturing",
+    "count": 36
+  },
+  {
+    "_id": "Manufacturing",
+    "count": 36
+  },
+  {
+    "_id": "Basic Chemical and Chemical Product Manufacturing",
+    "count": 36
+  },
+  {
+    "_id": "Clothing, Knitted Products and Footwear Manufacturing",
+    "count": 36
+  },
+  {
+    "_id": "Mining",
+    "count": 33
+  },
+  {
+    "_id": "Agriculture, Forestry and Fishing Support Services and Hunting",
+    "count": 31
+  },
+  {
+    "_id": "All industries",
+    "count": 31
+  },
+  {
+    "_id": "Agriculture, Forestry and Fishing",
+    "count": 31
+  },
+  {
+    "_id": "Fishing and Aquaculture",
+    "count": 30
+  },
+  {
+    "_id": "Basic Chemical and Basic Polymer Manufacturing",
+    "count": 3
+  }
+]

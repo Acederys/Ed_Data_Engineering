@@ -1,0 +1,152 @@
+[
+  {
+    "_id": {
+      "$oid": "656c5ff9bcaa1a47bc02ac24"
+    },
+    "Year": 2021,
+    "Industry_aggregation_NZSIOC": "Level 1",
+    "Industry_code_NZSIOC": "99999",
+    "Industry_name_NZSIOC": "All industries",
+    "Units": "Dollars (millions)",
+    "Variable_code": "H01",
+    "Variable_name": "Total income",
+    "Variable_category": "Financial performance",
+    "Value": 757504,
+    "Industry_code_ANZSIC06": "ANZSIC06 divisions A-S (excluding classes K6330, L6711, O7552, O760, O771, O772, S9540, S9601, S9602, and S9603)"
+  },
+  {
+    "_id": {
+      "$oid": "656c5ff9bcaa1a47bc02ac25"
+    },
+    "Year": 2021,
+    "Industry_aggregation_NZSIOC": "Level 1",
+    "Industry_code_NZSIOC": "99999",
+    "Industry_name_NZSIOC": "All industries",
+    "Units": "Dollars (millions)",
+    "Variable_code": "H04",
+    "Variable_name": "Sales, government funding, grants and subsidies",
+    "Variable_category": "Financial performance",
+    "Value": 674890,
+    "Industry_code_ANZSIC06": "ANZSIC06 divisions A-S (excluding classes K6330, L6711, O7552, O760, O771, O772, S9540, S9601, S9602, and S9603)"
+  },
+  {
+    "_id": {
+      "$oid": "656c5ff9bcaa1a47bc02ac28"
+    },
+    "Year": 2021,
+    "Industry_aggregation_NZSIOC": "Level 1",
+    "Industry_code_NZSIOC": "99999",
+    "Industry_name_NZSIOC": "All industries",
+    "Units": "Dollars (millions)",
+    "Variable_code": "H08",
+    "Variable_name": "Total expenditure",
+    "Variable_category": "Financial performance",
+    "Value": 654404,
+    "Industry_code_ANZSIC06": "ANZSIC06 divisions A-S (excluding classes K6330, L6711, O7552, O760, O771, O772, S9540, S9601, S9602, and S9603)"
+  },
+  {
+    "_id": {
+      "$oid": "656c5ff9bcaa1a47bc02ac2f"
+    },
+    "Year": 2021,
+    "Industry_aggregation_NZSIOC": "Level 1",
+    "Industry_code_NZSIOC": "99999",
+    "Industry_name_NZSIOC": "All industries",
+    "Units": "Dollars (millions)",
+    "Variable_code": "H19",
+    "Variable_name": "Purchases and other operating expenses",
+    "Variable_category": "Financial performance",
+    "Value": 452963,
+    "Industry_code_ANZSIC06": "ANZSIC06 divisions A-S (excluding classes K6330, L6711, O7552, O760, O771, O772, S9540, S9601, S9602, and S9603)"
+  },
+  {
+    "_id": {
+      "$oid": "656c5ff9bcaa1a47bc02ac2c"
+    },
+    "Year": 2021,
+    "Industry_aggregation_NZSIOC": "Level 1",
+    "Industry_code_NZSIOC": "99999",
+    "Industry_name_NZSIOC": "All industries",
+    "Units": "Dollars (millions)",
+    "Variable_code": "H12",
+    "Variable_name": "Salaries and wages paid",
+    "Variable_category": "Financial performance",
+    "Value": 123620,
+    "Industry_code_ANZSIC06": "ANZSIC06 divisions A-S (excluding classes K6330, L6711, O7552, O760, O771, O772, S9540, S9601, S9602, and S9603)"
+  },
+  {
+    "_id": {
+      "$oid": "656c5ff9bcaa1a47bc02adee"
+    },
+    "Year": 2021,
+    "Industry_aggregation_NZSIOC": "Level 1",
+    "Industry_code_NZSIOC": "CC",
+    "Industry_name_NZSIOC": "Manufacturing",
+    "Units": "Dollars (millions)",
+    "Variable_code": "H01",
+    "Variable_name": "Total income",
+    "Variable_category": "Financial performance",
+    "Value": 117404,
+    "Industry_code_ANZSIC06": "ANZSIC06 division C"
+  },
+  {
+    "_id": {
+      "$oid": "656c5ff9bcaa1a47bc02adf4"
+    },
+    "Year": 2021,
+    "Industry_aggregation_NZSIOC": "Level 1",
+    "Industry_code_NZSIOC": "CC",
+    "Industry_name_NZSIOC": "Manufacturing",
+    "Units": "Dollars (millions)",
+    "Variable_code": "H08",
+    "Variable_name": "Total expenditure",
+    "Variable_category": "Financial performance",
+    "Value": 111937,
+    "Industry_code_ANZSIC06": "ANZSIC06 division C"
+  },
+  {
+    "_id": {
+      "$oid": "656c5ff9bcaa1a47bc02adf0"
+    },
+    "Year": 2021,
+    "Industry_aggregation_NZSIOC": "Level 1",
+    "Industry_code_NZSIOC": "CC",
+    "Industry_name_NZSIOC": "Manufacturing",
+    "Units": "Dollars (millions)",
+    "Variable_code": "H03",
+    "Variable_name": "Sales of other goods and services",
+    "Variable_category": "Financial performance",
+    "Value": 105546,
+    "Industry_code_ANZSIC06": "ANZSIC06 division C"
+  },
+  {
+    "_id": {
+      "$oid": "656c5ff9bcaa1a47bc02ac33"
+    },
+    "Year": 2021,
+    "Industry_aggregation_NZSIOC": "Level 1",
+    "Industry_code_NZSIOC": "99999",
+    "Industry_name_NZSIOC": "All industries",
+    "Units": "Dollars (millions)",
+    "Variable_code": "H23",
+    "Variable_name": "Surplus before income tax",
+    "Variable_category": "Financial performance",
+    "Value": 103330,
+    "Industry_code_ANZSIC06": "ANZSIC06 divisions A-S (excluding classes K6330, L6711, O7552, O760, O771, O772, S9540, S9601, S9602, and S9603)"
+  },
+  {
+    "_id": {
+      "$oid": "656c5ff9bcaa1a47bc02adfb"
+    },
+    "Year": 2021,
+    "Industry_aggregation_NZSIOC": "Level 1",
+    "Industry_code_NZSIOC": "CC",
+    "Industry_name_NZSIOC": "Manufacturing",
+    "Units": "Dollars (millions)",
+    "Variable_code": "H18",
+    "Variable_name": "Other Purchases and operating expenses",
+    "Variable_category": "Financial performance",
+    "Value": 78874,
+    "Industry_code_ANZSIC06": "ANZSIC06 division C"
+  }
+]

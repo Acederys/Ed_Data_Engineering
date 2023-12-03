@@ -1,0 +1,227 @@
+[
+  {
+    "_id": {
+      "$oid": "656c5ff9bcaa1a47bc02ac98"
+    },
+    "Year": 2021,
+    "Industry_aggregation_NZSIOC": "Level 4",
+    "Industry_code_NZSIOC": "AA111",
+    "Industry_name_NZSIOC": "Horticulture and Fruit Growing",
+    "Units": "Dollars",
+    "Variable_code": "H35",
+    "Variable_name": "Surplus per employee count",
+    "Variable_category": "Financial ratios",
+    "Value": 38700,
+    "Industry_code_ANZSIC06": "ANZSIC06 groups A011, A012, and A013"
+  },
+  {
+    "_id": {
+      "$oid": "656c5ff9bcaa1a47bc02ac91"
+    },
+    "Year": 2021,
+    "Industry_aggregation_NZSIOC": "Level 4",
+    "Industry_code_NZSIOC": "AA111",
+    "Industry_name_NZSIOC": "Horticulture and Fruit Growing",
+    "Units": "Dollars (millions)",
+    "Variable_code": "H26",
+    "Variable_name": "Fixed tangible assets",
+    "Variable_category": "Financial position",
+    "Value": 11072,
+    "Industry_code_ANZSIC06": "ANZSIC06 groups A011, A012, and A013"
+  },
+  {
+    "_id": {
+      "$oid": "656c5ff9bcaa1a47bc02ac97"
+    },
+    "Year": 2021,
+    "Industry_aggregation_NZSIOC": "Level 4",
+    "Industry_code_NZSIOC": "AA111",
+    "Industry_name_NZSIOC": "Horticulture and Fruit Growing",
+    "Units": "Dollars",
+    "Variable_code": "H34",
+    "Variable_name": "Total income per employee count",
+    "Variable_category": "Financial ratios",
+    "Value": 204000,
+    "Industry_code_ANZSIC06": "ANZSIC06 groups A011, A012, and A013"
+  },
+  {
+    "_id": {
+      "$oid": "656c5ff9bcaa1a47bc02accd"
+    },
+    "Year": 2021,
+    "Industry_aggregation_NZSIOC": "Level 4",
+    "Industry_code_NZSIOC": "AA121",
+    "Industry_name_NZSIOC": "Sheep, Beef Cattle and Grain Farming",
+    "Units": "Dollars (millions)",
+    "Variable_code": "H26",
+    "Variable_name": "Fixed tangible assets",
+    "Variable_category": "Financial position",
+    "Value": 38952,
+    "Industry_code_ANZSIC06": "ANZSIC06 groups A014 and A015"
+  },
+  {
+    "_id": {
+      "$oid": "656c5ff9bcaa1a47bc02acbd"
+    },
+    "Year": 2021,
+    "Industry_aggregation_NZSIOC": "Level 4",
+    "Industry_code_NZSIOC": "AA121",
+    "Industry_name_NZSIOC": "Sheep, Beef Cattle and Grain Farming",
+    "Units": "Dollars (millions)",
+    "Variable_code": "H04",
+    "Variable_name": "Sales, government funding, grants and subsidies",
+    "Variable_category": "Financial performance",
+    "Value": 10965,
+    "Industry_code_ANZSIC06": "ANZSIC06 groups A014 and A015"
+  },
+  {
+    "_id": {
+      "$oid": "656c5ff9bcaa1a47bc02accf"
+    },
+    "Year": 2021,
+    "Industry_aggregation_NZSIOC": "Level 4",
+    "Industry_code_NZSIOC": "AA121",
+    "Industry_name_NZSIOC": "Sheep, Beef Cattle and Grain Farming",
+    "Units": "Dollars (millions)",
+    "Variable_code": "H30",
+    "Variable_name": "Total equity and liabilities",
+    "Variable_category": "Financial position",
+    "Value": 60824,
+    "Industry_code_ANZSIC06": "ANZSIC06 groups A014 and A015"
+  },
+  {
+    "_id": {
+      "$oid": "656c5ff9bcaa1a47bc02ac93"
+    },
+    "Year": 2021,
+    "Industry_aggregation_NZSIOC": "Level 4",
+    "Industry_code_NZSIOC": "AA111",
+    "Industry_name_NZSIOC": "Horticulture and Fruit Growing",
+    "Units": "Dollars (millions)",
+    "Variable_code": "H30",
+    "Variable_name": "Total equity and liabilities",
+    "Variable_category": "Financial position",
+    "Value": 16790,
+    "Industry_code_ANZSIC06": "ANZSIC06 groups A011, A012, and A013"
+  },
+  {
+    "_id": {
+      "$oid": "656c5ff9bcaa1a47bc02acd0"
+    },
+    "Year": 2021,
+    "Industry_aggregation_NZSIOC": "Level 4",
+    "Industry_code_NZSIOC": "AA121",
+    "Industry_name_NZSIOC": "Sheep, Beef Cattle and Grain Farming",
+    "Units": "Dollars (millions)",
+    "Variable_code": "H31",
+    "Variable_name": "Shareholders funds or owners equity",
+    "Variable_category": "Financial position",
+    "Value": 33880,
+    "Industry_code_ANZSIC06": "ANZSIC06 groups A014 and A015"
+  },
+  {
+    "_id": {
+      "$oid": "656c5ff9bcaa1a47bc02acc0"
+    },
+    "Year": 2021,
+    "Industry_aggregation_NZSIOC": "Level 4",
+    "Industry_code_NZSIOC": "AA121",
+    "Industry_name_NZSIOC": "Sheep, Beef Cattle and Grain Farming",
+    "Units": "Dollars (millions)",
+    "Variable_code": "H08",
+    "Variable_name": "Total expenditure",
+    "Variable_category": "Financial performance",
+    "Value": 10334,
+    "Industry_code_ANZSIC06": "ANZSIC06 groups A014 and A015"
+  },
+  {
+    "_id": {
+      "$oid": "656c5ff9bcaa1a47bc02accb"
+    },
+    "Year": 2021,
+    "Industry_aggregation_NZSIOC": "Level 4",
+    "Industry_code_NZSIOC": "AA121",
+    "Industry_name_NZSIOC": "Sheep, Beef Cattle and Grain Farming",
+    "Units": "Dollars (millions)",
+    "Variable_code": "H24",
+    "Variable_name": "Total assets",
+    "Variable_category": "Financial position",
+    "Value": 60824,
+    "Industry_code_ANZSIC06": "ANZSIC06 groups A014 and A015"
+  },
+  {
+    "_id": {
+      "$oid": "656c5ff9bcaa1a47bc02acd2"
+    },
+    "Year": 2021,
+    "Industry_aggregation_NZSIOC": "Level 4",
+    "Industry_code_NZSIOC": "AA121",
+    "Industry_name_NZSIOC": "Sheep, Beef Cattle and Grain Farming",
+    "Units": "Dollars (millions)",
+    "Variable_code": "H33",
+    "Variable_name": "Other liabilities",
+    "Variable_category": "Financial position",
+    "Value": 16455,
+    "Industry_code_ANZSIC06": "ANZSIC06 groups A014 and A015"
+  },
+  {
+    "_id": {
+      "$oid": "656c5ff9bcaa1a47bc02acd1"
+    },
+    "Year": 2021,
+    "Industry_aggregation_NZSIOC": "Level 4",
+    "Industry_code_NZSIOC": "AA121",
+    "Industry_name_NZSIOC": "Sheep, Beef Cattle and Grain Farming",
+    "Units": "Dollars (millions)",
+    "Variable_code": "H32",
+    "Variable_name": "Current liabilities",
+    "Variable_category": "Financial position",
+    "Value": 10489,
+    "Industry_code_ANZSIC06": "ANZSIC06 groups A014 and A015"
+  },
+  {
+    "_id": {
+      "$oid": "656c5ff9bcaa1a47bc02accc"
+    },
+    "Year": 2021,
+    "Industry_aggregation_NZSIOC": "Level 4",
+    "Industry_code_NZSIOC": "AA121",
+    "Industry_name_NZSIOC": "Sheep, Beef Cattle and Grain Farming",
+    "Units": "Dollars (millions)",
+    "Variable_code": "H25",
+    "Variable_name": "Current assets",
+    "Variable_category": "Financial position",
+    "Value": 13012,
+    "Industry_code_ANZSIC06": "ANZSIC06 groups A014 and A015"
+  },
+  {
+    "_id": {
+      "$oid": "656c5ff9bcaa1a47bc02acbc"
+    },
+    "Year": 2021,
+    "Industry_aggregation_NZSIOC": "Level 4",
+    "Industry_code_NZSIOC": "AA121",
+    "Industry_name_NZSIOC": "Sheep, Beef Cattle and Grain Farming",
+    "Units": "Dollars (millions)",
+    "Variable_code": "H01",
+    "Variable_name": "Total income",
+    "Variable_category": "Financial performance",
+    "Value": 11690,
+    "Industry_code_ANZSIC06": "ANZSIC06 groups A014 and A015"
+  },
+  {
+    "_id": {
+      "$oid": "656c5ff9bcaa1a47bc02ac8f"
+    },
+    "Year": 2021,
+    "Industry_aggregation_NZSIOC": "Level 4",
+    "Industry_code_NZSIOC": "AA111",
+    "Industry_name_NZSIOC": "Horticulture and Fruit Growing",
+    "Units": "Dollars (millions)",
+    "Variable_code": "H24",
+    "Variable_name": "Total assets",
+    "Variable_category": "Financial position",
+    "Value": 16790,
+    "Industry_code_ANZSIC06": "ANZSIC06 groups A011, A012, and A013"
+  }
+]

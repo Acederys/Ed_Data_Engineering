@@ -1,0 +1,152 @@
+[
+  {
+    "_id": {
+      "$oid": "656c5ff9bcaa1a47bc02ac84"
+    },
+    "Year": 2021,
+    "Industry_aggregation_NZSIOC": "Level 4",
+    "Industry_code_NZSIOC": "AA111",
+    "Industry_name_NZSIOC": "Horticulture and Fruit Growing",
+    "Units": "Dollars (millions)",
+    "Variable_code": "H08",
+    "Variable_name": "Total expenditure",
+    "Variable_category": "Financial performance",
+    "Value": 4374,
+    "Industry_code_ANZSIC06": "ANZSIC06 groups A011, A012, and A013"
+  },
+  {
+    "_id": {
+      "$oid": "656c5ff9bcaa1a47bc02ac83"
+    },
+    "Year": 2021,
+    "Industry_aggregation_NZSIOC": "Level 4",
+    "Industry_code_NZSIOC": "AA111",
+    "Industry_name_NZSIOC": "Horticulture and Fruit Growing",
+    "Units": "Dollars (millions)",
+    "Variable_code": "H07",
+    "Variable_name": "Non-operating income",
+    "Variable_category": "Financial performance",
+    "Value": 264,
+    "Industry_code_ANZSIC06": "ANZSIC06 groups A011, A012, and A013"
+  },
+  {
+    "_id": {
+      "$oid": "656c5ff9bcaa1a47bc02ac87"
+    },
+    "Year": 2021,
+    "Industry_aggregation_NZSIOC": "Level 4",
+    "Industry_code_NZSIOC": "AA111",
+    "Industry_name_NZSIOC": "Horticulture and Fruit Growing",
+    "Units": "Dollars (millions)",
+    "Variable_code": "H11",
+    "Variable_name": "Depreciation",
+    "Variable_category": "Financial performance",
+    "Value": 278,
+    "Industry_code_ANZSIC06": "ANZSIC06 groups A011, A012, and A013"
+  },
+  {
+    "_id": {
+      "$oid": "656c5ff9bcaa1a47bc02ac85"
+    },
+    "Year": 2021,
+    "Industry_aggregation_NZSIOC": "Level 4",
+    "Industry_code_NZSIOC": "AA111",
+    "Industry_name_NZSIOC": "Horticulture and Fruit Growing",
+    "Units": "Dollars (millions)",
+    "Variable_code": "H09",
+    "Variable_name": "Interest and donations",
+    "Variable_category": "Financial performance",
+    "Value": 181,
+    "Industry_code_ANZSIC06": "ANZSIC06 groups A011, A012, and A013"
+  },
+  {
+    "_id": {
+      "$oid": "656c5ff9bcaa1a47bc02ac81"
+    },
+    "Year": 2021,
+    "Industry_aggregation_NZSIOC": "Level 4",
+    "Industry_code_NZSIOC": "AA111",
+    "Industry_name_NZSIOC": "Horticulture and Fruit Growing",
+    "Units": "Dollars (millions)",
+    "Variable_code": "H04",
+    "Variable_name": "Sales, government funding, grants and subsidies",
+    "Variable_category": "Financial performance",
+    "Value": 4925,
+    "Industry_code_ANZSIC06": "ANZSIC06 groups A011, A012, and A013"
+  },
+  {
+    "_id": {
+      "$oid": "656c5ff9bcaa1a47bc02ac86"
+    },
+    "Year": 2021,
+    "Industry_aggregation_NZSIOC": "Level 4",
+    "Industry_code_NZSIOC": "AA111",
+    "Industry_name_NZSIOC": "Horticulture and Fruit Growing",
+    "Units": "Dollars (millions)",
+    "Variable_code": "H10",
+    "Variable_name": "Indirect taxes",
+    "Variable_category": "Financial performance",
+    "Value": 35,
+    "Industry_code_ANZSIC06": "ANZSIC06 groups A011, A012, and A013"
+  },
+  {
+    "_id": {
+      "$oid": "656c5ff9bcaa1a47bc02ac89"
+    },
+    "Year": 2021,
+    "Industry_aggregation_NZSIOC": "Level 4",
+    "Industry_code_NZSIOC": "AA111",
+    "Industry_name_NZSIOC": "Horticulture and Fruit Growing",
+    "Units": "Dollars (millions)",
+    "Variable_code": "H13",
+    "Variable_name": "Redundancy and severance",
+    "Variable_category": "Financial performance",
+    "Value": 0,
+    "Industry_code_ANZSIC06": "ANZSIC06 groups A011, A012, and A013"
+  },
+  {
+    "_id": {
+      "$oid": "656c5ff9bcaa1a47bc02ac88"
+    },
+    "Year": 2021,
+    "Industry_aggregation_NZSIOC": "Level 4",
+    "Industry_code_NZSIOC": "AA111",
+    "Industry_name_NZSIOC": "Horticulture and Fruit Growing",
+    "Units": "Dollars (millions)",
+    "Variable_code": "H12",
+    "Variable_name": "Salaries and wages paid",
+    "Variable_category": "Financial performance",
+    "Value": 887,
+    "Industry_code_ANZSIC06": "ANZSIC06 groups A011, A012, and A013"
+  },
+  {
+    "_id": {
+      "$oid": "656c5ff9bcaa1a47bc02ac82"
+    },
+    "Year": 2021,
+    "Industry_aggregation_NZSIOC": "Level 4",
+    "Industry_code_NZSIOC": "AA111",
+    "Industry_name_NZSIOC": "Horticulture and Fruit Growing",
+    "Units": "Dollars (millions)",
+    "Variable_code": "H05",
+    "Variable_name": "Interest, dividends and donations",
+    "Variable_category": "Financial performance",
+    "Value": 205,
+    "Industry_code_ANZSIC06": "ANZSIC06 groups A011, A012, and A013"
+  },
+  {
+    "_id": {
+      "$oid": "656c5ff9bcaa1a47bc02ac80"
+    },
+    "Year": 2021,
+    "Industry_aggregation_NZSIOC": "Level 4",
+    "Industry_code_NZSIOC": "AA111",
+    "Industry_name_NZSIOC": "Horticulture and Fruit Growing",
+    "Units": "Dollars (millions)",
+    "Variable_code": "H01",
+    "Variable_name": "Total income",
+    "Variable_category": "Financial performance",
+    "Value": 5394,
+    "Industry_code_ANZSIC06": "ANZSIC06 groups A011, A012, and A013"
+  }
+]

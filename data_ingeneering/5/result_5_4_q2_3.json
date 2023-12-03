@@ -1,0 +1,20 @@
+[
+  {
+    "_id": "Financial performance",
+    "max": 757504,
+    "min": -498,
+    "avg": 9325.615866388309
+  },
+  {
+    "_id": "Financial ratios",
+    "max": 2915100,
+    "min": -152300,
+    "avg": 97837.93548387097
+  },
+  {
+    "_id": "Financial position",
+    "max": 2512677,
+    "min": 11,
+    "avg": 49193.97348484849
+  }
+]
