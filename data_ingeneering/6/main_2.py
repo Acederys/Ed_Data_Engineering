@@ -13,16 +13,15 @@ from main_optimizired import read_dataset
 
 pd.set_option("display.max_rows", 20, "display.max_columns", 60)
 # выбранные столбцы
-start_colums = ['date', 'number_of_game',
-                'day_of_week', 'v_manager_name',
-                'park_id','length_minutes',
-                'h_walks', 'h_hits',
-                'v_hits','h_errors']
+start_colums = ['color', 'brandName',
+                'vf_ModelYear', 'isNew',
+                'vf_Turbo','vf_ValveTrainDesign',
+                'vf_TractionControl', 'vf_TrailerType',
+                'askPrice','vf_Model']
 #оптимизация датасета
-# new_data_set = read_dataset(f'data/[1]game_logs.csv', f'result_6_1_statistic.json', f'result_6_1_statistic_clear.json', start_colums, f'dtypes_6_1.json', f'new_dataset_6_1.csv')
+#new_data_set = read_dataset(f'data/[2]automotive.csv.zip', f'result_6_2_statistic.json', f'result_6_2_statistic_clear.json', start_colums, f'dtypes_6_2.json', f'new_dataset_6_2.csv')
 
-
-#чтение чистого датаесета
+# чтение чистого датаесета
 def read_file(file_name):
     return pd.read_csv(file_name)
 
@@ -40,51 +39,69 @@ def read_types(file_name):
     return dtypes
 
 
-need_dtypes = read_types('dtypes_6_1.json')
-dataset = pd.read_csv('new_dataset_6_1.csv',
+need_dtypes = read_types('dtypes_6_2.json')
+dataset = pd.read_csv('new_dataset_6_2.csv',
                       usecols= lambda x: x in need_dtypes.keys(),
                       dtype=need_dtypes)
 dataset.info(memory_usage='deep')
 
-
+#
 #Используя оптимизированный набор данных,
 # построить пять-семь графиков
 # (включая разные типы: линейный, столбчатый,
 # круговая диаграмма, корреляция и т.д.)
 # столбчатый
-plt.figure(figsize=(30, 5))
-sort_dow = dataset['day_of_week'].sort_index()
-plot = sort_dow.hist()
-plot.get_figure().savefig('6_1_hist.png')
+def hist_askPrice():
+    plt.figure(figsize=(30, 5))
+    plt.title('askPrice', fontsize=18)
+    sort_dow = dataset['askPrice'].sort_index()
+    plot = sort_dow.hist()
+    plot.get_figure().savefig('6_2_hist_askPrice.png')
 
 # столбчатый
-plt.figure(figsize=(30, 5))
-sort_dow = dataset['park_id'].sort_index()
-plot = sort_dow.hist()
-plot.get_figure().savefig('6_1_hist_park_id.png')
+def hist_brandName():
+    plt.figure(figsize=(30, 5))
+    plt.title('brandName', fontsize=18)
+    sort_dow = dataset['brandName'].sort_index()
+    plot = sort_dow.hist()
+    plot.get_figure().savefig('6_2_hist_modelName.png')
 
 # линейный
-plt.figure(figsize=(30, 5))
-sort_dow = dataset['h_hits'].sort_index()
-plot = sort_dow.plot()
-plot.get_figure().savefig('6_1_plot.png')
+def plot_ModelYear():
+    plt.figure(figsize=(30, 5))
+    plt.title('vf_ModelYear', fontsize=18)
+    sort_dow = dataset['vf_ModelYear'].sort_index()
+    plot = sort_dow.plot()
+    plot.get_figure().savefig('6_2_ModelYear.png')
 
 # линейный
-plt.figure(figsize=(30, 5))
-sort_dow = dataset['h_errors'].sort_index()
-plot = sort_dow.plot()
-plot.get_figure().savefig('6_1_plot_errors.png')
+def plot_askPrice():
+    plt.figure(figsize=(30, 5))
+    plt.title('askPrice', fontsize=18)
+    sort_dow = dataset['askPrice'].sort_index()
+    plot = sort_dow.plot()
+    plot.get_figure().savefig('6_2_plot_askPrice.png')
 
 # круговая диаграмма
-# fig1, ax1 = plt.subplots()
-# plot = ax1.pie(dataset['h_errors'], dataset['day_of_week'])
-# plot.get_figure().savefig('6_1_show.png')
+def show_Turbo():
+    plt.figure(figsize=(10, 10))
+    plt.title('vf_Turbo', fontsize=18)
+    plot_data = dataset['vf_Turbo'].value_counts()
+    plot_data.name = ''
+    plot = plot_data.plot(kind='pie', fontsize=18, autopct='%1.0f%%')
+    plot.get_figure().savefig('6_2_show.png')
 
 
 # корреляция
-data = dataset.copy()
-data.date = data.date.astype(int)
-data = data.select_dtypes(include=[int, float])
-plt.figure(figsize=(16,16))
-sns.heatmap(data.corr())
-plot.get_figure().savefig('6_1_corr.png')
+# def corr():
+#     data = dataset.copy()
+#     data.vf_ModelYear = data.vf_ModelYear.astype(int)
+#     data = data.select_dtypes(include=[int, float])
+#     plot = plt.figure(figsize=(16,16))
+#     sns.heatmap(data.corr())
+#     plot.get_figure().savefig('6_2_corr.png')
+hist_askPrice()
+hist_brandName()
+plot_ModelYear()
+plot_askPrice()
+show_Turbo()

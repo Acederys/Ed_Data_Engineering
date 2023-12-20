@@ -1,0 +1,1 @@
+{"diameter": "float32", "orbit_id": "category", "name": "category", "class": "category", "sigma_q": "float32", "moid_ld": "float64", "neo": "category", "albedo": "float32", "epoch": "float32", "equinox": "category"}

@@ -1,0 +1,1 @@
+{"type_name": "category", "employment_name": "category", "response_url": "category", "accept_kids": "bool", "area_id": "uint16", "apply_alternate_url": "object", "address_lng": "float32", "address_street": "category", "address_lat": "float32", "archived": "bool"}

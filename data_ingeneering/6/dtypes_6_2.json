@@ -1,0 +1,1 @@
+{"color": "category", "brandName": "category", "vf_ModelYear": "float32", "isNew": "bool", "vf_Turbo": "category", "vf_ValveTrainDesign": "category", "vf_TractionControl": "category", "vf_TrailerType": "category", "askPrice": "uint32", "vf_Model": "category"}

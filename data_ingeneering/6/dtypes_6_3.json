@@ -1,0 +1,1 @@
+{"CANCELLED": "uint8", "AIRLINE": "category", "TAIL_NUMBER": "category", "LATE_AIRCRAFT_DELAY": "float32", "TAXI_IN": "float32", "ORIGIN_AIRPORT": "category", "DEPARTURE_TIME": "float32", "SCHEDULED_DEPARTURE": "uint16", "FLIGHT_NUMBER": "uint16", "DAY_OF_WEEK": "uint8"}

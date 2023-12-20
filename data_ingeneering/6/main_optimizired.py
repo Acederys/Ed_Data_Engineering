@@ -13,7 +13,7 @@ def read_dataset(file_name, statistic_json, statistic_clear_json, colums_names, 
     pd.set_option("display.max_rows", 20, "display.max_columns", 60)
     # file_name = 'data/[1]game_logs.csv'
     # dataset = pd.read_csv(file_name)
-    dataset = pd.read_csv(file_name, compression='zip')
+    dataset = next(pd.read_csv(file_name, chunksize=100_000))
     column_stat = memory_cal(file_name, dataset)
     # запись в json
     write_to_json(column_stat, statistic_json)
