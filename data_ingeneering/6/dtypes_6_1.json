@@ -1,0 +1,1 @@
+{"date": "uint32", "number_of_game": "uint8", "day_of_week": "category", "v_manager_name": "category", "park_id": "category", "length_minutes": "float32", "h_walks": "float32", "h_hits": "float32", "v_hits": "float32", "h_errors": "float32"}
