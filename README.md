@@ -1,6 +1,127 @@
 <h2>Ed_Data_Engineering</h2>
 <h2>Решение учебных задач по инженирингу данных</h2>
 <p>Вариант 7</p>
+<h2>Файлы для задания к шестой практической</h2>
+<p>Изначальный датасет для 6 задачи: 'https://drive.google.com/file/d/1kx0Wn2jF5YWftldcm2jBqCpAgbRL2U5K/view?usp=sharing'</p>
+<table>
+  <tr>
+    <th>Название файла</th>
+    <th>Номер задания</th>
+    <th>Описание</th>
+  </tr>
+  <tr>
+    <td>
+      <p>main_optimizired.py</p>
+      <p>memory_calc.py</p>
+      <p>write_to_json.py</p>
+      <p>col_num.py</p>
+      <p>col_category.py</p>
+      <p>result_5_1_q4.json</p>
+    </td>
+    <td>Общие файлы по оптимизации датасета</td>
+    <td>Входные данные main_optimizired.py, memory_calc.py, write_to_json.py, col_num.py, col_category.py <br>
+    </td>
+  </tr>
+  <td>
+      <p>main_1.py</p>
+      <p>new_dataset_6_1.csv</p>
+      <p>dtypes_6_1.json</p>
+      <p>result_6_1_statistic.json</p>
+      <p>result_6_1_statistic_clear.json</p>
+      <p>6_1_corr.png</p>
+      <p>6_1_hist.png</p>
+      <p>6_1_hist_park_id.png</p>
+      <p>6_1_plot.png</p>
+      <p>6_1_plot_errors.png</p>
+      <p>result_5_2_q9.json</p>
+      <p>result_5_2_q10.json</p>
+      <p>result_5_2_q11.json</p>
+    </td>
+    <td>Задача 1</td>
+    <td>Входные данные main_1.py, <br>Выходные new_dataset_6_1.csv, dtypes_6_1.json, result_6_1_statistic.json, result_6_1_statistic_clear.json, 6_1_corr.png, 6_1_hist.png, 6_1_hist_park_id.png, 6_1_plot.png, 6_1_plot_errors.png
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <p>main_2.py</p>
+      <p>dtypes_6_2.json</p>
+      <p>result_6_2_statistic.json</p>
+      <p>result_6_2_statistic_clear.json</p>
+      <p>6_2_hist_askPrice.png</p>
+      <p>6_2_hist_modelName.png</p>
+      <p>6_2_plot_askPrice.png</p>
+      <p>6_2_show.png</p>
+      <p>new_dataset_6_2.rar</p>
+    </td>
+    <td>Задача 2</td>
+    <td>Входные данные main_2.py <br>Выходныеdtypes_6_2.json, result_6_2_statistic.json, result_6_2_statistic_clear.json, 6_2_hist_askPrice.png, 6_2_hist_modelName.png, 6_2_plot_askPrice.png, 6_2_show.png, new_dataset_6_2.rar
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <p>main_3.py</p>
+      <p>dtypes_6_3.json</p>
+      <p>result_6_3_statistic.json</p>
+      <p>result_6_3_statistic_clear.json</p>
+      <p>6_3_DEPARTURE_TIME.png</p>
+      <p>6_3_hist_AIRLINE.png</p>
+      <p>6_3_hist_LATE_AIRCRAFT_DELAY.png</p>
+      <p>6_3_plot_TAXI_IN.png</p>
+      <p>6_3_show.png</p>
+    </td>
+    <td>Задача 3</td>
+    <td>Входные данные main_3.py <br>Выходные dtypes_6_3.json, result_6_3_statistic.json, result_6_3_statistic_clear.json, 6_3_DEPARTURE_TIME.png, 6_3_hist_AIRLINE.png, 6_3_hist_LATE_AIRCRAFT_DELAY.png, 6_3_plot_TAXI_IN.png, 6_3_show.png
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <p>main_4.py</p>
+      <p>dtypes_6_4.json</p>
+      <p>result_6_4_statistic.json</p>
+      <p>result_6_4_statistic_clear.json</p>
+      <p>6_4_area_id.png</p>
+      <p>6_4_hist_address_lng.png</p>
+      <p>6_4_hist_employment_name.png</p>
+      <p>6_4_plot_address_lat.png</p>
+      <p>6_4_show.png</p>
+    </td>
+    <td>Задача 4</td>
+    <td>Входные данные main_4.py <br>Выходные dtypes_6_4.json, result_6_4_statistic.json, result_6_4_statistic_clear.json, 6_4_area_id.png, 6_3_hist_AIRLINE.png, 6_4_hist_address_lng.png, 6_4_hist_employment_name.png, 6_4_plot_address_lat.png, 6_4_show.png
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <p>main_5.py</p>
+      <p>dtypes_6_5.json</p>
+      <p>result_6_5_statistic.json</p>
+      <p>result_6_5_statistic_clear.json</p>
+      <p>6_5_diameter.png</p>
+      <p>6_5_hist_albedo.png</p>
+      <p>6_5_hist_neo.png</p>
+      <p>6_5_plot_epoch.png</p>
+      <p>6_5_show.png</p>
+    </td>
+    <td>Задача 5</td>
+    <td>Входные данные main_5.py <br>Выходные dtypes_6_5.json, result_6_5_statistic.json, result_6_5_statistic_clear.json,       6_5_diameter.png, 6_5_hist_albedo.png, 6_5_hist_neo.png, 6_5_plot_epoch.png, 6_5_show.png
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <p>main_6.py</p>
+      <p>dtypes_6_6.json</p>
+      <p>result_6_6_statistic.json</p>
+      <p>result_6_6_statistic_clear.json</p>
+      <p>6_6_hist_timbre_avg_0.png</p>
+      <p>6_6_hist_timbre_avg_1.png</p>
+      <p>6_6_timbre_avg_2.png</p>
+      <p>6_6_hist_timbre_avg_3.png</p>
+      <p>6_6_show.png</p>
+    </td>
+    <td>Задача 6</td>
+    <td>Входные данные main_6.py <br>Выходные dtypes_6_6.json, result_6_6_statistic.json, result_6_6_statistic_clear.json,             6_6_hist_timbre_avg_0.png, 6_6_hist_timbre_avg_1.png, 6_6_timbre_avg_2.png, 6_6_hist_timbre_avg_3.png, 6_6_show.png
+    </td>
+  </tr>
+</table>
 <h2>Файлы для задания к пятой практической</h2>
 <table>
   <tr>
