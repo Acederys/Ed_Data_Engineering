@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import json
 import seaborn as sns
+from sklearn.preprocessing import OrdinalEncoder # Импортируем Порядковое кодированиеот scikit-learn
 import os
 from memory_calc import memory_cal
 from write_to_json import write_to_json
@@ -45,63 +46,67 @@ dataset = pd.read_csv('new_dataset_6_3.csv',
                       dtype=need_dtypes)
 dataset.info(memory_usage='deep')
 
-#
-#Используя оптимизированный набор данных,
-# построить пять-семь графиков
-# (включая разные типы: линейный, столбчатый,
-# круговая диаграмма, корреляция и т.д.)
-# столбчатый
-def hist_LATE_AIRCRAFT_DELAY():
-    plt.figure(figsize=(30, 5))
-    plt.title('LATE_AIRCRAFT_DELAY', fontsize=18)
-    sort_dow = dataset['LATE_AIRCRAFT_DELAY'].sort_index()
-    plot = sort_dow.hist()
-    plot.get_figure().savefig('6_3_hist_LATE_AIRCRAFT_DELAY.png')
+# преобразовываем категориальные признаки в числовые
+def transform_category():
+    cat_columns = [] # создаем пустой список для имен колонок категориальных данных
+    num_columns = [] # создаем пустой список для имен колонок числовых данных
+    for column_name in dataset.columns: # смотрим на все колонки в датафрейме
+        if (dataset[column_name].dtypes == 'category' or dataset[column_name].dtypes == 'bool'): # проверяем тип данных для каждой колонки
+            cat_columns +=[column_name] # если тип объект - то складываем в категориальные данные
+        else:
+            num_columns +=[column_name] # иначе - числовые)
+    ordinal = OrdinalEncoder()
+    ordinal.fit(dataset[cat_columns])
+    Ordinal_encoded = ordinal.transform(dataset[cat_columns])
+    df_ordinal = pd.DataFrame(Ordinal_encoded, columns = cat_columns)
+    df = pd.concat([dataset[num_columns], df_ordinal], axis=1)
+    width = 2
+    height = int(np.ceil(len(num_columns)/width))
+    return df
+df = transform_category()
+# dataset.to_pickle('2_cat.pickle')
+# Удаляем выбросы LATE_AIRCRAFT_DELAY
+utem = df[(df['LATE_AIRCRAFT_DELAY'] >= 180) & (df['LATE_AIRCRAFT_DELAY'] <= 1331)].index
+df= df.drop(utem)
+utem_1 = df[(df['TAXI_IN'] >= 35) & (df['TAXI_IN'] <= 1331)].index
+df= df.drop(utem_1)
 
-# столбчатый
-def hist_AIRLINE():
-    plt.figure(figsize=(30, 5))
-    plt.title('AIRLINE', fontsize=18)
-    sort_dow = dataset['AIRLINE'].sort_index()
-    plot = sort_dow.hist()
-    plot.get_figure().savefig('6_3_hist_AIRLINE.png')
+def figure_1(df):
+    figure_1 =  sns.boxplot(x=df["DAY_OF_WEEK"], y=df["DEPARTURE_TIME"])
+    return figure_1.get_figure().savefig(f'6_3_boxplot.png')
 
-# линейный
-def plot_DEPARTURE_TIME():
-    plt.figure(figsize=(30, 5))
-    plt.title('DEPARTURE_TIME', fontsize=18)
-    sort_dow = dataset['DEPARTURE_TIME'].sort_index()
-    plot = sort_dow.plot()
-    plot.get_figure().savefig('6_3_DEPARTURE_TIME.png')
+def figure_2(df):
+    g = plt.figure(figsize=(10,7))
+    figure_2 = sns.histplot(data = df, # какой датафрейм используем
+             x = 'AIRLINE', # какую переменную отрисовываем
+             hue = 'CANCELLED', # какую переменную используем для подкрашиваиния данных.
+             bins = 15, # на сколько ячеек разбиваем
+             kde = True, # чтобы отрисовал оценку плотности распределения
+             palette='bwr'); # какую цветовую карту используем.
+    return figure_2.get_figure().savefig(f'6_3_histplot.png')
 
-# линейный
-def plot_TAXI_IN():
-    plt.figure(figsize=(30, 5))
-    plt.title('TAXI_IN', fontsize=18)
-    sort_dow = dataset['TAXI_IN'].sort_index()
-    plot = sort_dow.plot()
-    plot.get_figure().savefig('6_3_plot_TAXI_IN.png')
+def figure_3(df):
+    plt.figure(figsize=(15,6)) # создаем "полотно", уточняем размер
+    figure_3 = sns.histplot(data=df, # какой датафрейм используем
+             x='AIRLINE', # какую переменную отрисовываем
+             bins = 20, # на сколько ячеек разбиваем
+             ); # захотели использовать логарифмический масштаб (для очень больших диапазонов)
+    return figure_3.get_figure().savefig(f'6_3_histplot_AIRLINE.png')
 
-# круговая диаграмма
-def show_DAY_OF_WEEK():
-    plt.figure(figsize=(10, 10))
+def figure_4(df):
+    figure_4 = sns.heatmap(df.corr(), cmap="Blues")
+    return figure_4.get_figure().savefig(f'6_3_heatmap.png')
+
+
+def figure_5(dataset):
+    plt.figure(figsize=(16, 6))
     plt.title('DAY_OF_WEEK', fontsize=18)
     plot_data = dataset['DAY_OF_WEEK'].value_counts()
     plot_data.name = ''
-    plot = plot_data.plot(kind='pie', fontsize=18, autopct='%1.0f%%')
-    plot.get_figure().savefig('6_3_show.png')
-
-
-# корреляция
-# def corr():
-#     data = dataset.copy()
-#     data.vf_ModelYear = data.vf_ModelYear.astype(int)
-#     data = data.select_dtypes(include=[int, float])
-#     plot = plt.figure(figsize=(16,16))
-#     sns.heatmap(data.corr())
-#     plot.get_figure().savefig('6_2_corr.png')
-hist_LATE_AIRCRAFT_DELAY()
-hist_AIRLINE()
-plot_DEPARTURE_TIME()
-plot_TAXI_IN()
-show_DAY_OF_WEEK()
+    plot_5 = plot_data.plot(kind='pie', fontsize=18, autopct='%1.0f%%')
+    return plot_5.get_figure().savefig('6_3_show.png')
+# figure_1(df)
+# figure_2(df)
+# figure_3(dataset)
+# figure_4(df)
+# figure_5(dataset)

@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import json
 import seaborn as sns
+from sklearn.preprocessing import OrdinalEncoder # Импортируем Порядковое кодированиеот scikit-learn
 import os
 from memory_calc import memory_cal
 from write_to_json import write_to_json
@@ -45,63 +46,77 @@ dataset = pd.read_csv('new_dataset_6_6.csv',
                       dtype=need_dtypes)
 dataset.info(memory_usage='deep')
 
-#
+
 #Используя оптимизированный набор данных,
 # построить пять-семь графиков
 # (включая разные типы: линейный, столбчатый,
 # круговая диаграмма, корреляция и т.д.)
 # столбчатый
-def hist_timbre_avg_0():
-    plt.figure(figsize=(30, 5))
-    plt.title('timbre_avg_0', fontsize=18)
-    sort_dow = dataset['timbre_avg_0'].sort_index()
-    plot = sort_dow.hist()
-    plot.get_figure().savefig('6_6_hist_timbre_avg_0.png')
+def transform_category():
+    cat_columns = [] # создаем пустой список для имен колонок категориальных данных
+    num_columns = [] # создаем пустой список для имен колонок числовых данных
+    for column_name in dataset.columns: # смотрим на все колонки в датафрейме
+        if (dataset[column_name].dtypes == 'category' or dataset[column_name].dtypes == 'bool' or dataset[column_name].dtypes == 'object'): # проверяем тип данных для каждой колонки
+            cat_columns +=[column_name] # если тип объект - то складываем в категориальные данные
+        else:
+            num_columns +=[column_name] # иначе - числовые)
+    ordinal = OrdinalEncoder()
+    ordinal.fit(dataset[cat_columns])
+    Ordinal_encoded = ordinal.transform(dataset[cat_columns])
+    df_ordinal = pd.DataFrame(Ordinal_encoded, columns = cat_columns)
+    df = pd.concat([dataset[num_columns], df_ordinal], axis=1)
+    return df
+df = transform_category()
 
-# столбчатый
-def hist_timbre_avg_1():
-    plt.figure(figsize=(30, 5))
-    plt.title('timbre_avg_1', fontsize=18)
-    sort_dow = dataset['timbre_avg_1'].sort_index()
-    plot = sort_dow.hist()
-    plot.get_figure().savefig('6_6_hist_timbre_avg_1.png')
+df.to_pickle('6.pickle')
+#
+# utem = df[(df['sigma_q'] >= 250) & (df['sigma_q'] <= 126130.0)].index
+# df= df.drop(utem)
+# utem_2 = df[(df['diameter'] >= 10) & (df['diameter'] <= 939.4)].index
+# df= df.drop(utem_2)
+# utem_3 = df[(df['albedo'] <= 0.6)].index
+# df= df.drop(utem_3)
+DF_cat= pd.DataFrame
+utem = df[df['year'] <= 2000].index
+DF_cat = df.drop(utem)
+utem_1 = DF_cat[DF_cat['year'] >= 2005].index
+DF_cat = DF_cat.drop(utem_1)
+def figure_1(df):
+    figure_1 = sns.boxplot(x=df['year'], y=df["timbre_avg_0"]);
+    return figure_1.get_figure().savefig(f'6_6_boxplot.png')
 
-# линейный
-def plot_timbre_avg_2():
-    plt.figure(figsize=(30, 5))
-    plt.title('timbre_avg_2', fontsize=18)
-    sort_dow = dataset['timbre_avg_2'].sort_index()
-    plot = sort_dow.plot()
-    plot.get_figure().savefig('6_6_timbre_avg_2.png')
+def figure_2(df):
+    g = plt.figure(figsize=(10,7))
+    figure_2 = sns.histplot(data = df, # какой датафрейм используем
+             x = 'timbre_avg_1', # какую переменную отрисовываем
+             hue = 'year', # какую переменную используем для подкрашиваиния данных.
+             bins = 15, # на сколько ячеек разбиваем
+             kde = True, # чтобы отрисовал оценку плотности распределения
+             palette='bwr'); # какую цветовую карту используем.
+    return figure_2.get_figure().savefig(f'6_6_histplot.png')
 
-# линейный
-def plot_timbre_avg_3():
-    plt.figure(figsize=(30, 5))
-    plt.title('timbre_avg_3', fontsize=18)
-    sort_dow = dataset['timbre_avg_3'].sort_index()
-    plot = sort_dow.plot()
-    plot.get_figure().savefig('6_6_plot_timbre_avg_3.png')
+def figure_3(df):
+    plt.figure(figsize=(15,6)) # создаем "полотно", уточняем размер
+    figure_3 = sns.histplot(data=df, # какой датафрейм используем
+             x='year', # какую переменную отрисовываем
+             bins = 20, # на сколько ячеек разбиваем
+             ); # захотели использовать логарифмический масштаб (для очень больших диапазонов)
+    return figure_3.get_figure().savefig(f'6_6_histplot_response_url.png')
 
-# круговая диаграмма
-def show_year():
-    plt.figure(figsize=(10, 10))
+def figure_4(df):
+    figure_4 = sns.heatmap(df.corr(), cmap="Blues")
+    return figure_4.get_figure().savefig(f'6_6_heatmap.png')
+
+
+def figure_5(dataset):
+    plt.figure(figsize=(16, 6))
     plt.title('year', fontsize=18)
     plot_data = dataset['year'].value_counts()
     plot_data.name = ''
-    plot = plot_data.plot(kind='pie', fontsize=18, autopct='%1.0f%%')
-    plot.get_figure().savefig('6_6_show.png')
-
-
-# корреляция
-# def corr():
-#     data = dataset.copy()
-#     data.vf_ModelYear = data.vf_ModelYear.astype(int)
-#     data = data.select_dtypes(include=[int, float])
-#     plot = plt.figure(figsize=(16,16))
-#     sns.heatmap(data.corr())
-#     plot.get_figure().savefig('6_6_corr.png')
-hist_timbre_avg_0()
-hist_timbre_avg_1()
-plot_timbre_avg_2()
-plot_timbre_avg_3()
-show_year()
+    plot_5 = plot_data.plot(kind='pie', fontsize=18, autopct='%1.0f%%')
+    return plot_5.get_figure().savefig('6_6_show.png')
+# figure_1(DF_cat)
+# figure_2(DF_cat)
+# figure_3(df)
+# figure_4(df)
+figure_5(DF_cat)

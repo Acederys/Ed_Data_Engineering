@@ -5,8 +5,45 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="96c8428c-76f6-48be-ac71-969eec98aa84" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/4_main_3.py" beforeDir="false" afterPath="$PROJECT_DIR$/4_main_3.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/6/6_1_corr.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/6/6_1_hist.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/6/6_1_hist_park_id.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/6/6_1_plot.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/6/6_1_plot_errors.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/6/6_2_ModelYear.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/6/6_2_hist_askPrice.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/6/6_2_hist_modelName.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/6/6_2_plot_askPrice.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/6/6_2_show.png" beforeDir="false" afterPath="$PROJECT_DIR$/6/6_2_show.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/6/6_3_DEPARTURE_TIME.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/6/6_3_hist_AIRLINE.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/6/6_3_hist_LATE_AIRCRAFT_DELAY.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/6/6_3_plot_TAXI_IN.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/6/6_3_show.png" beforeDir="false" afterPath="$PROJECT_DIR$/6/6_3_show.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/6/6_4_area_id.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/6/6_4_hist_address_lng.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/6/6_4_hist_employment_name.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/6/6_4_plot_address_lat.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/6/6_4_show.png" beforeDir="false" afterPath="$PROJECT_DIR$/6/6_4_show.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/6/6_5_diameter.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/6/6_5_hist_albedo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/6/6_5_hist_neo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/6/6_5_plot_epoch.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/6/6_5_show.png" beforeDir="false" afterPath="$PROJECT_DIR$/6/6_5_show.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/6/6_6_hist_timbre_avg_0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/6/6_6_hist_timbre_avg_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/6/6_6_plot_timbre_avg_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/6/6_6_show.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/6/6_6_timbre_avg_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/6/main_1.py" beforeDir="false" afterPath="$PROJECT_DIR$/6/main_1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/6/main_2.py" beforeDir="false" afterPath="$PROJECT_DIR$/6/main_2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/6/main_3.py" beforeDir="false" afterPath="$PROJECT_DIR$/6/main_3.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/6/main_4.py" beforeDir="false" afterPath="$PROJECT_DIR$/6/main_4.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/6/main_5.py" beforeDir="false" afterPath="$PROJECT_DIR$/6/main_5.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/6/main_6.py" beforeDir="false" afterPath="$PROJECT_DIR$/6/main_6.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/6/new_dataset_6_5.rar" beforeDir="false" afterPath="$PROJECT_DIR$/6/new_dataset_6_5.rar" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,8 +89,8 @@
       <recent name="C:\Users\acede\Documents\python\data_enjeneer\Ed_Data_Engineering\data_ingeneering\4_bd" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.4_main_5">
-    <configuration name="11111" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.main_6">
+    <configuration name="main_2" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="data_ingeneering" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -61,11 +98,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/6" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/11111.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/6/main_2.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -74,7 +111,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="3_main_4" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="main_3" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="data_ingeneering" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -82,11 +119,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/6" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/3_main_4.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/6/main_3.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -95,7 +132,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="3_main_5" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="main_4" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="data_ingeneering" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -103,11 +140,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/6" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/3_main_5.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/6/main_4.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -116,7 +153,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="4_main_4" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="main_5" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="data_ingeneering" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -124,11 +161,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/6" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/4_main_4.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/6/main_5.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -137,7 +174,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="4_main_5" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="main_6" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="data_ingeneering" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -145,11 +182,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/6" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/4_main_5.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/6/main_6.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -160,11 +197,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.4_main_5" />
-        <item itemvalue="Python.4_main_4" />
-        <item itemvalue="Python.3_main_5" />
-        <item itemvalue="Python.11111" />
-        <item itemvalue="Python.3_main_4" />
+        <item itemvalue="Python.main_6" />
+        <item itemvalue="Python.main_5" />
+        <item itemvalue="Python.main_4" />
+        <item itemvalue="Python.main_3" />
+        <item itemvalue="Python.main_2" />
       </list>
     </recent_temporary>
   </component>

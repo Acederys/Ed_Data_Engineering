@@ -5,6 +5,7 @@ import numpy as np
 import json
 import seaborn as sns
 import os
+from sklearn.preprocessing import OrdinalEncoder
 from memory_calc import memory_cal
 from write_to_json import write_to_json
 from col_category import col_category, mem_usage
@@ -46,47 +47,65 @@ dataset = pd.read_csv('new_dataset_6_1.csv',
                       dtype=need_dtypes)
 dataset.info(memory_usage='deep')
 
-
-
-
+# преобразовываем категориальные признаки в числовые
+def transform_category():
+    cat_columns = [] # создаем пустой список для имен колонок категориальных данных
+    num_columns = [] # создаем пустой список для имен колонок числовых данных
+    for column_name in dataset.columns: # смотрим на все колонки в датафрейме
+        if (dataset[column_name].dtypes == 'category'): # проверяем тип данных для каждой колонки
+            cat_columns +=[column_name] # если тип объект - то складываем в категориальные данные
+        else:
+            num_columns +=[column_name] # иначе - числовые)
+    ordinal = OrdinalEncoder()
+    ordinal.fit(dataset[cat_columns])
+    Ordinal_encoded = ordinal.transform(dataset[cat_columns])
+    df_ordinal = pd.DataFrame(Ordinal_encoded, columns = cat_columns)
+    df = pd.concat([dataset[num_columns], df_ordinal], axis=1)
+    return df
+df = transform_category()
 #Используя оптимизированный набор данных,
 # построить пять-семь графиков
 # (включая разные типы: линейный, столбчатый,
 # круговая диаграмма, корреляция и т.д.)
 # столбчатый
-plt.figure(figsize=(30, 5))
-sort_dow = dataset['day_of_week'].sort_index()
-plot = sort_dow.hist()
-plot.get_figure().savefig('6_1_hist.png')
+# чтобы построить график надо удалить выбросы
+def figure_1(dataset):
+    x = dataset['h_errors']
+    y = dataset['number_of_game']
 
-# столбчатый
-plt.figure(figsize=(30, 5))
-sort_dow = dataset['park_id'].sort_index()
-plot = sort_dow.hist()
-plot.get_figure().savefig('6_1_hist_park_id.png')
-
-# линейный
-plt.figure(figsize=(30, 5))
-sort_dow = dataset['h_hits'].sort_index()
-plot = sort_dow.plot()
-plot.get_figure().savefig('6_1_plot.png')
-
-# линейный
-plt.figure(figsize=(30, 5))
-sort_dow = dataset['h_errors'].sort_index()
-plot = sort_dow.plot()
-plot.get_figure().savefig('6_1_plot_errors.png')
-
-# круговая диаграмма
-# fig1, ax1 = plt.subplots()
-# plot = ax1.pie(dataset['h_errors'], dataset['day_of_week'])
-# plot.get_figure().savefig('6_1_show.png')
+    plot = sns.barplot(x=y, y=x)
+    plot.get_figure().savefig('6_1_barplot.png')
 
 
-# корреляция
-data = dataset.copy()
-data.date = data.date.astype(int)
-data = data.select_dtypes(include=[int, float])
-plt.figure(figsize=(16,16))
-sns.heatmap(data.corr())
-plot.get_figure().savefig('6_1_corr.png')
+def figure_2(dataset):
+    plot = sns.barplot(x=dataset["number_of_game"],
+                    y=dataset["length_minutes"],
+                    hue=dataset["day_of_week"],
+                    data=dataset)
+    plot.get_figure().savefig('6_1_barplot_group.png')
+
+
+def figure_3(dataset):
+    plt.figure(figsize=(16, 6))
+    heatmap = sns.heatmap(dataset.corr(), vmin=-1, vmax=1, annot=True, cmap='BrBG')
+    heatmap.set_title('Correlation Heatmap', fontdict={'fontsize':18}, pad=12)
+    heatmap.get_figure().savefig('6_1_heatmap.png')
+
+
+def figure_4(dataset):
+    plot = sns.scatterplot(data=dataset, x="h_errors", y="h_walks")
+    plot.set_title('scatterplot of h_errors, h_walks', fontdict={'fontsize':18}, pad=12)
+    plot.get_figure().savefig('6_1_h_walks.png')
+
+def figure_5(dataset):
+    plt.figure(figsize=(10, 10))
+    plt.title('day_of_week', fontsize=18)
+    plot_data = dataset['day_of_week'].value_counts()
+    plot_data.name = ''
+    plot = plot_data.plot(kind='pie', fontsize=18, autopct='%1.0f%%')
+    plot.get_figure().savefig('6_1_show.png')
+figure_1(df)
+figure_2(df)
+figure_3(df)
+figure_4(df)
+figure_5(dataset)

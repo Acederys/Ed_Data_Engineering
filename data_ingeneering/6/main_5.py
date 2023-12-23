@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import json
 import seaborn as sns
+from sklearn.preprocessing import OrdinalEncoder # Импортируем Порядковое кодированиеот scikit-learn
 import os
 from memory_calc import memory_cal
 from write_to_json import write_to_json
@@ -44,64 +45,60 @@ dataset = pd.read_csv('new_dataset_6_5.csv',
                       usecols= lambda x: x in need_dtypes.keys(),
                       dtype=need_dtypes)
 dataset.info(memory_usage='deep')
-#
-# #
-#Используя оптимизированный набор данных,
-# построить пять-семь графиков
-# (включая разные типы: линейный, столбчатый,
-# круговая диаграмма, корреляция и т.д.)
-# столбчатый
-def hist_albedo():
-    plt.figure(figsize=(30, 5))
-    plt.title('albedo', fontsize=18)
-    sort_dow = dataset['albedo'].sort_index()
-    plot = sort_dow.hist()
-    plot.get_figure().savefig('6_5_hist_albedo.png')
+def transform_category():
+    cat_columns = [] # создаем пустой список для имен колонок категориальных данных
+    num_columns = [] # создаем пустой список для имен колонок числовых данных
+    for column_name in dataset.columns: # смотрим на все колонки в датафрейме
+        if (dataset[column_name].dtypes == 'category' or dataset[column_name].dtypes == 'bool' or dataset[column_name].dtypes == 'object'): # проверяем тип данных для каждой колонки
+            cat_columns +=[column_name] # если тип объект - то складываем в категориальные данные
+        else:
+            num_columns +=[column_name] # иначе - числовые)
+    ordinal = OrdinalEncoder()
+    ordinal.fit(dataset[cat_columns])
+    Ordinal_encoded = ordinal.transform(dataset[cat_columns])
+    df_ordinal = pd.DataFrame(Ordinal_encoded, columns = cat_columns)
+    df = pd.concat([dataset[num_columns], df_ordinal], axis=1)
+    return df
+df = transform_category()
 
-# столбчатый
-def hist_neo():
-    plt.figure(figsize=(30, 5))
-    plt.title('neo', fontsize=18)
-    sort_dow = dataset['neo'].sort_index()
-    plot = sort_dow.hist()
-    plot.get_figure().savefig('6_5_hist_neo.png')
+utem = df[(df['sigma_q'] >= 250) & (df['sigma_q'] <= 126130.0)].index
+df= df.drop(utem)
+utem_2 = df[(df['diameter'] >= 10) & (df['diameter'] <= 939.4)].index
+df= df.drop(utem_2)
+utem_3 = df[(df['albedo'] <= 0.6)].index
+df= df.drop(utem_3)
+def figure_1(df):
+    figure_1 =  sns.boxplot(x=df["class"], y=df["diameter"])
+    return figure_1.get_figure().savefig(f'6_5_boxplot.png')
 
-# линейный
-def plot_diameter():
-    plt.figure(figsize=(30, 5))
-    plt.title('diameter', fontsize=18)
-    sort_dow = dataset['diameter'].sort_index()
-    plot = sort_dow.plot()
-    plot.get_figure().savefig('6_5_diameter.png')
+def figure_2(df):
+    g = plt.figure(figsize=(10,7))
+    figure_2 = sns.histplot(data = df, # какой датафрейм используем
+             x = 'orbit_id', # какую переменную отрисовываем
+             hue = 'neo', # какую переменную используем для подкрашиваиния данных.
+             bins = 15, # на сколько ячеек разбиваем
+             kde = True, # чтобы отрисовал оценку плотности распределения
+             palette='bwr'); # какую цветовую карту используем.
+    return figure_2.get_figure().savefig(f'6_5_histplot.png')
 
-# линейный
-def plot_epoch():
-    plt.figure(figsize=(30, 5))
-    plt.title('epoch', fontsize=18)
-    sort_dow = dataset['epoch'].sort_index()
-    plot = sort_dow.plot()
-    plot.get_figure().savefig('6_5_plot_epoch.png')
+def figure_3(df):
+    plt.figure(figsize=(15,6)) # создаем "полотно", уточняем размер
+    figure_3 = sns.histplot(data=df, # какой датафрейм используем
+             x='class', # какую переменную отрисовываем
+             bins = 20, # на сколько ячеек разбиваем
+             ); # захотели использовать логарифмический масштаб (для очень больших диапазонов)
+    return figure_3.get_figure().savefig(f'6_5_histplot_response_url.png')
 
-# круговая диаграмма
-def show_class():
-    plt.figure(figsize=(10, 10))
-    plt.title('class', fontsize=18)
-    plot_data = dataset['class'].value_counts()
-    plot_data.name = ''
-    plot = plot_data.plot(kind='pie', fontsize=18, autopct='%1.0f%%')
-    plot.get_figure().savefig('6_5_show.png')
+def figure_4(df):
+    figure_4 = sns.heatmap(df.corr(), cmap="Blues")
+    return figure_4.get_figure().savefig(f'6_5_heatmap.png')
 
 
-# корреляция
-# def corr():
-#     data = dataset.copy()
-#     data.vf_ModelYear = data.vf_ModelYear.astype(int)
-#     data = data.select_dtypes(include=[int, float])
-#     plot = plt.figure(figsize=(16,16))
-#     sns.heatmap(data.corr())
-#     plot.get_figure().savefig('6_2_corr.png')
-hist_albedo()
-hist_neo()
-plot_diameter()
-plot_epoch()
-show_class()
+def figure_5(dataset):
+    plot_5 = sns.violinplot(x=dataset['class'], y=dataset['moid_ld'], data=dataset)
+    return plot_5.get_figure().savefig('6_5_show.png')
+# figure_1(df)
+# figure_2(df)
+# figure_3(dataset)
+# figure_4(df)
+# figure_5(df)

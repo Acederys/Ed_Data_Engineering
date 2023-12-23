@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import json
 import seaborn as sns
+from sklearn.preprocessing import OrdinalEncoder # Импортируем Порядковое кодированиеот scikit-learn
 import os
 from memory_calc import memory_cal
 from write_to_json import write_to_json
@@ -44,64 +45,65 @@ dataset = pd.read_csv('new_dataset_6_4.csv',
                       usecols= lambda x: x in need_dtypes.keys(),
                       dtype=need_dtypes)
 dataset.info(memory_usage='deep')
-#
-# #
-#Используя оптимизированный набор данных,
-# построить пять-семь графиков
-# (включая разные типы: линейный, столбчатый,
-# круговая диаграмма, корреляция и т.д.)
-# столбчатый
-def hist_address_lng():
-    plt.figure(figsize=(30, 5))
-    plt.title('address_lng', fontsize=18)
-    sort_dow = dataset['address_lng'].sort_index()
-    plot = sort_dow.hist()
-    plot.get_figure().savefig('6_4_hist_address_lng.png')
 
-# столбчатый
-def hist_employment_name():
-    plt.figure(figsize=(30, 5))
-    plt.title('employment_name', fontsize=18)
-    sort_dow = dataset['employment_name'].sort_index()
-    plot = sort_dow.hist()
-    plot.get_figure().savefig('6_4_hist_employment_name.png')
+def transform_category():
+    cat_columns = [] # создаем пустой список для имен колонок категориальных данных
+    num_columns = [] # создаем пустой список для имен колонок числовых данных
+    for column_name in dataset.columns: # смотрим на все колонки в датафрейме
+        if (dataset[column_name].dtypes == 'category' or dataset[column_name].dtypes == 'bool' or dataset[column_name].dtypes == 'object'): # проверяем тип данных для каждой колонки
+            cat_columns +=[column_name] # если тип объект - то складываем в категориальные данные
+        else:
+            num_columns +=[column_name] # иначе - числовые)
+    ordinal = OrdinalEncoder()
+    ordinal.fit(dataset[cat_columns])
+    Ordinal_encoded = ordinal.transform(dataset[cat_columns])
+    df_ordinal = pd.DataFrame(Ordinal_encoded, columns = cat_columns)
+    df = pd.concat([dataset[num_columns], df_ordinal], axis=1)
+    return df
+df = transform_category()
 
-# линейный
-def plot_area_id():
-    plt.figure(figsize=(30, 5))
-    plt.title('area_id', fontsize=18)
-    sort_dow = dataset['area_id'].sort_index()
-    plot = sort_dow.plot()
-    plot.get_figure().savefig('6_4_area_id.png')
+utem = df[(df['address_lng'] <= 0)].index
+df = df.drop(utem)
+utem_1 = df[(df['address_lat'] <= 0)].index
+df= df.drop(utem_1)
 
-# линейный
-def plot_address_lat():
-    plt.figure(figsize=(30, 5))
-    plt.title('address_lat', fontsize=18)
-    sort_dow = dataset['address_lat'].sort_index()
-    plot = sort_dow.plot()
-    plot.get_figure().savefig('6_4_plot_address_lat.png')
+def figure_1(df):
+    figure_1 =  sns.boxplot(x=df["employment_name"], y=df["address_street"])
+    return figure_1.get_figure().savefig(f'6_4_boxplot.png')
 
-# круговая диаграмма
-def show_archived():
-    plt.figure(figsize=(10, 10))
+def figure_2(df):
+    g = plt.figure(figsize=(10,7))
+    figure_2 = sns.histplot(data = df, # какой датафрейм используем
+             x = 'response_url', # какую переменную отрисовываем
+             hue = 'accept_kids', # какую переменную используем для подкрашиваиния данных.
+             bins = 15, # на сколько ячеек разбиваем
+             kde = True, # чтобы отрисовал оценку плотности распределения
+             palette='bwr'); # какую цветовую карту используем.
+    return figure_2.get_figure().savefig(f'6_4_histplot.png')
+
+def figure_3(df):
+    plt.figure(figsize=(15,6)) # создаем "полотно", уточняем размер
+    figure_3 = sns.histplot(data=df, # какой датафрейм используем
+             x='employment_name', # какую переменную отрисовываем
+             bins = 20, # на сколько ячеек разбиваем
+             ); # захотели использовать логарифмический масштаб (для очень больших диапазонов)
+    return figure_3.get_figure().savefig(f'6_4_histplot_response_url.png')
+
+def figure_4(df):
+    figure_4 = sns.heatmap(df.corr(), cmap="Blues")
+    return figure_4.get_figure().savefig(f'6_4_heatmap.png')
+
+
+def figure_5(dataset):
+    plt.figure(figsize=(16, 6))
     plt.title('archived', fontsize=18)
     plot_data = dataset['archived'].value_counts()
     plot_data.name = ''
-    plot = plot_data.plot(kind='pie', fontsize=18, autopct='%1.0f%%')
-    plot.get_figure().savefig('6_4_show.png')
+    plot_5 = plot_data.plot(kind='pie', fontsize=18, autopct='%1.0f%%')
+    return plot_5.get_figure().savefig('6_4_show.png')
+figure_1(df)
+# figure_2(df)
+# figure_3(dataset)
+# figure_4(df)
+# figure_5(dataset)
 
-
-# корреляция
-# def corr():
-#     data = dataset.copy()
-#     data.vf_ModelYear = data.vf_ModelYear.astype(int)
-#     data = data.select_dtypes(include=[int, float])
-#     plot = plt.figure(figsize=(16,16))
-#     sns.heatmap(data.corr())
-#     plot.get_figure().savefig('6_2_corr.png')
-hist_address_lng()
-hist_employment_name()
-plot_area_id()
-plot_address_lat()
-show_archived()
