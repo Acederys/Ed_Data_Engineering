@@ -1,8 +1,8 @@
-![6_1_barplot](https://github.com/Acederys/Ed_Data_Engineering/assets/42139796/62b84233-aa0b-4ec2-8dd5-458b89d3b654)<h2>Ed_Data_Engineering</h2>
+<h2>Ed_Data_Engineering</h2>
 <h2>Решение учебных задач по инженирингу данных</h2>
 <p>Вариант 7</p>
 <h2>Файлы для задания к шестой практической</h2>
-<p>Изначальный датасет для 6 задачи: 'https://drive.google.com/file/d/1kx0Wn2jF5YWftldcm2jBqCpAgbRL2U5K/view?usp=sharing'</p>
+<p>![Изначальный датасет для 6 задачи:]('https://drive.google.com/file/d/1kx0Wn2jF5YWftldcm2jBqCpAgbRL2U5K/view?usp=sharing')</p>
 <table>
   <tr>
     <th>Название файла</th>
