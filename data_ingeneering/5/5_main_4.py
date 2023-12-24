@@ -154,17 +154,15 @@ def two_third_query(collection):
         f.write(json_data)
 # вывод максимальной Value при минимальном Industry_aggregation_NZSIOC
 def two_fourth_qyery(collection):
-    q = [{
-        "$match": {
-            "Industry_aggregation_NZSIOC": 'Level 1'
-            }
-        },{
-            "$group" :{
-                "_id":'result',
-                "max_Industry_aggregation_NZSIOC" : {"$max": "$Industry_aggregation_NZSIOC"},
-                "min_Value": {"$min":"$Value"}
-            }
-        }]
+    q = [
+        {
+            '$sort':{
+                'Industry_aggregation_NZSIOC': 1,
+                'Value': -1
+            },
+        },
+        {'$limit': 10}
+    ]
     result = []
     for stat in collection.aggregate(q):
         result.append(stat)

@@ -1,7 +1,152 @@
 [
   {
-    "_id": "result",
-    "max_Industry_aggregation_NZSIOC": "Level 1",
-    "min_Value": 10.700000000000001
+    "_id": {
+      "$oid": "656c5ff9bcaa1a47bc02add3"
+    },
+    "Year": 2022,
+    "Industry_aggregation_NZSIOC": "Level 1",
+    "Industry_code_NZSIOC": "BB",
+    "Industry_name_NZSIOC": "Mining",
+    "Units": "Dollars (millions)",
+    "Variable_code": "H09",
+    "Variable_name": "Interest and donations",
+    "Variable_category": "Financial performance",
+    "Value": 107.0,
+    "Industry_code_ANZSIC06": "ANZSIC06 division B"
+  },
+  {
+    "_id": {
+      "$oid": "656c5ff9bcaa1a47bc02ae0d"
+    },
+    "Year": 2022,
+    "Industry_aggregation_NZSIOC": "Level 1",
+    "Industry_code_NZSIOC": "CC",
+    "Industry_name_NZSIOC": "Manufacturing",
+    "Units": "Percentage",
+    "Variable_code": "H37",
+    "Variable_name": "Quick ratio",
+    "Variable_category": "Financial ratios",
+    "Value": 101.65,
+    "Industry_code_ANZSIC06": "ANZSIC06 division C"
+  },
+  {
+    "_id": {
+      "$oid": "656c5ff9bcaa1a47bc02adea"
+    },
+    "Year": 2022,
+    "Industry_aggregation_NZSIOC": "Level 1",
+    "Industry_code_NZSIOC": "BB",
+    "Industry_name_NZSIOC": "Mining",
+    "Units": "Percentage",
+    "Variable_code": "H37",
+    "Variable_name": "Quick ratio",
+    "Variable_category": "Financial ratios",
+    "Value": 101.65,
+    "Industry_code_ANZSIC06": "ANZSIC06 division B"
+  },
+  {
+    "_id": {
+      "$oid": "656c5ff9bcaa1a47bc02ac3e"
+    },
+    "Year": 2022,
+    "Industry_aggregation_NZSIOC": "Level 1",
+    "Industry_code_NZSIOC": "99999",
+    "Industry_name_NZSIOC": "All industries",
+    "Units": "Percentage",
+    "Variable_code": "H36",
+    "Variable_name": "Current ratio",
+    "Variable_category": "Financial ratios",
+    "Value": 83.46000000000001,
+    "Industry_code_ANZSIC06": "ANZSIC06 divisions A-S (excluding classes K6330, L6711, O7552, O760, O771, O772, S9540, S9601, S9602, and S9603)"
+  },
+  {
+    "_id": {
+      "$oid": "656c5ff9bcaa1a47bc02ac3f"
+    },
+    "Year": 2022,
+    "Industry_aggregation_NZSIOC": "Level 1",
+    "Industry_code_NZSIOC": "99999",
+    "Industry_name_NZSIOC": "All industries",
+    "Units": "Percentage",
+    "Variable_code": "H37",
+    "Variable_name": "Quick ratio",
+    "Variable_category": "Financial ratios",
+    "Value": 75.97,
+    "Industry_code_ANZSIC06": "ANZSIC06 divisions A-S (excluding classes K6330, L6711, O7552, O760, O771, O772, S9540, S9601, S9602, and S9603)"
+  },
+  {
+    "_id": {
+      "$oid": "656c5ff9bcaa1a47bc02adf9"
+    },
+    "Year": 2022,
+    "Industry_aggregation_NZSIOC": "Level 1",
+    "Industry_code_NZSIOC": "CC",
+    "Industry_name_NZSIOC": "Manufacturing",
+    "Units": "Dollars (millions)",
+    "Variable_code": "H13",
+    "Variable_name": "Redundancy and severance",
+    "Variable_category": "Financial performance",
+    "Value": 71.69,
+    "Industry_code_ANZSIC06": "ANZSIC06 division C"
+  },
+  {
+    "_id": {
+      "$oid": "656c5ff9bcaa1a47bc02ac5e"
+    },
+    "Year": 2022,
+    "Industry_aggregation_NZSIOC": "Level 1",
+    "Industry_code_NZSIOC": "AA",
+    "Industry_name_NZSIOC": "Agriculture, Forestry and Fishing",
+    "Units": "Percentage",
+    "Variable_code": "H37",
+    "Variable_name": "Quick ratio",
+    "Variable_category": "Financial ratios",
+    "Value": 67.41000000000001,
+    "Industry_code_ANZSIC06": "ANZSIC06 division A"
+  },
+  {
+    "_id": {
+      "$oid": "656c5ff9bcaa1a47bc02ac61"
+    },
+    "Year": 2022,
+    "Industry_aggregation_NZSIOC": "Level 1",
+    "Industry_code_NZSIOC": "AA",
+    "Industry_name_NZSIOC": "Agriculture, Forestry and Fishing",
+    "Units": "Percentage",
+    "Variable_code": "H41",
+    "Variable_name": "Liabilities structure",
+    "Variable_category": "Financial ratios",
+    "Value": 51.36,
+    "Industry_code_ANZSIC06": "ANZSIC06 division A"
+  },
+  {
+    "_id": {
+      "$oid": "656c5ff9bcaa1a47bc02ae11"
+    },
+    "Year": 2022,
+    "Industry_aggregation_NZSIOC": "Level 1",
+    "Industry_code_NZSIOC": "CC",
+    "Industry_name_NZSIOC": "Manufacturing",
+    "Units": "Percentage",
+    "Variable_code": "H41",
+    "Variable_name": "Liabilities structure",
+    "Variable_category": "Financial ratios",
+    "Value": 49.220000000000006,
+    "Industry_code_ANZSIC06": "ANZSIC06 division C"
+  },
+  {
+    "_id": {
+      "$oid": "656c5ff9bcaa1a47bc02add4"
+    },
+    "Year": 2022,
+    "Industry_aggregation_NZSIOC": "Level 1",
+    "Industry_code_NZSIOC": "BB",
+    "Industry_name_NZSIOC": "Mining",
+    "Units": "Dollars (millions)",
+    "Variable_code": "H10",
+    "Variable_name": "Indirect taxes",
+    "Variable_category": "Financial performance",
+    "Value": 43.870000000000005,
+    "Industry_code_ANZSIC06": "ANZSIC06 division B"
   }
 ]

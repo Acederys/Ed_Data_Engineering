@@ -147,17 +147,16 @@ def sixth_query(collection):
     #     f.write(json_data)
 # вывод максимальной заработной платы при минимальном возрасте
 def seventh_query(collection):
-    q = [{
-        "$match": {
-            "age": 18
-            }
-        }, {
-            "$group":{
-                "_id":'result',
-                "min_age" : {"$min": "$age"},
-                "max_salary": {"$max":"$salary"}
-            }
-    }]
+    q = [
+        {
+            '$sort':{
+                'age': 1,
+                'salary': -1
+            },
+        },
+        {'$limit': 10}
+    ]
+
     result = []
     for stat in collection.aggregate(q):
         result.append(stat)
@@ -166,17 +165,15 @@ def seventh_query(collection):
     #     f.write(json_data)
 # вывод минимальной заработной платы при максимальной возрасте
 def eighth_query(collection):
-    q = [{
-        "$match": {
-            "age": 65
-            }
-        },{
-            "$group" :{
-                "_id":'result',
-                "max_age" : {"$max": "$_id"},
-                "min_salary": {"$min":"$min_salary"}
-            }
-        }]
+    q = [
+        {
+            '$sort':{
+                'age': -1,
+                'salary': 1
+            },
+        },
+        {'$limit': 10}
+    ]
     result = []
     for stat in collection.aggregate(q):
         result.append(stat)
@@ -267,8 +264,8 @@ insert_many(connect(), data)
 # fourth_query(connect())
 # fifth_query(connect())
 # sixth_query(connect())
-# seventh_query(connect())
-# eighth_query(connect())
+seventh_query(connect())
+eighth_query(connect())
 # ninth_query(connect())
 # tenth_query(connect())
 # eleventh_query(connect())
