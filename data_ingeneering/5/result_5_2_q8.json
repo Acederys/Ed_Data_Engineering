@@ -1,7 +1,9 @@
 [
   {
     "_id": "result",
-    "max_age": 65,
-    "min_salary": 20160
+    "max_age": {
+      "$oid": "6588069985ae7a9cb6ef7dc4"
+    },
+    "min_salary": null
   }
 ]

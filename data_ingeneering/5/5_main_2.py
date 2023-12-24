@@ -148,15 +148,14 @@ def sixth_query(collection):
 # вывод максимальной заработной платы при минимальном возрасте
 def seventh_query(collection):
     q = [{
-        "$group": {
-            "_id":'$age',
-            "max_salary": {"$max":"$salary"}
+        "$match": {
+            "age": 18
             }
         }, {
-            "$group" :{
+            "$group":{
                 "_id":'result',
-                "min_age" : {"$min": "$_id"},
-                "max_salary": {"$max":"$max_salary"}
+                "min_age" : {"$min": "$age"},
+                "max_salary": {"$max":"$salary"}
             }
     }]
     result = []
@@ -168,10 +167,9 @@ def seventh_query(collection):
 # вывод минимальной заработной платы при максимальной возрасте
 def eighth_query(collection):
     q = [{
-        "$group": {
-            "_id":'$age',
-            "min_salary": {"$min":"$salary"}
-         }
+        "$match": {
+            "age": 65
+            }
         },{
             "$group" :{
                 "_id":'result',
@@ -261,16 +259,16 @@ def eleventh_query(collection):
     # json_data = dumps(result, indent = 2, ensure_ascii=False)
     # with open(f'result_5_2_q11.json', 'w', encoding='utf-8') as f:
     #     f.write(json_data)
-# data = get_from_csv('5_var_7/task_2_item.csv')
-# insert_many(connect(), data)
-first_query(connect())
-second_query(connect())
-third_query(connect())
-fourth_query(connect())
-fifth_query(connect())
-sixth_query(connect())
-seventh_query(connect())
-eighth_query(connect())
-ninth_query(connect())
-tenth_query(connect())
-eleventh_query(connect())
+data = get_from_csv('5_var_7/task_2_item.csv')
+insert_many(connect(), data)
+# first_query(connect())
+# second_query(connect())
+# third_query(connect())
+# fourth_query(connect())
+# fifth_query(connect())
+# sixth_query(connect())
+# seventh_query(connect())
+# eighth_query(connect())
+# ninth_query(connect())
+# tenth_query(connect())
+# eleventh_query(connect())

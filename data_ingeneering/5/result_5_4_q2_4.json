@@ -1,7 +1,7 @@
 [
   {
     "_id": "result",
-    "min_Industry_aggregation_NZSIOC": null,
-    "max_Value": 2915100
+    "max_Industry_aggregation_NZSIOC": "Level 1",
+    "min_Value": 10.700000000000001
   }
 ]

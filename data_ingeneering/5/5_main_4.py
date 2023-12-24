@@ -155,17 +155,16 @@ def two_third_query(collection):
 # вывод максимальной Value при минимальном Industry_aggregation_NZSIOC
 def two_fourth_qyery(collection):
     q = [{
-        "$group": {
-            "_id":'$Industry_aggregation_NZSIOC',
-            "max_Value": {"$max":"$Value"}
+        "$match": {
+            "Industry_aggregation_NZSIOC": 'Level 1'
             }
-        }, {
+        },{
             "$group" :{
                 "_id":'result',
-                "min_Industry_aggregation_NZSIOC" : {"$min": "$_Industry_aggregation_NZSIOC"},
-                "max_Value": {"$max":"$max_Value"}
+                "max_Industry_aggregation_NZSIOC" : {"$max": "$Industry_aggregation_NZSIOC"},
+                "min_Value": {"$min":"$Value"}
             }
-    }]
+        }]
     result = []
     for stat in collection.aggregate(q):
         result.append(stat)
@@ -230,16 +229,16 @@ def three_third_query(collection):
 # data = get_from_csv('5_var_7/finans_year.csv')
 # data_json = get_from_json('5_var_7/finans_year.json')
 # insert_many(connect(), data)
-first_query(connect())
-second_query(connect())
-third_qyery(connect())
-fourth_qyery(connect())
+# first_query(connect())
+# second_query(connect())
+# third_qyery(connect())
+# fourth_qyery(connect())
 # insert_many(connect(), data_json)
-two_first_query(connect())
-two_second_query(connect())
-two_third_query(connect())
+# two_first_query(connect())
+# two_second_query(connect())
+# two_third_query(connect())
 two_fourth_qyery(connect())
-two_fifth_query(connect())
-three_first_query(connect())
-three_second_query(connect())
-three_third_query(connect())
+# two_fifth_query(connect())
+# three_first_query(connect())
+# three_second_query(connect())
+# three_third_query(connect())
